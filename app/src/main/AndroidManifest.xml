@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.psionicinteractive.dhakaclubltd">
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".DirectoryActivity"></activity>
+        <activity android:name=".HomeActivity"></activity>
+        <activity android:name=".MenuActivity"></activity>
+        <activity android:name=".PutGetExtra"></activity>
+        <activity android:name=".AboutUsActivity"></activity>
+        <activity android:name=".FacilityActivity"></activity>
+        <activity android:name=".BirthdaysActivity"></activity>
+        <activity android:name=".GalleryActivity"></activity>
+        <activity android:name=".ContactActivity"></activity>
+        <activity android:name=".LocationActivity"></activity>
+        <activity android:name=".Facility_a_Activity"></activity>
+        <activity android:name=".Facility_b_Activity"></activity>
+        <activity android:name=".Facility_c_Activity"></activity>
+        <activity android:name=".SettingsActivity"></activity>
+    </application>
+
+</manifest>

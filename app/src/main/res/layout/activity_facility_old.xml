@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    >
+
+    <ImageView
+        android:layout_width="80pt"
+        android:layout_height="80pt"
+        android:id="@+id/imageView"
+        android:layout_marginTop="10pt"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/facility" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Headline of the page"
+        android:textSize="25sp"
+        android:layout_margin="5pt"
+        android:textColor="#fff"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        android:layout_gravity="center_horizontal"
+        android:fillViewport="true"
+        android:layout_margin="5pt"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Membership Plan 1"
+                android:textSize="20sp"
+                android:textColor="#f00"
+                android:layout_marginBottom="5pt"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="   A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. "
+                android:id="@+id/textView_plan1"
+                android:textColor="#fff"
+                android:textSize="15sp"
+                android:layout_marginBottom="5pt"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Membership Plan 2"
+                android:textSize="20sp"
+                android:textColor="#f00"
+                android:layout_marginBottom="5pt"
+
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="   A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. "
+                android:id="@+id/textView_plan2"
+                android:textColor="#fff"
+                android:textSize="15sp"
+                android:layout_marginBottom="5pt"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Membership Plan 3"
+                android:textSize="20sp"
+                android:textColor="#f00"
+                android:layout_marginBottom="5pt"
+
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="   A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. "
+                android:id="@+id/textView_plan3"
+                android:textColor="#fff"
+                android:textSize="15sp"
+                android:layout_marginBottom="5pt"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Membership Plan 4"
+                android:textSize="20sp"
+                android:textColor="#f00"
+                android:layout_marginBottom="5pt"
+
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="   A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. "
+                android:id="@+id/textView_plan4"
+                android:textColor="#fff"
+                android:textSize="15sp"
+                android:layout_marginBottom="5pt"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Membership Plan 5"
+                android:textSize="20sp"
+                android:textColor="#f00"
+                android:layout_marginBottom="5pt"
+
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="   A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. "
+                android:id="@+id/textView_plan5"
+                android:textColor="#fff"
+                android:textSize="15sp"
+                android:layout_marginBottom="5pt"
+                />
+
+        </LinearLayout>
+
+
+    </ScrollView>
+</LinearLayout>

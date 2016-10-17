@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splash"
+    >
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:background="#fff"
+        android:paddingTop="20dp"
+        android:paddingBottom="5dp"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        >
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:id="@+id/user_name"
+            android:layout_marginBottom="5pt"
+            android:hint="Username"
+            android:textColorHint="#C4C4C4"
+            android:textColor="#000"
+            android:layout_gravity="center_horizontal"
+            android:textIsSelectable="false" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:id="@+id/user_pass"
+            android:layout_marginBottom="10pt"
+            android:textColor="#000"
+            android:hint="Password"
+            android:textColorHint="#C4C4C4"
+
+            android:layout_gravity="center_horizontal" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="SIGN IN"
+            android:textSize="25sp"
+            android:id="@+id/loginbutton"
+            android:textColor="#fff"
+            android:background="@drawable/login_button_selector"
+            android:layout_gravity="center_horizontal"
+            android:onClick="userLogin"
+
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:weightSum="5"
+            android:padding="5dp"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="New to Club App? "
+                android:gravity="end"
+                android:layout_weight="2"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" Sign Up"
+                android:textColor="#09A9EC"
+                android:layout_weight="3"
+                android:onClick="register"
+                />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</RelativeLayout>

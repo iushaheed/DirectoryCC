@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    android:orientation="vertical" >
+
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="match_parent"
+        android:layout_height="80pt"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:clickable="true"
+        android:src="@drawable/mapimage"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DHAKA CLUB LIMITED"
+        android:id="@+id/textView4"
+        android:layout_below="@+id/imageView1"
+        android:textColor="#fff"
+        android:typeface="serif"
+        android:textSize="26sp"
+        android:layout_margin="5pt"
+        android:gravity="center"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView1"
+        android:layout_below="@+id/textView4"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:paddingTop="5pt"
+        android:text="\nRamna, Dhaka-1000\nBangladesh\n\ninfo@dhakaclubltd.com\nTel: 9671960-4, 9672620, 9663965"
+        android:textColor="#fff"
+        android:typeface="serif"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PSIONIC INTERACTIVE LIMITED"
+        android:id="@+id/textView5"
+        android:textColor="#fff"
+        android:textSize="24sp"
+
+        android:paddingBottom="2dip"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+
+</RelativeLayout>
