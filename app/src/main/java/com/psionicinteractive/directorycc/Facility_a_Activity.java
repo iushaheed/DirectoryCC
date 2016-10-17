@@ -1,4 +1,4 @@
-package com.psionicinteractive.dhakaclubltd;
+package com.psionicinteractive.directorycc;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 /**
  * Created by PSIONIC on 9/19/2016.
  */
-public class Facility_c_Activity extends Activity {
+public class Facility_a_Activity extends Activity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -20,7 +20,7 @@ public class Facility_c_Activity extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_facility_c);
+        setContentView(R.layout.activity_facility_a);
 
         ExtendedViewPager mViewPager = (ExtendedViewPager) findViewById(R.id.view_pager);
         mViewPager.setAdapter(new TouchImageAdapter());
@@ -32,10 +32,9 @@ public class Facility_c_Activity extends Activity {
     static class TouchImageAdapter extends PagerAdapter {
 
         private static int[] images = {
-
-                R.drawable.bar,
                 R.drawable.swimming,
-                R.drawable.garden
+                R.drawable.garden,
+                R.drawable.bar
         };
 
         @Override

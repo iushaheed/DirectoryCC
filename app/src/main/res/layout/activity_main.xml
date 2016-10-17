@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/splash"
     android:layout_gravity="center"
-    tools:context="com.psionicinteractive.dhakaclubltd.MainActivity">
+    tools:context="com.psionicinteractive.directorycc.MainActivity">
 
 
     <TextView

@@ -1,4 +1,4 @@
-package com.psionicinteractive.dhakaclubltd;
+package com.psionicinteractive.directorycc;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -6,9 +6,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;

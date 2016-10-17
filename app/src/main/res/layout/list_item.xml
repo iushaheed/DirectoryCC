@@ -8,12 +8,12 @@
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="7pt"
+    android:padding="5pt"
     >
 
     <ImageView
-        android:layout_width="50pt"
-        android:layout_height="50pt"
+        android:layout_width="30pt"
+        android:layout_height="30pt"
         android:id="@+id/imageView"
         android:text="image"
         android:layout_gravity="center"
@@ -30,11 +30,10 @@
             android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="2dp"
             android:paddingTop="1dp"
             android:text="Name"
             android:textAllCaps="true"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:textStyle="bold"
 
 
@@ -45,7 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Email"
-            android:textSize="15sp"
+            android:textSize="12sp"
             />
 
 
@@ -54,7 +53,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Mobile"
-            android:textSize="17sp"
+            android:textSize="12sp"
             android:paddingBottom="1dp"
             />
 

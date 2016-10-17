@@ -10,7 +10,7 @@
  * Extends Android ImageView to include pinch zooming, panning, fling and double tap zoom.
  */
 
-package com.psionicinteractive.dhakaclubltd;
+package com.psionicinteractive.directorycc;
 
 import android.annotation.TargetApi;
 import android.content.Context;

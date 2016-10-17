@@ -5,7 +5,7 @@ android {
     buildToolsVersion "24.0.2"
 
     defaultConfig {
-        applicationId "com.psionicinteractive.dhakaclubltd"
+        applicationId "com.psionicinteractive.directoryccc"
         minSdkVersion 19
         targetSdkVersion 24
         versionCode 1
@@ -27,3 +27,4 @@ dependencies {
     compile project(':picasso-2.5.2')
     compile 'pl.droidsonroids.gif:android-gif-drawable:1.1.+'
 }
+apply plugin: 'com.google.gms.google-services'

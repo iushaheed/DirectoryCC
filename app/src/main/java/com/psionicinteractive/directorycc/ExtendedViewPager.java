@@ -1,4 +1,4 @@
-package com.psionicinteractive.dhakaclubltd;
+package com.psionicinteractive.directorycc;
 
 
 import android.content.Context;

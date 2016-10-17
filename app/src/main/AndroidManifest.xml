@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.psionicinteractive.dhakaclubltd">
+    package="com.psionicinteractive.directorycc">
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
         <activity
-            android:name=".MainActivity"
+            android:name="com.psionicinteractive.directorycc.MainActivity"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
             <intent-filter>
@@ -24,20 +24,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DirectoryActivity"></activity>
-        <activity android:name=".HomeActivity"></activity>
-        <activity android:name=".MenuActivity"></activity>
-        <activity android:name=".PutGetExtra"></activity>
-        <activity android:name=".AboutUsActivity"></activity>
-        <activity android:name=".FacilityActivity"></activity>
-        <activity android:name=".BirthdaysActivity"></activity>
-        <activity android:name=".GalleryActivity"></activity>
-        <activity android:name=".ContactActivity"></activity>
-        <activity android:name=".LocationActivity"></activity>
-        <activity android:name=".Facility_a_Activity"></activity>
-        <activity android:name=".Facility_b_Activity"></activity>
-        <activity android:name=".Facility_c_Activity"></activity>
-        <activity android:name=".SettingsActivity"></activity>
+        <activity android:name="com.psionicinteractive.directorycc.DirectoryActivity"></activity>
+        <activity android:name="com.psionicinteractive.directorycc.HomeActivity"></activity>
+        <activity android:name="com.psionicinteractive.directorycc.MenuActivity"></activity>
+        <activity android:name="com.psionicinteractive.directorycc.PutGetExtra"></activity>
+        <activity android:name="com.psionicinteractive.directorycc.AboutUsActivity"></activity>
+        <activity android:name="com.psionicinteractive.directorycc.FacilityActivity"></activity>
+        <activity android:name="com.psionicinteractive.directorycc.BirthdaysActivity"></activity>
+        <activity android:name="com.psionicinteractive.directorycc.GalleryActivity"></activity>
+        <activity android:name="com.psionicinteractive.directorycc.ContactActivity"></activity>
+        <activity android:name="com.psionicinteractive.directorycc.LocationActivity"></activity>
+        <activity android:name="com.psionicinteractive.directorycc.Facility_a_Activity"></activity>
+        <activity android:name="com.psionicinteractive.directorycc.Facility_b_Activity"></activity>
+        <activity android:name="com.psionicinteractive.directorycc.Facility_c_Activity"></activity>
+        <activity android:name="com.psionicinteractive.directorycc.SettingsActivity"></activity>
     </application>
 
 </manifest>

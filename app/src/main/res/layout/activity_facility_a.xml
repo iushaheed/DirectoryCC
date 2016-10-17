@@ -12,7 +12,7 @@
 
 
 
-        <com.psionicinteractive.dhakaclubltd.ExtendedViewPager
+        <com.psionicinteractive.directorycc.ExtendedViewPager
             android:id="@+id/view_pager"
             android:layout_width="match_parent"
             android:layout_height="250dp"
