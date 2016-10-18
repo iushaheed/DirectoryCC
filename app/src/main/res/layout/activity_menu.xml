@@ -156,7 +156,7 @@
                 android:layout_width="80dp"
                 android:layout_height="90dp"
                 android:id="@+id/imageButton15"
-                android:onClick="gotodocuments"
+                android:onClick="gotopush"
                 android:background="@drawable/menu_button_selector_documents"
                 />
 

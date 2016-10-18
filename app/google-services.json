@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "345734890888",
-    "firebase_url": "https://directorycc-4ef0c.firebaseio.com",
-    "project_id": "directorycc-4ef0c",
-    "storage_bucket": "directorycc-4ef0c.appspot.com"
+    "project_number": "361825763409",
+    "firebase_url": "https://directory-cc.firebaseio.com",
+    "project_id": "directory-cc",
+    "storage_bucket": "directory-cc.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:345734890888:android:e816e2cd7e7a4b4e",
+        "mobilesdk_app_id": "1:361825763409:android:e816e2cd7e7a4b4e",
         "android_client_info": {
           "package_name": "com.psionicinteractive.directorycc"
         }
       },
       "oauth_client": [
         {
-          "client_id": "345734890888-8emb9nnmim6sv65kagiv35d8dtv2rftj.apps.googleusercontent.com",
+          "client_id": "361825763409-bb3o2j7n79nln7ut162vms855ufkpl77.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCLNgrS-USUzuzHzx_i6OJVWkB_5RxKsjE"
+          "current_key": "AIzaSyCSbzZg4fIx4Uv_zOZJ1v_xSHw4msy8_Dc"
         }
       ],
       "services": {

@@ -11,6 +11,8 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
 
+import com.psionicinteractive.directorycc.activity.PushActivity;
+
 /**
  * Created by imam on 8/16/2016.
  */
@@ -43,6 +45,10 @@ public class MenuActivity extends Activity {
 
     public void gotobenifits(View view) {
         Intent i = new Intent(MenuActivity.this, FacilityActivity.class);
+        startActivity(i);
+    }
+    public void gotopush(View view) {
+        Intent i = new Intent(MenuActivity.this, PushActivity.class);
         startActivity(i);
     }
     public void gotomsg(View view) {
