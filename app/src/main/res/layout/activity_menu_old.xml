@@ -1,0 +1,178 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:gravity="center">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        >
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:padding="10dp">
+
+            <ImageButton
+                android:layout_width="80dp"
+                android:layout_height="90dp"
+                android:id="@+id/imageButton"
+                android:onClick="gotodirectory"
+                android:background="@drawable/menu_button_selector_directory"/>
+
+            <ImageButton
+                android:layout_width="80dp"
+                android:layout_height="90dp"
+                android:id="@+id/imageButton2"
+                android:onClick="gotoaboutus"
+                android:background="@drawable/menu_button_selector_contact"
+                />
+
+            <ImageButton
+                android:layout_width="80dp"
+                android:layout_height="90dp"
+                android:id="@+id/imageButton3"
+                android:onClick="gotoevents"
+                android:background="@drawable/menu_button_selector_events"
+                />
+
+            <ImageButton
+                android:layout_width="80dp"
+                android:layout_height="90dp"
+                android:id="@+id/imageButton4"
+                android:onClick="gotomsg"
+                android:background="@drawable/menu_button_selector_message"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp">
+
+            <ImageButton
+                android:layout_width="80dp"
+                android:layout_height="90dp"
+                android:id="@+id/imageButton5"
+                android:onClick="gotobenifits"
+                android:background="@drawable/menu_button_selector_facilities"/>
+
+            <ImageButton
+                android:layout_width="80dp"
+                android:layout_height="90dp"
+                android:id="@+id/imageButton6"
+                android:onClick="gotoecmembers"
+                android:background="@drawable/menu_button_selector_ecmembers"
+                />
+
+            <ImageButton
+                android:layout_width="80dp"
+                android:layout_height="90dp"
+                android:id="@+id/imageButton7"
+                android:onClick="gotofounders"
+                android:background="@drawable/menu_button_selector_founder"
+                />
+
+            <ImageButton
+                android:layout_width="80dp"
+                android:layout_height="90dp"
+                android:id="@+id/imageButton8"
+                android:onClick="gotolocation"
+                android:background="@drawable/menu_button_selector_location"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp">
+
+            <ImageButton
+                android:layout_width="80dp"
+                android:layout_height="90dp"
+                android:id="@+id/imageButton9"
+                android:onClick="gotoaffiliation"
+                android:background="@drawable/menu_button_selector_affiliations"/>
+
+            <ImageButton
+                android:layout_width="80dp"
+                android:layout_height="90dp"
+                android:id="@+id/imageButton10"
+                android:onClick="gotogallery"
+                android:background="@drawable/menu_button_selector_aboutus"
+                />
+
+            <ImageButton
+                android:layout_width="80dp"
+                android:layout_height="90dp"
+                android:id="@+id/imageButton11"
+                android:onClick="gotobirthday"
+                android:background="@drawable/menu_button_selector_birthdays"
+                />
+
+            <ImageButton
+                android:layout_width="80dp"
+                android:layout_height="90dp"
+                android:id="@+id/imageButton12"
+                android:onClick="gotocontactus"
+                android:background="@drawable/menu_button_selector_locator"
+                />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp">
+
+            <ImageButton
+                android:layout_width="80dp"
+                android:layout_height="90dp"
+                android:id="@+id/imageButton13"
+                android:onClick="gotoprofile"
+                android:background="@drawable/menu_button_selector_profile"/>
+
+            <ImageButton
+                android:layout_width="80dp"
+                android:layout_height="90dp"
+                android:id="@+id/imageButton14"
+                android:onClick="gotosettings"
+                android:background="@drawable/menu_button_selector_settings"
+                />
+
+            <ImageButton
+                android:layout_width="80dp"
+                android:layout_height="90dp"
+                android:id="@+id/imageButton15"
+                android:onClick="gotopush"
+                android:background="@drawable/menu_button_selector_documents"
+                />
+
+            <ImageButton
+                android:layout_width="80dp"
+                android:layout_height="90dp"
+                android:id="@+id/imageButton16"
+                android:onClick="gotosearch"
+                android:background="@drawable/directory"
+                />
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

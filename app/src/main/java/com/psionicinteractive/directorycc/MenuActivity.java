@@ -3,12 +3,14 @@ package com.psionicinteractive.directorycc;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.psionicinteractive.directorycc.activity.PushActivity;
@@ -17,6 +19,7 @@ import com.psionicinteractive.directorycc.activity.PushActivity;
  * Created by imam on 8/16/2016.
  */
 public class MenuActivity extends Activity {
+    TextView tx;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
@@ -24,7 +27,12 @@ public class MenuActivity extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         setContentView(R.layout.activity_menu);
+
+        tx = (TextView)findViewById(R.id.headerText);
+        Typeface custom_font = Typeface.createFromAsset(getAssets(),  "fonts/lato.ttf");
+        tx.setTypeface(custom_font);
 
 
     }
