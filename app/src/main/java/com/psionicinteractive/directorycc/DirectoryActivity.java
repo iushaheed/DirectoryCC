@@ -181,59 +181,7 @@ public class DirectoryActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-//    public void buttonclickalpha(View view){
-////        Toast.makeText(DirectoryActivity.this, "A Selected", Toast.LENGTH_LONG).show();
-//        arrayList = new ArrayList<>();
-//        context=this;
-//        mMemberType.setText("ALPHA MEMBERS");
-//        runOnUiThread(new Runnable() {
-//            @Override
-//            public void run() {
-//                new ReadJSON().execute("http://iamimam.com/directory/member_a.txt");
-//            }
-//        });
-//
-//    }
-//    public void buttonclickbeta(View view){
-//        arrayList = new ArrayList<>();
-//        context=this;
-//        mMemberType.setText("BETA MEMBERS");
-//        runOnUiThread(new Runnable() {
-//            @Override
-//            public void run() {
-//                new ReadJSON().execute("http://iamimam.com/directory/member_b.txt");
-//            }
-//        });
-////        Toast.makeText(DirectoryActivity.this,"Beta",Toast.LENGTH_LONG).show();
-////        Toast.makeText(DirectoryActivity.this, "B Selected", Toast.LENGTH_LONG).show();
-//
-//    }
-//    public void buttonclickgamma(View view){
-//        arrayList = new ArrayList<>();
-//        context=this;
-//        mMemberType.setText("GAMMA MEMBERS");
-//        runOnUiThread(new Runnable() {
-//            @Override
-//            public void run() {
-//                new ReadJSON().execute("http://iamimam.com/directory/member_c.txt");
-//            }
-//        });
-////        Toast.makeText(DirectoryActivity.this, "C Selected", Toast.LENGTH_LONG).show();
-//
-//    }
-//    public void buttonclickfree(View view){
-//        arrayList = new ArrayList<>();
-//        context=this;
-//        mMemberType.setText("FREE MEMBERS");
-//        runOnUiThread(new Runnable() {
-//            @Override
-//            public void run() {
-//                new ReadJSON().execute("http://iamimam.com/directory/member_d.txt");
-//            }
-//        });
-////        Toast.makeText(DirectoryActivity.this, "D Selected", Toast.LENGTH_LONG).show();
-//
-//    }
+
 
     class ReadJSON extends AsyncTask<String, Integer, String> {
 

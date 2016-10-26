@@ -65,8 +65,7 @@ public class CustomListAdapter extends ArrayAdapter<Product> {
 //                Toast.makeText(context,Product.getName(), Toast.LENGTH_LONG).show();
 
                 //calling an activity from a non activity class
-                Intent intent = new Intent(context,PutGetExtra.class)
-                        .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                Intent intent = new Intent(context,PutGetExtra.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
                 //passing name id image phone string in the PUtGetExtra.java class for user_profile display
 
