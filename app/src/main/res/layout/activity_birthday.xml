@@ -52,8 +52,6 @@
             android:id="@+id/listView"
             android:padding="10dip"
             >
-
-
         </ListView>
 
     </LinearLayout>

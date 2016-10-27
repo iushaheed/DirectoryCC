@@ -100,9 +100,7 @@ public class BirthdaysActivity extends AppCompatActivity {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            CustomListAdapter adapter = new CustomListAdapter(
-                    getApplicationContext(), R.layout.list_item, arrayList
-            );
+            CustomListAdapter adapter = new CustomListAdapter(getApplicationContext(), R.layout.list_item, arrayList);
             lv.setAdapter(adapter);
         }
     }

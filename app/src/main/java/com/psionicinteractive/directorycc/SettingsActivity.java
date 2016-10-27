@@ -30,6 +30,8 @@ public class SettingsActivity extends Activity {
         Toast.makeText(SettingsActivity.this, "logged out", Toast.LENGTH_SHORT).show();
 
         Intent i= new Intent(SettingsActivity.this,HomeActivity.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(i);
         finish();
     }

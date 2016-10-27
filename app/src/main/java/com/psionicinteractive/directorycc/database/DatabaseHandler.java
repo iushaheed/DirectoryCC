@@ -29,9 +29,14 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String KEY_ID = "id";
     private static final String KEY_TITLE = "title";
     private static final String KEY_MESSAGE = "message";
+
     public DatabaseHandler(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
+    public DatabaseHandler(Context context) {
+        super(context, "pushManager", null, 1);
+    }
+
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
@@ -47,7 +52,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
     // Adding new push
-    void addPush(Push push) {
+    public void addPush(Push push) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();

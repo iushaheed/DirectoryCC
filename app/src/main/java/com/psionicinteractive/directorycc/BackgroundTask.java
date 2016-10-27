@@ -130,8 +130,10 @@ public class BackgroundTask extends AsyncTask<String,Void,String> {
             editor.apply();
 
             Intent i = new Intent(ctx, MenuActivity.class);
+            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
             ctx.startActivity(i);
-//            finish();
+
 
         }
         else if(result.equals(""))

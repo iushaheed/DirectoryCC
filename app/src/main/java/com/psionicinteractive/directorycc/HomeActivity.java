@@ -37,6 +37,7 @@ public class HomeActivity extends Activity {
             Toast.makeText(HomeActivity.this, "WELCOME BACK", Toast.LENGTH_LONG).show();
             Intent i = new Intent(HomeActivity.this, MenuActivity.class);
             startActivity(i);
+            finish();
         }
     }
 

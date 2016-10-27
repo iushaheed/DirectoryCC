@@ -38,7 +38,10 @@
         <activity android:name="com.psionicinteractive.directorycc.Facility_b_Activity"></activity>
         <activity android:name="com.psionicinteractive.directorycc.Facility_c_Activity"></activity>
         <activity android:name="com.psionicinteractive.directorycc.SettingsActivity"></activity>
-        <activity android:name="com.psionicinteractive.directorycc.activity.PushActivity"></activity>
+
+        <activity android:name="com.psionicinteractive.directorycc.SinglePushActivity"></activity>
+
+
 
         <!-- Firebase Notifications -->
         <service android:name=".service.MyFirebaseMessagingService">
@@ -52,6 +55,13 @@
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
+        <activity android:name=".PushActivity">
+
+            <intent-filter>
+                <action android:name="com.psionicinteractive.directorycc_TARGET_NOTIFICATION"></action>
+                <category android:name="android.intent.category.DEFAULT"></category>
+            </intent-filter>
+        </activity>
         <!-- ./Firebase Notifications -->
     </application>
 

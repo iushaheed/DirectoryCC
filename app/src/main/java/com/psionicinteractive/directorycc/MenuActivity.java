@@ -13,8 +13,6 @@ import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.psionicinteractive.directorycc.activity.PushActivity;
-
 /**
  * Created by imam on 8/16/2016.
  */
@@ -33,6 +31,8 @@ public class MenuActivity extends Activity {
         tx = (TextView)findViewById(R.id.headerText);
         Typeface custom_font = Typeface.createFromAsset(getAssets(),  "fonts/lato.ttf");
         tx.setTypeface(custom_font);
+
+
 
 
     }
