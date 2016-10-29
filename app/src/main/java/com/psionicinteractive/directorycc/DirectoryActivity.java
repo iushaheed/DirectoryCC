@@ -15,7 +15,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ListView;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,6 +32,8 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
 
+import static com.psionicinteractive.directorycc.R.id.checkboxId;
+
 public class DirectoryActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -36,11 +41,14 @@ public class DirectoryActivity extends AppCompatActivity
     ListView lv;
     ProgressDialog dialog;
     Context context;
-    TextView mMemberType;
+//    TextView mMemberType;
+    TextView mMembershipTypeInToolbar;
     public Handler mHandler;
     public View ftView;
     public boolean isLoading=false;
     CustomListAdapter adapter;
+//    Switch mSmsSwich;
+//    CheckBox cb_t;
 
 
     @Override
@@ -48,7 +56,7 @@ public class DirectoryActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_directory);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
+        setSupportActionBar(toolbar);
 //        getSupportActionBar().hide();
         arrayList = new ArrayList<>();
         context=this;
@@ -58,9 +66,26 @@ public class DirectoryActivity extends AppCompatActivity
 //        mHandler = new MyHandler();
 
         //possible reason for list problem
+//        cb_t= (CheckBox) findViewById(R.id.checkboxId);
         lv = (ListView) findViewById(R.id.listView);
-        mMemberType= (TextView) findViewById(R.id.membership_name);
-        mMemberType.setText("ALL MEMBERS");
+//        mMemberType= (TextView) findViewById(R.id.membership_name);
+//        mSmsSwich= (Switch) findViewById(R.id.sms_switch);
+//        mSmsSwich.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//                if(mSmsSwich.isChecked()){
+//    //            mSmsSwich.getVisibility();
+//                    cb_t.getVisibility();
+//                    Toast.makeText(context, ""+isChecked, Toast.LENGTH_SHORT).show();
+//                }
+//
+//            }
+//        });
+
+        mMembershipTypeInToolbar= (TextView) findViewById(R.id.toolbar_title);
+
+        mMembershipTypeInToolbar.setText("ALL MEMBERS");
+//        mMemberType.setText("ALL MEMBERS");
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -103,7 +128,7 @@ public class DirectoryActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_sendsms) {
             return true;
         }
 
@@ -119,7 +144,9 @@ public class DirectoryActivity extends AppCompatActivity
         if (id == R.id.nav_camera) {
             arrayList = new ArrayList<>();
             context=this;
-            mMemberType.setText("ALPHA MEMBERS");
+            mMembershipTypeInToolbar.setText("ALPHA MEMBERS");
+//            mMemberType.setText("ALPHA MEMBERS");
+
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
@@ -130,7 +157,8 @@ public class DirectoryActivity extends AppCompatActivity
         } else if (id == R.id.nav_gallery) {
             arrayList = new ArrayList<>();
             context=this;
-            mMemberType.setText("BETA MEMBERS");
+            mMembershipTypeInToolbar.setText("BETA MEMBERS");
+//            mMemberType.setText("BETA MEMBERS");
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
@@ -142,7 +170,8 @@ public class DirectoryActivity extends AppCompatActivity
         } else if (id == R.id.nav_slideshow) {
             arrayList = new ArrayList<>();
             context=this;
-            mMemberType.setText("GAMMA MEMBERS");
+            mMembershipTypeInToolbar.setText("GAMMA MEMBERS");
+//            mMemberType.setText("GAMMA MEMBERS");
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
@@ -153,7 +182,8 @@ public class DirectoryActivity extends AppCompatActivity
         } else if (id == R.id.nav_manage) {
             arrayList = new ArrayList<>();
             context=this;
-            mMemberType.setText("FREE MEMBERS");
+            mMembershipTypeInToolbar.setText("FREE MEMBERS");
+//            mMemberType.setText("FREE MEMBERS");
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
