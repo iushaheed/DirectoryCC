@@ -8,9 +8,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -23,6 +25,7 @@ public class CustomListAdapter extends ArrayAdapter<Product> {
     ArrayList<Product> products;
     Context context;
     int resource;
+//    final boolean[] checkArray;
 
 
 
@@ -31,6 +34,7 @@ public class CustomListAdapter extends ArrayAdapter<Product> {
         this.products = products;
         this.context = context;
         this.resource = resource;
+//        checkArray=new boolean[products.size()];
     }
 
     public void addListItemToAdapter(List<Product> list){
@@ -51,8 +55,6 @@ public class CustomListAdapter extends ArrayAdapter<Product> {
         }
         final Product product = getItem(position);
 
-
-
         ImageView imageView = (ImageView) convertView.findViewById(R.id.imageView);
         Picasso.with(context).load(product.getImage()).into(imageView);
 
@@ -63,10 +65,24 @@ public class CustomListAdapter extends ArrayAdapter<Product> {
         txtEmail.setText(product.getEmail());
 
         CheckBox cb= (CheckBox) convertView.findViewById(R.id.checkboxId);
+
+        cb.setChecked(product.getIsTrue());
+
+//        cb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//                product.setIsTrue(isChecked);
+//                Toast.makeText(getContext(), ""+isChecked, Toast.LENGTH_SHORT).show();
+//            }
+//        });
         cb.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Log.v("checkbox position",position+"");
+            public void onClick(View v) {
+                if (product.getIsTrue())
+                product.setIsTrue(!product.getIsTrue());
+                else
+                    product.setIsTrue(!product.getIsTrue());
+                Toast.makeText(getContext(), ""+product.getIsTrue(), Toast.LENGTH_SHORT).show();
             }
         });
 
