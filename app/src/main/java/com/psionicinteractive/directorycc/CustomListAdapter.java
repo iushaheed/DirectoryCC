@@ -2,10 +2,13 @@ package com.psionicinteractive.directorycc;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,6 +23,8 @@ public class CustomListAdapter extends ArrayAdapter<Product> {
     ArrayList<Product> products;
     Context context;
     int resource;
+
+
 
     public CustomListAdapter(Context context, int resource, ArrayList<Product> products) {
         super(context, resource, products);
@@ -40,8 +45,7 @@ public class CustomListAdapter extends ArrayAdapter<Product> {
 
 
         if (convertView == null){
-            LayoutInflater layoutInflater = (LayoutInflater) getContext()
-                    .getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
+            LayoutInflater layoutInflater = (LayoutInflater) getContext().getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
             convertView = layoutInflater.inflate(R.layout.list_item, null, true);
 
         }
@@ -57,7 +61,14 @@ public class CustomListAdapter extends ArrayAdapter<Product> {
 
         TextView txtEmail = (TextView) convertView.findViewById(R.id.email);
         txtEmail.setText(product.getEmail());
-        //MY STARTS
+
+        CheckBox cb= (CheckBox) convertView.findViewById(R.id.checkboxId);
+        cb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.v("checkbox position",position+"");
+            }
+        });
 
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override

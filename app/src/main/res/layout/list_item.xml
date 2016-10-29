@@ -11,6 +11,7 @@
     android:padding="5pt"
     >
 
+
     <ImageView
         android:layout_width="30pt"
         android:layout_height="30pt"
@@ -21,7 +22,7 @@
     <!-- Name Label -->
 
     <LinearLayout
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="fill_parent"
         android:paddingLeft="5pt"
         android:orientation="vertical"
@@ -57,8 +58,25 @@
             android:paddingBottom="1dp"
             />
 
+
     </LinearLayout>
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="end|center"
+        android:id="@+id/checkboxlayout"
+
+        >
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:id="@+id/checkboxId"
+            />
+    </LinearLayout>
 
 
 </LinearLayout>

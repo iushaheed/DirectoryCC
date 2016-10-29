@@ -42,6 +42,7 @@ public class DirectoryActivity extends AppCompatActivity
     public boolean isLoading=false;
     CustomListAdapter adapter;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,18 +68,9 @@ public class DirectoryActivity extends AppCompatActivity
             }
         });
 
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
@@ -183,6 +175,7 @@ public class DirectoryActivity extends AppCompatActivity
     }
 
 
+
     class ReadJSON extends AsyncTask<String, Integer, String> {
 
         @Override
@@ -216,9 +209,7 @@ public class DirectoryActivity extends AppCompatActivity
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            CustomListAdapter adapter = new CustomListAdapter(
-                    getApplicationContext(), R.layout.list_item, arrayList
-            );
+            CustomListAdapter adapter = new CustomListAdapter(getApplicationContext(), R.layout.list_item, arrayList);
             lv.setAdapter(adapter);
         }
     }
@@ -271,53 +262,4 @@ public class DirectoryActivity extends AppCompatActivity
 
 //    https://www.youtube.com/watch?v=XwIKb_f0Y_w
 
-    private ArrayList<Product> getMoreData(){
-        ArrayList<Product> newList= new ArrayList<>();
-
-        newList.add(new Product("http://iamimam.com/directory/images/6.png","name","email","phone"));
-        newList.add(new Product("http://iamimam.com/directory/images/6.png","name","email","phone"));
-        newList.add(new Product("http://iamimam.com/directory/images/6.png","name","email","phone"));
-        newList.add(new Product("http://iamimam.com/directory/images/6.png","name","email","phone"));
-        newList.add(new Product("http://iamimam.com/directory/images/6.png","name","email","phone"));
-        newList.add(new Product("http://iamimam.com/directory/images/6.png","name","email","phone"));
-        newList.add(new Product("http://iamimam.com/directory/images/6.png","name","email","phone"));
-        newList.add(new Product("http://iamimam.com/directory/images/6.png","name","email","phone"));
-        newList.add(new Product("http://iamimam.com/directory/images/6.png","name","email","phone"));
-        newList.add(new Product("http://iamimam.com/directory/images/6.png","name","email","phone"));
-        newList.add(new Product("http://iamimam.com/directory/images/6.png","name","email","phone"));
-        newList.add(new Product("http://iamimam.com/directory/images/6.png","name","email","phone"));
-        newList.add(new Product("http://iamimam.com/directory/images/6.png","name","email","phone"));
-        newList.add(new Product("http://iamimam.com/directory/images/6.png","name","email","phone"));
-        newList.add(new Product("http://iamimam.com/directory/images/6.png","name","email","phone"));
-        newList.add(new Product("http://iamimam.com/directory/images/6.png","name","email","phone"));
-        newList.add(new Product("http://iamimam.com/directory/images/6.png","name","email","phone"));
-        newList.add(new Product("http://iamimam.com/directory/images/6.png","name","email","phone"));
-
-
-
-        return newList;
-
-    }
-
-    public  class ThreadGetMoreData extends Thread{
-        @Override
-        public void run() {
-            //add footer view after get data
-            mHandler.sendEmptyMessage(0);
-            //search more data
-
-            ArrayList<Product> newListResult=getMoreData();
-
-            try {
-                Thread.sleep(3000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-
-            //result to handler
-            Message msg= mHandler.obtainMessage(1,newListResult);
-            mHandler.sendMessage(msg);
-
-        }
-    }
 }

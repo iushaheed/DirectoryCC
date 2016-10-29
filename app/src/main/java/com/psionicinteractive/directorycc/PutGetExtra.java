@@ -5,6 +5,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
+import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -36,7 +38,10 @@ public class PutGetExtra extends Activity implements OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_profile);
-
+//        setCornerRadius(float cornerRadius)
+//        RoundedBitmapDrawable dr = RoundedBitmapDrawableFactory.create(res, src);
+//        dr.setCornerRadius(cornerRadius);
+//        imageView.setImageDrawable(dr);
 
         imageView = (ImageView) findViewById(R.id.profile_image);
         textName = (TextView) findViewById(R.id.textView1);

@@ -17,6 +17,8 @@ import com.psionicinteractive.directorycc.app.Config;
 public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
     private static final String REG_TOKEN = MyFirebaseInstanceIDService.class.getSimpleName();
 
+
+
     @Override
     public void onTokenRefresh() {
         super.onTokenRefresh();
@@ -34,6 +36,8 @@ public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
         Intent registrationComplete = new Intent(Config.REGISTRATION_COMPLETE);
         registrationComplete.putExtra("token", refreshedToken);
         LocalBroadcastManager.getInstance(this).sendBroadcast(registrationComplete);
+        Log.v("eitanotuntoken",refreshedToken);
+
     }
 
 

@@ -8,9 +8,11 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
@@ -64,6 +66,12 @@ public class PushActivity extends AppCompatActivity {
             arrayList.add(new Push(push.get(c).getID(),push.get(c).getTitle(),push.get(c).getMessage()));
 //            Log.v("database update: ", log);
         }
+//        SharedPreferences pref = getApplicationContext().getSharedPreferences(Config.SHARED_PREF, 0);
+//        String regId = pref.getString("regId", null);
+//        Toast.makeText(this, ""+regId, Toast.LENGTH_SHORT).show();
+//        Log.v("token_mytoken",regId);
+
+//        Log.e(TAG, "Firebase reg id: " + regId);
         CustomPushListAdapter adapter=new CustomPushListAdapter(getApplicationContext(),R.layout.list_push,arrayList);
         lv.setAdapter(adapter);
 
@@ -78,7 +86,7 @@ public class PushActivity extends AppCompatActivity {
                     FirebaseMessaging.getInstance().subscribeToTopic(Config.TOPIC_GLOBAL);
                     Toast.makeText(context, ""+intent.getStringExtra("message"), Toast.LENGTH_SHORT).show();
 
-//                    displayFirebaseRegId();
+                    displayFirebaseRegId();
 
                 } else if (intent.getAction().equals(Config.PUSH_NOTIFICATION)) {
                     // new push notification is received
@@ -92,22 +100,22 @@ public class PushActivity extends AppCompatActivity {
             }
         };
 
-//        displayFirebaseRegId();
+        displayFirebaseRegId();
     }
 
     // Fetches reg id from shared preferences
     // and displays on the screen
-//    private void displayFirebaseRegId() {
-//        SharedPreferences pref = getApplicationContext().getSharedPreferences(Config.SHARED_PREF, 0);
-//        String regId = pref.getString("regId", null);
-//
-//        Log.e(TAG, "Firebase reg id: " + regId);
-//
+    private void displayFirebaseRegId() {
+        SharedPreferences pref = getApplicationContext().getSharedPreferences(Config.SHARED_PREF, 0);
+        String regId = pref.getString("regId", null);
+
+        Log.e(TAG, "Firebase reg id: " + regId);
+
 //        if (!TextUtils.isEmpty(regId))
 //            txtRegId.setText("Firebase Reg Id: " + regId);
 //        else
 //            txtRegId.setText("Firebase Reg Id is not received yet!");
-//    }
+    }
 
     @Override
     protected void onResume() {
