@@ -4,9 +4,11 @@ import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 /**
  * Created by PSIONIC on 10/30/2016.
@@ -28,5 +30,14 @@ public class ProfileActivity extends Activity {
         roundImage=new RoundImage(bitmap);
         imageView.setImageDrawable(roundImage);
 
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(ProfileActivity.this, "Image changed", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
+
+
 }

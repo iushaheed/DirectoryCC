@@ -24,16 +24,29 @@
         android:padding="5dp"
         android:layout_gravity="center" />
 
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--&gt;-->
 
-    <LinearLayout
+    <!--</LinearLayout>-->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        >
+        android:orientation="vertical"
+            android:gravity="center"
+            >
 
-    </LinearLayout>
     <TableRow
         android:gravity="center"
-        android:paddingTop="10dp">
+        android:paddingTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
         <TextView
             android:layout_width="wrap_content"
@@ -54,15 +67,12 @@
             android:textSize="20sp"
             android:id="@+id/textView1"
             android:textColor="#fff" />
-
-
-
-
-
     </TableRow>
 
     <TableRow
-        android:gravity="center">
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
         <TextView
             android:layout_width="wrap_content"
@@ -90,7 +100,9 @@
     </TableRow>
 
     <TableRow
-        android:gravity="center">
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
         <TextView
             android:layout_width="wrap_content"
@@ -118,7 +130,9 @@
     </TableRow>
 
     <TableRow
-        android:gravity="center">
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
         <TextView
             android:layout_width="wrap_content"
@@ -145,7 +159,9 @@
     </TableRow>
 
     <TableRow
-        android:gravity="center">
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -168,31 +184,31 @@
             android:textColor="#fff"/>
 
     </TableRow>
+        </LinearLayout>
+    </ScrollView>
 
+    <!--<LinearLayout-->
+        <!--android:orientation="horizontal"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_gravity="bottom"-->
+        <!--android:gravity="center"-->
+        <!--android:paddingBottom="10dp"-->
+        <!--android:id="@+id/linearLayout">-->
 
+        <!--<Button-->
+            <!--android:layout_width="150dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="CHANGE IMAGE"-->
+            <!--android:padding="5dp"-->
+            <!--android:id="@+id/sendSms" />-->
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="bottom"
-        android:gravity="center"
-        android:paddingBottom="10dp"
-        android:id="@+id/linearLayout">
+        <!--<Button-->
+            <!--android:layout_width="150dp"-->
+            <!--android:padding="5dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="CHANGE PHONE"-->
+            <!--android:id="@+id/doCall"/>-->
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="CHANGE PROFILE IMAGE"
-            android:layout_gravity="bottom"
-            android:id="@+id/sendSms" />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="CHANGE PHONE"
-            android:layout_gravity="bottom"
-            android:id="@+id/doCall"/>
-
-    </LinearLayout>
+    <!--</LinearLayout>-->
 </TableLayout>
