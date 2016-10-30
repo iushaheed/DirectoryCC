@@ -2,13 +2,19 @@ package com.psionicinteractive.directorycc;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -37,10 +43,9 @@ public class BirthdaysActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_birthday);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 //        getSupportActionBar().hide();
         arrayList = new ArrayList<>();
         context=this;
@@ -65,6 +70,47 @@ public class BirthdaysActivity extends AppCompatActivity {
                 new ReadJSON().execute("http://iamimam.com/directory/contact.txt");
             }
         });
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_sendsms) {
+
+            ArrayList<Product> productsTemp=CustomListAdapter.products;
+            String shob="";
+            for(int c=0;c<productsTemp.size();c++){
+                Product productTemp= productsTemp.get(c);
+                if (productTemp.getIsTrue()==true){
+                    shob=shob+productTemp.getPhoneNumber()+";";
+                }
+            }
+            if(shob==""){
+                Toast.makeText(context, "No member selected", Toast.LENGTH_SHORT).show();
+            }else{
+                Toast.makeText(context, shob, Toast.LENGTH_SHORT).show();
+                Uri uri = Uri.parse("smsto:"+shob);
+                Intent i = new Intent(Intent.ACTION_SENDTO, uri);
+                i.putExtra("sms_body", "");
+                startActivity(i);
+            }
+
+
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     class ReadJSON extends AsyncTask<String, Integer, String> {

@@ -2,6 +2,8 @@ package com.psionicinteractive.directorycc;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
@@ -129,6 +131,26 @@ public class DirectoryActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_sendsms) {
+
+            ArrayList<Product> productsTemp=CustomListAdapter.products;
+            String shob="";
+            for(int c=0;c<productsTemp.size();c++){
+                Product productTemp= productsTemp.get(c);
+                if (productTemp.getIsTrue()==true){
+                    shob=shob+productTemp.getPhoneNumber()+";";
+                }
+            }
+            if(shob==""){
+                Toast.makeText(context, "No member selected", Toast.LENGTH_SHORT).show();
+            }else{
+                Toast.makeText(context, shob, Toast.LENGTH_SHORT).show();
+                Uri uri = Uri.parse("smsto:"+shob);
+                Intent i = new Intent(Intent.ACTION_SENDTO, uri);
+                i.putExtra("sms_body", "");
+                startActivity(i);
+            }
+
+
             return true;
         }
 

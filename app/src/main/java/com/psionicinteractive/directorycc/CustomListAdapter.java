@@ -22,7 +22,7 @@ import java.util.List;
 
 public class CustomListAdapter extends ArrayAdapter<Product> {
 
-    ArrayList<Product> products;
+    static ArrayList<Product> products;
     Context context;
     int resource;
 //    final boolean[] checkArray;
@@ -94,7 +94,7 @@ public class CustomListAdapter extends ArrayAdapter<Product> {
                 //calling an activity from a non activity class
                 Intent intent = new Intent(context,PutGetExtra.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
-                //passing name id image phone string in the PUtGetExtra.java class for user_profile display
+                //passing name id image phone string in the PUtGetExtra.java class for member_profile display
 
                 intent.putExtra("name", product.getName());
                 intent.putExtra("id", product.getEmail());

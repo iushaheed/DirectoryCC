@@ -5,10 +5,10 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
-import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -37,7 +37,9 @@ public class PutGetExtra extends Activity implements OnClickListener {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.user_profile);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setContentView(R.layout.member_profile);
 //        setCornerRadius(float cornerRadius)
 //        RoundedBitmapDrawable dr = RoundedBitmapDrawableFactory.create(res, src);
 //        dr.setCornerRadius(cornerRadius);
@@ -69,13 +71,17 @@ public class PutGetExtra extends Activity implements OnClickListener {
         imageUrl = intent.getStringExtra("image");
         phoneNumber = intent.getStringExtra("phone");
 
-        //setting profile name and email address and other info in the user_profile layout to display
+        //setting profile name and email address and other info in the member_profile layout to display
         textName.setText(name);
         textEmail.setText(emailAddress);
         textPhone.setText(phoneNumber);
 
-        //loading profile image in imageView of user_profile
-        Picasso.with(this).load(imageUrl).into(imageView);
+        //loading profile image in imageView of member_profile
+        Picasso.with(this)
+                .load(imageUrl)
+                .resize(200,200)
+                .centerCrop()
+                .into(imageView);
 
 
 //        Toast.makeText(this, fName + " " + lName, Toast.LENGTH_LONG).show();

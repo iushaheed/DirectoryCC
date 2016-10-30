@@ -23,6 +23,7 @@
         android:id="@+id/profile_image"
         android:src="@drawable/h"
         android:padding="5dp"
+
         android:layout_gravity="center" />
 
 
