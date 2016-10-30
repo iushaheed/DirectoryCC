@@ -94,6 +94,8 @@ public class MenuActivity extends Activity {
     }
 
     public void gotoprofile(View view) {
+        Intent i = new Intent(MenuActivity.this, ProfileActivity.class);
+        startActivity(i);
         Toast.makeText(MenuActivity.this, "PROFILE", Toast.LENGTH_LONG).show();
     }
 

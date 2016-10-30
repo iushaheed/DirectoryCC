@@ -6,6 +6,10 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -31,38 +35,45 @@ import java.util.Date;
 /**
  * Created by iShaheed on 8/28/2016.
  */
-public class BirthdaysActivity extends AppCompatActivity {
+public class BirthdaysActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     ArrayList<Product> arrayList;
     ListView lv;
     ProgressDialog dialog;
     Context context;
     TextView dateTime;
+//    TextView mMembershipTypeInToolbar;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_birthday);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+//        getActionBar().setDisplayShowTitleEnabled(false);
 //        getSupportActionBar().hide();
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
         arrayList = new ArrayList<>();
         context=this;
 
 //        rocketAnimation = (AnimationDrawable) rocketImage.getBackground();
 
-        dateTime= (TextView) findViewById(R.id.date_time);
+//        dateTime= (TextView) findViewById(R.id.date_time);
 
         //setting date
         String currentDateTimeString = DateFormat.getDateInstance().format(new Date());
 
         // textView is the TextView view that should display it
-        dateTime.setText("IT'S "+currentDateTimeString+ " !");
+//        dateTime.setText("IT'S "+currentDateTimeString+ " !");
 
 
         //possible reason for list problem
         lv = (ListView) findViewById(R.id.listView);
+//        mMembershipTypeInToolbar= (TextView) findViewById(R.id.toolbar_title);
+
+//        mMembershipTypeInToolbar.setText("BIRTHDAY");
 
         runOnUiThread(new Runnable() {
             @Override
@@ -70,7 +81,29 @@ public class BirthdaysActivity extends AppCompatActivity {
                 new ReadJSON().execute("http://iamimam.com/directory/contact.txt");
             }
         });
+
+        //
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.setDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
+
+        //
     }
+    @Override
+    public void onBackPressed() {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -111,6 +144,74 @@ public class BirthdaysActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    @SuppressWarnings("StatementWithEmptyBody")
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        // Handle navigation view item clicks here.
+        int id = item.getItemId();
+
+        if (id == R.id.nav_camera) {
+            arrayList = new ArrayList<>();
+            context=this;
+//            mMembershipTypeInToolbar.setText("ALPHA MEMBERS");
+//            mMemberType.setText("ALPHA MEMBERS");
+
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    new ReadJSON().execute("http://iamimam.com/directory/member_a.txt");
+                }
+            });
+            // Handle the camera action
+        } else if (id == R.id.nav_gallery) {
+            arrayList = new ArrayList<>();
+            context=this;
+//            mMembershipTypeInToolbar.setText("BETA MEMBERS");
+//            mMemberType.setText("BETA MEMBERS");
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    new ReadJSON().execute("http://iamimam.com/directory/member_b.txt");
+                }
+            });
+
+
+        } else if (id == R.id.nav_slideshow) {
+            arrayList = new ArrayList<>();
+            context=this;
+//            mMembershipTypeInToolbar.setText("GAMMA MEMBERS");
+//            mMemberType.setText("GAMMA MEMBERS");
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    new ReadJSON().execute("http://iamimam.com/directory/member_c.txt");
+                }
+            });
+
+        } else if (id == R.id.nav_manage) {
+            arrayList = new ArrayList<>();
+            context=this;
+//            mMembershipTypeInToolbar.setText("FREE MEMBERS");
+//            mMemberType.setText("FREE MEMBERS");
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    new ReadJSON().execute("http://iamimam.com/directory/member_d.txt");
+                }
+            });
+
+        } else if (id == R.id.nav_share) {
+            Toast.makeText(context, "Loading website", Toast.LENGTH_SHORT).show();
+
+        } else if (id == R.id.nav_send) {
+            Toast.makeText(context, "Loading facebook", Toast.LENGTH_SHORT).show();
+
+        }
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
     }
 
     class ReadJSON extends AsyncTask<String, Integer, String> {

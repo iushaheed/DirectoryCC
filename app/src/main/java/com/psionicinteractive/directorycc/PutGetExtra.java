@@ -3,6 +3,8 @@ package com.psionicinteractive.directorycc;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -14,6 +16,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 /**
  * Created by iShaheed on 8/27/2016.
@@ -33,6 +40,7 @@ public class PutGetExtra extends Activity implements OnClickListener {
     Button smsButton;
     Button callButton;
     Button emailButton;
+    RoundImage roundImage;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,22 +79,45 @@ public class PutGetExtra extends Activity implements OnClickListener {
         imageUrl = intent.getStringExtra("image");
         phoneNumber = intent.getStringExtra("phone");
 
-        //setting profile name and email address and other info in the member_profile layout to display
+        //setting profile_img name and email address and other info in the member_profile layout to display
         textName.setText(name);
         textEmail.setText(emailAddress);
         textPhone.setText(phoneNumber);
 
-        //loading profile image in imageView of member_profile
-        Picasso.with(this)
-                .load(imageUrl)
-                .resize(200,200)
-                .centerCrop()
-                .into(imageView);
+        //loading profile_img image in imageView of member_profile
+//        Picasso.with(this)
+//                .load(imageUrl)
+//                .resize(200,200)
+//                .centerCrop()
+//                .into(imageView);
+
+//        Bitmap bitmap= BitmapFactory.decodeResource(getResources(),R.drawable.profile_img);
+
+        Bitmap bitmap= getit(imageUrl);
+        roundImage=new RoundImage(bitmap);
+        imageView.setImageDrawable(roundImage);
+
 
 
 //        Toast.makeText(this, fName + " " + lName, Toast.LENGTH_LONG).show();
 
     }
+
+    private Bitmap getit(String imageUrl) {
+        try {
+            URL url = new URL(imageUrl);
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            connection.setDoInput(true);
+            connection.connect();
+            InputStream input = connection.getInputStream();
+            Bitmap myBitmap = BitmapFactory.decodeStream(input);
+            return myBitmap;
+        } catch (IOException e) {
+            // Log exception
+            return null;
+        }
+    }
+
     @Override
     public void onClick(View v) {
         // TODO Auto-generated method stub
