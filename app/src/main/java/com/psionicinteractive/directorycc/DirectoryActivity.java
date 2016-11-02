@@ -92,6 +92,8 @@ public class DirectoryActivity extends AppCompatActivity
         lv.setOnScrollListener(new AbsListView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(AbsListView view, int scrollState) {
+//                Toast.makeText(context, "Scrolling is it ?", Toast.LENGTH_SHORT).show();
+
 
             }
 
@@ -99,13 +101,13 @@ public class DirectoryActivity extends AppCompatActivity
             public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
 
                 //Check when scroll to last item in listview, in this tut, init data in listview = 10 item
-//                if(view.getLastVisiblePosition() == totalItemCount-1 && lv.getCount() >=4 && isLoading == false) {
+                if(view.getLastVisiblePosition() == totalItemCount-1 && lv.getCount() >=15 && isLoading == false) {
                     isLoading = true;
                     Toast.makeText(context, "Scrolling", Toast.LENGTH_SHORT).show();
                     Thread thread = new ThreadGetMoreData();
                     //Start thread
                     thread.start();
-//                }
+                }
 
             }
         });
@@ -117,8 +119,8 @@ public class DirectoryActivity extends AppCompatActivity
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-//                new ReadJSON().execute("http://iamimam.com/directory/contact.txt");
-                new ReadJSON().execute("http://192.168.0.101:8000/api_getAllMembers");
+                new ReadJSON().execute("http://iamimam.com/directory/contact.txt");
+//                new ReadJSON().execute("http://192.168.0.101:8000/api_getAllMembers");
             }
         });
 
@@ -379,8 +381,8 @@ public class DirectoryActivity extends AppCompatActivity
                 e.printStackTrace();
             }
             //Send the result to Handle
-//            Message msg = mHandler.obtainMessage(1, lstResult);
-//            mHandler.sendMessage(msg);
+            Message msg = mHandler.obtainMessage(1, lstResult);
+            mHandler.sendMessage(msg);
 
 
         }
@@ -396,7 +398,8 @@ public class DirectoryActivity extends AppCompatActivity
                     break;
                 case 1:
                     //update data adaper and ui
-                    adapter.addListItemToAdapter((List<Product>)msg.obj);
+
+//                    adapter.addListItemToAdapter((List<Product>)msg.obj);
 
                     //remove loading view
                     lv.removeFooterView(ftView);

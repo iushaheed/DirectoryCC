@@ -18,9 +18,6 @@ import java.util.Map;
 
 import javax.net.ssl.HttpsURLConnection;
 
-/**
- * Created by Belal on 8/19/2015.
- */
 
 public class RequestHandler {
 
@@ -44,8 +41,7 @@ public class RequestHandler {
         }
     }
 
-    public String sendPostRequest(String requestURL,
-                                  HashMap<String, String> postDataParams) {
+    public String sendPostRequest(String requestURL, HashMap<String, String> postDataParams) {
 
         URL url;
         String response = "";
