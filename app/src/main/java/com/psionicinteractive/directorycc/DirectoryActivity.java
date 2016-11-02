@@ -373,6 +373,9 @@ public class DirectoryActivity extends AppCompatActivity
             //Add footer view after get data
             mHandler.sendEmptyMessage(0);
             //Search more data
+
+
+            /////////eikhane thik kora lagbe
             ArrayList<Product> lstResult = getMoreData();
             //Delay time to show loading footer when debug, remove it when release
             try {
@@ -415,5 +418,76 @@ public class DirectoryActivity extends AppCompatActivity
     }
 
 //    https://www.youtube.com/watch?v=XwIKb_f0Y_w
+
+    class ReadNewJSON extends AsyncTask<String, Integer, String> {
+
+        @Override
+        protected void onPreExecute() {
+//            super.onPreExecute();
+            dialog = ProgressDialog.show(context,"please wait","Loading Members");
+
+        }
+
+        @Override
+        protected String doInBackground(String... params) {
+            return readNewURL(params[0]);
+        }
+
+        @Override
+        protected void onPostExecute(String content) {
+            dialog.dismiss();
+            try {
+                JSONObject jsonObject = new JSONObject(content);
+                JSONArray jsonArray =  jsonObject.getJSONArray("data");
+
+
+                JSONArray jsonArray_meta =  jsonObject.getJSONArray("meta");
+                JSONObject productObject_meta = jsonArray_meta.getJSONObject(0);
+                jsonArray_meta_url=  productObject_meta.getString("next_page_url");
+                Toast.makeText(context, ""+jsonArray_meta_url, Toast.LENGTH_SHORT).show();
+
+                ArrayList<Product> newArrayList=new ArrayList<>();
+                for(int i =0;i<jsonArray.length(); i++){
+                    JSONObject productObject = jsonArray.getJSONObject(i);
+                    newArrayList.add(new Product(
+                            productObject.getString("user_image"),
+                            productObject.getString("name"),
+                            productObject.getString("email"),
+                            productObject.getString("mobile_number")
+                    ));
+                }
+
+
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            CustomListAdapter adapter = new CustomListAdapter(getApplicationContext(), R.layout.list_item, arrayList);
+            lv.setAdapter(adapter);
+        }
+    }
+
+
+    private static String readNewURL(String theUrl) {
+        StringBuilder content = new StringBuilder();
+        try {
+            // create a url object
+            URL url = new URL(theUrl);
+            // create a urlconnection object
+            URLConnection urlConnection = url.openConnection();
+            // wrap the urlconnection in a bufferedreader
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
+            String line;
+            // read from the urlconnection via the bufferedreader
+            while ((line = bufferedReader.readLine()) != null) {
+                content.append(line + "\n");
+            }
+            bufferedReader.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return content.toString();
+    }
+
 
 }
