@@ -47,6 +47,7 @@ public class Product {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+
     public boolean getIsTrue() {
         return isTrue;
     }

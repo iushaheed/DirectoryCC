@@ -92,9 +92,6 @@ public class DirectoryActivity extends AppCompatActivity
         lv.setOnScrollListener(new AbsListView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(AbsListView view, int scrollState) {
-//                Toast.makeText(context, "Scrolling is it ?", Toast.LENGTH_SHORT).show();
-
-
             }
 
             @Override
