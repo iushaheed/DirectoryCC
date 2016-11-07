@@ -25,12 +25,24 @@
         <!--android:layout_above="@+id/listView"-->
         <!--android:layout_alignParentTop="true" />-->
 
+    <EditText
+        android:id="@+id/inputSearch"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="Search member"
+        android:textColorHint="#fff"
+        android:textColor="#fff"
+        android:padding="10dp"
+        android:inputType="textVisiblePassword"
+        android:layout_alignParentTop="true" />
+
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/listView"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"/>
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/inputSearch" />
         <!--android:layout_below="@+id/sms_switch"-->
         
 

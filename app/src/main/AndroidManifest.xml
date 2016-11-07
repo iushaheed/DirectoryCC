@@ -26,7 +26,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.psionicinteractive.directorycc.DirectoryActivity"></activity>
+
+        <activity
+            android:name="com.psionicinteractive.directorycc.DirectoryActivity"
+            android:windowSoftInputMode="stateHidden">
+        </activity>
         <activity android:name="com.psionicinteractive.directorycc.HomeActivity"></activity>
         <activity android:name="com.psionicinteractive.directorycc.MenuActivity"></activity>
         <activity android:name="com.psionicinteractive.directorycc.PutGetExtra"></activity>
@@ -42,6 +46,7 @@
         <activity android:name="com.psionicinteractive.directorycc.SettingsActivity"></activity>
         <activity android:name=".ProfileActivity"></activity>
         <activity android:name=".UploadImageActivity"></activity>
+        <activity android:name=".SearchActivity"></activity>
 
         <activity android:name="com.psionicinteractive.directorycc.SinglePushActivity"></activity>
 

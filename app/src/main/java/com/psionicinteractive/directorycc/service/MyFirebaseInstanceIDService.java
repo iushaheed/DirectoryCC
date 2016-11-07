@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.FirebaseInstanceIdService;
+import com.psionicinteractive.directorycc.BackgroundTask;
 import com.psionicinteractive.directorycc.app.Config;
 
 
@@ -45,6 +46,8 @@ public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
         // sending gcm token to server
 //        Log.e(REG_TOKEN, "sendRegistrationToServer: " + token);
         Log.e("THEETOKEN", "sendRegistrationToServer: " + token);
+        BackgroundTask backgroundTask = new BackgroundTask(this);
+        backgroundTask.execute("fcm_token_send",token,"test");
     }
 
     private void storeRegIdInPref(String token) {
@@ -53,4 +56,5 @@ public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
         editor.putString("regId", token);
         editor.commit();
     }
+
 }

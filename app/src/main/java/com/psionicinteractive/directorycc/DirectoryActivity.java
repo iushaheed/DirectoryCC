@@ -8,6 +8,9 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v7.app.ActionBar;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,8 +23,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AbsListView;
+import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -52,21 +57,31 @@ public class DirectoryActivity extends AppCompatActivity
     public Handler mHandler;
     public View ftView;
     public boolean isLoading=false;
-    CustomListAdapter adapter;
+    CustomListAdapter mAdapter;
     String jsonArray_meta_url="";
+    EditText inputSearch;
+
+    ActionBarDrawerToggle toggle;
 //    Switch mSmsSwich;
 //    CheckBox cb_t;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_directory);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
 //        setSupportActionBar(toolbar);
 //        getSupportActionBar().hide();
+
+//        ActionBar actionBar = getSupportActionBar();
+//        actionBar.hide();
+        getSupportActionBar().setHomeButtonEnabled(true);
+
+
         arrayList = new ArrayList<>();
         context=this;
+        inputSearch = (EditText) findViewById(R.id.inputSearch);
 
         LayoutInflater li= (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         ftView = li.inflate(R.layout.footer_view,null);
@@ -109,6 +124,24 @@ public class DirectoryActivity extends AppCompatActivity
             }
         });
 
+        inputSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+//                DirectoryActivity.this.mAdapter.getFilter().filter(s);
+                Log.v("Typed",s+"");
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
         mMembershipTypeInToolbar= (TextView) findViewById(R.id.toolbar_title);
 
         mMembershipTypeInToolbar.setText("ALL MEMBERS");
@@ -123,7 +156,7 @@ public class DirectoryActivity extends AppCompatActivity
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
@@ -156,30 +189,32 @@ public class DirectoryActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_sendsms) {
-
-            ArrayList<Product> productsTemp=CustomListAdapter.products;
-            String shob="";
-            for(int c=0;c<productsTemp.size();c++){
-                Product productTemp= productsTemp.get(c);
-                if (productTemp.getIsTrue()==true){
-                    shob=shob+productTemp.getPhoneNumber()+";";
-                }
-            }
-            if(shob==""){
-                Toast.makeText(context, "No member selected", Toast.LENGTH_SHORT).show();
-            }else{
-                Toast.makeText(context, shob, Toast.LENGTH_SHORT).show();
-                Uri uri = Uri.parse("smsto:"+shob);
-                Intent i = new Intent(Intent.ACTION_SENDTO, uri);
-                i.putExtra("sms_body", "");
-                startActivity(i);
-            }
-
-
+//        if (id == R.id.action_sendsms) {
+//
+//            ArrayList<Product> productsTemp=CustomListAdapter.products;
+//            String shob="";
+//            for(int c=0;c<productsTemp.size();c++){
+//                Product productTemp= productsTemp.get(c);
+//                if (productTemp.getIsTrue()==true){
+//                    shob=shob+productTemp.getPhoneNumber()+";";
+//                }
+//            }
+//            if(shob==""){
+//                Toast.makeText(context, "No member selected", Toast.LENGTH_SHORT).show();
+//            }else{
+//                Toast.makeText(context, shob, Toast.LENGTH_SHORT).show();
+//                Uri uri = Uri.parse("smsto:"+shob);
+//                Intent i = new Intent(Intent.ACTION_SENDTO, uri);
+//                i.putExtra("sms_body", "");
+//                startActivity(i);
+//            }
+//
+//
+//            return true;
+//        }
+        if (toggle.onOptionsItemSelected(item)) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 

@@ -122,7 +122,9 @@ public class MenuActivity extends Activity {
     }
 
     public void gotosearch(View view) {
-        Toast.makeText(MenuActivity.this, "SEARCH", Toast.LENGTH_LONG).show();
+        Intent i=new Intent(MenuActivity.this,SearchActivity.class);
+////        startActivityForResult(i, 107);
+        startActivity(i);
     }
 
 
