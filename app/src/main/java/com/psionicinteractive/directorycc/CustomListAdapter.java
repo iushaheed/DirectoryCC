@@ -2,6 +2,7 @@ package com.psionicinteractive.directorycc;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,10 +23,14 @@ import java.util.List;
 
 public class CustomListAdapter extends ArrayAdapter<Product> {
 
+
     static ArrayList<Product> products;
     Context context;
     int resource;
 //    final boolean[] checkArray;
+
+
+
 
 
 
@@ -34,6 +39,8 @@ public class CustomListAdapter extends ArrayAdapter<Product> {
         this.products = products;
         this.context = context;
         this.resource = resource;
+
+
 //        checkArray=new boolean[products.size()];
     }
 
@@ -48,6 +55,8 @@ public class CustomListAdapter extends ArrayAdapter<Product> {
     public View getView(final int position, View convertView, ViewGroup parent) {
 
 
+
+
         if (convertView == null){
             LayoutInflater layoutInflater = (LayoutInflater) getContext().getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
             convertView = layoutInflater.inflate(R.layout.list_item, null, true);
@@ -55,14 +64,21 @@ public class CustomListAdapter extends ArrayAdapter<Product> {
         }
         final Product product = getItem(position);
 
+        Typeface lato_font = Typeface.createFromAsset(getContext().getAssets(),  "fonts/lato.ttf");
+
         ImageView imageView = (ImageView) convertView.findViewById(R.id.imageView);
         Picasso.with(context).load(product.getImage()).into(imageView);
 
         TextView txtName = (TextView) convertView.findViewById(R.id.name);
         txtName.setText(product.getName());
+        txtName.setTypeface(lato_font);
 
         TextView txtEmail = (TextView) convertView.findViewById(R.id.email);
         txtEmail.setText(product.getEmail());
+        txtEmail.setTypeface(lato_font);
+
+        TextView txtMobile = (TextView) convertView.findViewById(R.id.mobile);
+        txtMobile.setTypeface(lato_font);
 
         CheckBox cb= (CheckBox) convertView.findViewById(R.id.checkboxId);
 
@@ -94,7 +110,7 @@ public class CustomListAdapter extends ArrayAdapter<Product> {
                 //calling an activity from a non activity class
                 Intent intent = new Intent(context,PutGetExtra.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
-                //passing name id image phone string in the PUtGetExtra.java class for member_profile display
+                //passing name id image phone string in the PUtGetExtra.java class for activity_member_profile display
 
                 intent.putExtra("name", product.getName());
                 intent.putExtra("id", product.getEmail());

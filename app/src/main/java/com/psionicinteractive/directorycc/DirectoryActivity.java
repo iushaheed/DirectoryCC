@@ -3,6 +3,7 @@ package com.psionicinteractive.directorycc;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -35,6 +36,7 @@ import android.widget.Toast;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -45,8 +47,12 @@ import java.util.List;
 
 import static com.psionicinteractive.directorycc.R.id.checkboxId;
 
-public class DirectoryActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class DirectoryActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+
+//    TextView m_name;
+//    TextView m_email;
+//    TextView m_phone;
 
     ArrayList<Product> arrayList;
     ListView lv;
@@ -61,7 +67,7 @@ public class DirectoryActivity extends AppCompatActivity
     String jsonArray_meta_url="";
     EditText inputSearch;
 
-    ActionBarDrawerToggle toggle;
+
 //    Switch mSmsSwich;
 //    CheckBox cb_t;
 
@@ -69,6 +75,7 @@ public class DirectoryActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_directory);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
 //        setSupportActionBar(toolbar);
@@ -76,7 +83,18 @@ public class DirectoryActivity extends AppCompatActivity
 
 //        ActionBar actionBar = getSupportActionBar();
 //        actionBar.hide();
-        getSupportActionBar().setHomeButtonEnabled(true);
+
+//        Typeface lato_font = Typeface.createFromAsset(getAssets(),  "fonts/lato.ttf");
+
+//        m_name= (TextView) findViewById(R.id.name);
+//        m_email= (TextView) findViewById(R.id.email);
+//        m_phone= (TextView) findViewById(R.id.mobile);
+//
+//        m_name.setTypeface(lato_font);
+//        m_email.setTypeface(lato_font);
+//        m_phone.setTypeface(lato_font);
+
+
 
 
         arrayList = new ArrayList<>();
@@ -156,7 +174,7 @@ public class DirectoryActivity extends AppCompatActivity
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
@@ -189,32 +207,32 @@ public class DirectoryActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-//        if (id == R.id.action_sendsms) {
-//
-//            ArrayList<Product> productsTemp=CustomListAdapter.products;
-//            String shob="";
-//            for(int c=0;c<productsTemp.size();c++){
-//                Product productTemp= productsTemp.get(c);
-//                if (productTemp.getIsTrue()==true){
-//                    shob=shob+productTemp.getPhoneNumber()+";";
-//                }
-//            }
-//            if(shob==""){
-//                Toast.makeText(context, "No member selected", Toast.LENGTH_SHORT).show();
-//            }else{
-//                Toast.makeText(context, shob, Toast.LENGTH_SHORT).show();
-//                Uri uri = Uri.parse("smsto:"+shob);
-//                Intent i = new Intent(Intent.ACTION_SENDTO, uri);
-//                i.putExtra("sms_body", "");
-//                startActivity(i);
-//            }
-//
-//
-//            return true;
-//        }
-        if (toggle.onOptionsItemSelected(item)) {
+        if (id == R.id.action_sendsms) {
+
+            ArrayList<Product> productsTemp=CustomListAdapter.products;
+            String shob="";
+            for(int c=0;c<productsTemp.size();c++){
+                Product productTemp= productsTemp.get(c);
+                if (productTemp.getIsTrue()==true){
+                    shob=shob+productTemp.getPhoneNumber()+";";
+                }
+            }
+            if(shob==""){
+                Toast.makeText(context, "No member selected", Toast.LENGTH_SHORT).show();
+            }else{
+                Toast.makeText(context, shob, Toast.LENGTH_SHORT).show();
+                Uri uri = Uri.parse("smsto:"+shob);
+                Intent i = new Intent(Intent.ACTION_SENDTO, uri);
+                i.putExtra("sms_body", "");
+                startActivity(i);
+            }
+
+
             return true;
         }
+//        if (toggle.onOptionsItemSelected(item)) {
+//            return true;
+//        }
         return super.onOptionsItemSelected(item);
     }
 
@@ -386,15 +404,15 @@ public class DirectoryActivity extends AppCompatActivity
 //                productObject.getString("phone")
 //        ));
 
-        arrayList.add(new Product("http://iamimam.com/directory/images/9.png", "imam", "imam@imam", "123"));
-        arrayList.add(new Product("http://iamimam.com/directory/images/9.png", "ush", "imam@imam", "123"));
-        arrayList.add(new Product("http://iamimam.com/directory/images/9.png", "shaheed", "imam@imam", "123"));
-        arrayList.add(new Product("http://iamimam.com/directory/images/9.png", "shakib", "imam@imam", "123"));
-        arrayList.add(new Product("http://iamimam.com/directory/images/9.png", "hossen", "imam@imam", "123"));
-        arrayList.add(new Product("http://iamimam.com/directory/images/9.png", "rahul", "imam@imam", "123"));
-        arrayList.add(new Product("http://iamimam.com/directory/images/9.png", "chakrabarty", "imam@imam", "123"));
-        arrayList.add(new Product("http://iamimam.com/directory/images/9.png", "habib", "imam@imam", "123"));
-        arrayList.add(new Product("http://iamimam.com/directory/images/9.png", "wahid", "imam@imam", "123"));
+        arrayList.add(new Product("http://iamimam.com/directory/images/1.jpg", "imam", "imam@imam", "123"));
+        arrayList.add(new Product("http://iamimam.com/directory/images/1.jpg", "ush", "imam@imam", "123"));
+        arrayList.add(new Product("http://iamimam.com/directory/images/1.jpg", "shaheed", "imam@imam", "123"));
+        arrayList.add(new Product("http://iamimam.com/directory/images/1.jpg", "shakib", "imam@imam", "123"));
+        arrayList.add(new Product("http://iamimam.com/directory/images/1.jpg", "hossen", "imam@imam", "123"));
+        arrayList.add(new Product("http://iamimam.com/directory/images/1.jpg", "rahul", "imam@imam", "123"));
+        arrayList.add(new Product("http://iamimam.com/directory/images/1.jpg", "chakrabarty", "imam@imam", "123"));
+        arrayList.add(new Product("http://iamimam.com/directory/images/1.jpg", "habib", "imam@imam", "123"));
+        arrayList.add(new Product("http://iamimam.com/directory/images/1.jpg", "wahid", "imam@imam", "123"));
 
         return lst;
     }

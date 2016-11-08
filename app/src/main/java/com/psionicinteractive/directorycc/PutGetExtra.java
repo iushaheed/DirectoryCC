@@ -15,8 +15,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.squareup.picasso.Picasso;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -47,7 +45,7 @@ public class PutGetExtra extends Activity implements OnClickListener {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.member_profile);
+        setContentView(R.layout.activity_member_profile);
 //        setCornerRadius(float cornerRadius)
 //        RoundedBitmapDrawable dr = RoundedBitmapDrawableFactory.create(res, src);
 //        dr.setCornerRadius(cornerRadius);
@@ -79,12 +77,12 @@ public class PutGetExtra extends Activity implements OnClickListener {
         imageUrl = intent.getStringExtra("image");
         phoneNumber = intent.getStringExtra("phone");
 
-        //setting profile_img name and email address and other info in the member_profile layout to display
+        //setting profile_img name and email address and other info in the activity_member_profile layout to display
         textName.setText(name);
         textEmail.setText(emailAddress);
         textPhone.setText(phoneNumber);
 
-        //loading profile_img image in imageView of member_profile
+        //loading profile_img image in imageView of activity_member_profile
 //        Picasso.with(this)
 //                .load(imageUrl)
 //                .resize(200,200)

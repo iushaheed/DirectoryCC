@@ -19,6 +19,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
@@ -37,6 +38,27 @@ public class ProfileActivity extends Activity {
     ImageView imageView;
     RoundImage roundImage;
     String UPLOAD_URL="";
+
+    TextView m_joining_text;
+    TextView m_directory_title;
+    TextView m_membership_text;
+    TextView m_type_text;
+    TextView m_nametag;
+    TextView m_namedata;
+    TextView m_dobtag;
+    TextView m_dobdata;
+    TextView m_addresstag;
+    TextView m_addressdata;
+    TextView m_emailtag;
+    TextView m_emaildata;
+    TextView m_phonetag;
+    TextView m_phonedata;
+    TextView m_statustag;
+    TextView m_statusdata;
+    TextView m_anniversarytag;
+    TextView m_anniversarydata;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +67,8 @@ public class ProfileActivity extends Activity {
         setContentView(R.layout.activity_user_profile);
 
         imageView= (ImageView) findViewById(R.id.profile_image);
+
+
 
         Bitmap bitmap= BitmapFactory.decodeResource(getResources(),R.drawable.profile_img);
         roundImage=new RoundImage(bitmap);
@@ -68,20 +92,24 @@ public class ProfileActivity extends Activity {
         builder.setTitle("Add Photo!");
         builder.setItems(items, new DialogInterface.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialog, int item) {
+            public void onClick(DialogInterface dialog, int item)
+            {
                 if (items[item].equals("Take Photo")) {
                     Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                    File f = new File(android.os.Environment
-                            .getExternalStorageDirectory(), "temp.jpg");
+                    File f = new File(android.os.Environment.getExternalStorageDirectory(), "temp.jpg");
+                    intent.putExtra("crop", "true");
                     intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(f));
+
                     startActivityForResult(intent, 0);
-                } else if (items[item].equals("Choose from Library")) {
-                    Intent intent = new Intent(
-                            Intent.ACTION_PICK,
-                            android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                }
+                else if (items[item].equals("Choose from Library"))
+                {
+                    Intent intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                     intent.setType("image/*");
                     startActivityForResult(Intent.createChooser(intent, "Select File"), 1);
-                } else if (items[item].equals("Cancel")) {
+                }
+                else if (items[item].equals("Cancel"))
+                {
                     dialog.dismiss();
                 }
             }
@@ -189,7 +217,9 @@ public class ProfileActivity extends Activity {
             }
 
             @Override
-            protected String doInBackground(Bitmap... params) {
+            protected String doInBackground(Bitmap... params)
+
+            {
                 Bitmap bitmap = params[0];
                 String uploadImage = getStringImage(bitmap);
 

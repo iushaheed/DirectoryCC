@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
@@ -26,6 +27,9 @@ import com.psionicinteractive.directorycc.database.DatabaseHandler;
 import com.psionicinteractive.directorycc.model.Push;
 import com.psionicinteractive.directorycc.util.NotificationUtils;
 
+import org.w3c.dom.Text;
+
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,6 +40,8 @@ public class PushActivity extends AppCompatActivity {
     ListView lv;
     ProgressDialog dialog;
     Context context;
+    TextView m_message_textview;
+
 
     private static final String TAG = PushActivity.class.getSimpleName();
     private BroadcastReceiver mRegistrationBroadcastReceiver;
@@ -45,12 +51,19 @@ public class PushActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         setContentView(R.layout.activity_push);
+
+        Typeface font_lato=Typeface.createFromAsset(getAssets(),  "fonts/lato.ttf");
+
+        m_message_textview= (TextView) findViewById(R.id.message_textview);
+        m_message_textview.setTypeface(font_lato);
+
 
         txtRegId = (TextView) findViewById(R.id.txt_reg_id);
 //        txtMessage = (TextView) findViewById(R.id.txt_push_message);
+
 
         DatabaseHandler db=new DatabaseHandler(this);
         Log.d("Reading: ", "Reading all contacts..");

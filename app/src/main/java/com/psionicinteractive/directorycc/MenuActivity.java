@@ -18,20 +18,49 @@ import android.widget.Toast;
  */
 public class MenuActivity extends Activity {
     TextView tx;
+    TextView m_directory_text_layout;
+    TextView m_contact_text_layout;
+    TextView m_message_text_layout;
+    TextView m_anniversary_text_layout;
+    TextView m_checkin_text_layout;
+    TextView m_myclub_text_layout;
+    TextView m_search_text_layout;
+    TextView m_myprofile_text_layout;
+    TextView m_settings_text_layout;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.activity_menu);
+        Typeface lato_font = Typeface.createFromAsset(getAssets(),  "fonts/lato.ttf");
 
         tx = (TextView)findViewById(R.id.headerText);
-        Typeface custom_font = Typeface.createFromAsset(getAssets(),  "fonts/lato.ttf");
-        tx.setTypeface(custom_font);
+        m_directory_text_layout= (TextView)findViewById(R.id.directory_text_layout);
+        m_contact_text_layout= (TextView)findViewById(R.id.contact_text_layout);
+        m_message_text_layout= (TextView)findViewById(R.id.message_text_layout);
+        m_anniversary_text_layout= (TextView)findViewById(R.id.anniversary_text_layout);
+        m_checkin_text_layout= (TextView)findViewById(R.id.checkin_text_layout);
+        m_myclub_text_layout= (TextView)findViewById(R.id.myclub_text_layout);
+        m_search_text_layout= (TextView)findViewById(R.id.search_text_layout);
+        m_myprofile_text_layout= (TextView)findViewById(R.id.myprofile_text_layout);
+        m_settings_text_layout= (TextView)findViewById(R.id.settings_text_layout);
 
+
+        tx.setTypeface(lato_font);
+        m_directory_text_layout.setTypeface(lato_font);
+        m_contact_text_layout.setTypeface(lato_font);
+        m_message_text_layout.setTypeface(lato_font);
+        m_anniversary_text_layout.setTypeface(lato_font);
+        m_checkin_text_layout.setTypeface(lato_font);
+        m_myclub_text_layout.setTypeface(lato_font);
+        m_search_text_layout.setTypeface(lato_font);
+        m_myprofile_text_layout.setTypeface(lato_font);
+        m_settings_text_layout.setTypeface(lato_font);
 
 
 

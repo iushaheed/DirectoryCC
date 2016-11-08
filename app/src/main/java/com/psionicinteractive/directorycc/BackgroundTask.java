@@ -39,7 +39,8 @@ public class BackgroundTask extends AsyncTask<String,Void,String> {
     @Override
     protected String doInBackground(String... params) {
         String reg_url = "http://www.iamimam.com/club/register.php";
-        String login_url = "http://192.168.0.100:8000/authmob";
+//        String login_url = "http://192.168.0.100:8000/authmob";
+        String login_url = "http://cable.psionichub.com/authmob";
         String method = params[0];
         ///////////////register
         if (method.equals("register")) {

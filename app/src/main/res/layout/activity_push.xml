@@ -19,14 +19,14 @@
         android:padding="5dp"
         android:textColor="#fff"
         android:gravity="center"
-        android:id="@+id/textView6" />
+        android:id="@+id/message_textview" />
 
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="10dip"
         android:id="@+id/pushListView"
-        android:layout_below="@+id/textView6"
+        android:layout_below="@+id/message_textview"
         android:layout_alignParentBottom="true">
     </ListView>
 

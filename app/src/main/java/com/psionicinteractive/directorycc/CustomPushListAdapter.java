@@ -2,6 +2,7 @@ package com.psionicinteractive.directorycc;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +22,8 @@ public class CustomPushListAdapter extends ArrayAdapter<Push> {
     ArrayList<Push> products;
     Context context;
     int resource;
+    TextView m_titlet;
+    TextView m_message;
 
     public CustomPushListAdapter(Context context, int resource, ArrayList<Push> products) {
         super(context, resource, products);
@@ -46,15 +49,17 @@ public class CustomPushListAdapter extends ArrayAdapter<Push> {
 
         }
         final Push product = getItem(position);
-
+        Typeface lato_font = Typeface.createFromAsset(getContext().getAssets(), "fonts/lato.ttf");
 
 
 
         TextView txtName = (TextView) convertView.findViewById(R.id.titlet);
         txtName.setText(product.getTitle());
+        txtName.setTypeface(lato_font);
 
-        TextView txtEmail = (TextView) convertView.findViewById(R.id.message);
-        txtEmail.setText(product.getMessage());
+        TextView txtMSG = (TextView) convertView.findViewById(R.id.messaget);
+        txtMSG.setText(product.getMessage());
+        txtMSG.setTypeface(lato_font);
 
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
