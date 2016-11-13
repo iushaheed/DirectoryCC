@@ -111,7 +111,7 @@ public class BackgroundTask extends AsyncTask<String,Void,String> {
             }
         }
         else if(method.equals("fcm_token_send")){
-            String fcm_reg_id_url="http://192.168.0.100:8000/fireBaseSaveREGID";
+            String fcm_reg_id_url="http://192.168.0.101:8000/fireBaseSaveREGID";
 //            Toast.makeText(ctx, "sending", Toast.LENGTH_SHORT).show();
             Log.e("jaitese","ghorardimjay");
             Log.v("sending","sending dcm regID");

@@ -11,12 +11,10 @@
         android:layout_height="wrap_content"
         android:text="Directory"
         android:gravity="center"
-        android:fontFamily="sans-serif-condensed"
         android:textSize="25sp"
         android:textColor="#fff"
         android:padding="10dp"
-
-        />
+        android:id="@+id/header_text" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -40,26 +38,29 @@
 
             >
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Joining Date : 01 Jan 2015"
                 android:textColor="#fff"
                 android:textSize="16sp"
-                android:padding="5dp"/>
+                android:padding="5dp"
+                android:id="@+id/joiningtext" />
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Membership A/C : SN-19"
                 android:textColor="#fff"
                 android:textSize="16sp"
-                android:padding="5dp"/>
+                android:padding="5dp"
+                android:id="@+id/member_sn_text" />
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Member Type : Senior"
                 android:textColor="#fff"
                 android:textSize="16sp"
-                android:padding="5dp"/>
+                android:padding="5dp"
+                android:id="@+id/type_text" />
 
 
         </LinearLayout>
@@ -92,11 +93,11 @@
 
                 <TextView
                     android:paddingLeft="10dp"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Who am i ?"
                     android:textSize="17.5sp"
-                    android:id="@+id/textView1"
+                    android:id="@+id/namedata"
                     android:textColor="#fff" />
 
 
@@ -119,11 +120,11 @@
 
                 <TextView
                     android:paddingLeft="10dp"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="01.01.1900"
                     android:textSize="17.5sp"
-                    android:id="@+id/dob"
+                    android:id="@+id/dobdata"
                     android:textColor="#fff" />
 
 
@@ -148,11 +149,11 @@
 
                 <TextView
                     android:paddingLeft="10dp"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="House # 10, Road # 5,\nSector # 4, Uttara, \n Dhaka- 1230"
                     android:textSize="17.5sp"
-                    android:id="@+id/address"
+                    android:id="@+id/addressdata"
                     android:textColor="#fff" />
 
 
@@ -177,11 +178,11 @@
 
                 <TextView
                     android:paddingLeft="10dp"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="a@gmail"
                     android:textSize="17.5sp"
-                    android:id="@+id/textView2"
+                    android:id="@+id/emaildata"
                     android:textColor="#fff" />
 
 
@@ -210,7 +211,7 @@
                     android:layout_height="wrap_content"
                     android:text="017"
                     android:textSize="17.5sp"
-                    android:id="@+id/textView3"
+                    android:id="@+id/phonedata"
                     android:textColor="#fff"/>
 
             </TableRow>
@@ -247,6 +248,7 @@
                 android:paddingTop="5dp"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent">
+
                 <TextView
                     android:layout_width="120dp"
                     android:layout_height="wrap_content"
@@ -260,7 +262,7 @@
 
                 <TextView
                     android:paddingLeft="10dp"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="28 December"
                     android:textSize="17.5sp"

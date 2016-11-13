@@ -81,20 +81,6 @@ public class DirectoryActivity extends AppCompatActivity implements NavigationVi
 //        setSupportActionBar(toolbar);
 //        getSupportActionBar().hide();
 
-//        ActionBar actionBar = getSupportActionBar();
-//        actionBar.hide();
-
-//        Typeface lato_font = Typeface.createFromAsset(getAssets(),  "fonts/lato.ttf");
-
-//        m_name= (TextView) findViewById(R.id.name);
-//        m_email= (TextView) findViewById(R.id.email);
-//        m_phone= (TextView) findViewById(R.id.mobile);
-//
-//        m_name.setTypeface(lato_font);
-//        m_email.setTypeface(lato_font);
-//        m_phone.setTypeface(lato_font);
-
-
 
 
         arrayList = new ArrayList<>();
@@ -105,6 +91,7 @@ public class DirectoryActivity extends AppCompatActivity implements NavigationVi
         ftView = li.inflate(R.layout.footer_view,null);
         mHandler = new MyHandler();
 
+        mMembershipTypeInToolbar= (TextView) findViewById(R.id.toolbar_title);
         //possible reason for list problem
 //        cb_t= (CheckBox) findViewById(R.id.checkboxId);
         lv = (ListView) findViewById(R.id.listView);
@@ -131,7 +118,7 @@ public class DirectoryActivity extends AppCompatActivity implements NavigationVi
             public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
 
                 //Check when scroll to last item in listview, in this tut, init data in listview = 10 item
-                if(view.getLastVisiblePosition() == totalItemCount-1 && lv.getCount() >=15 && isLoading == false) {
+                if(view.getLastVisiblePosition() == totalItemCount-1 && lv.getCount() >=10 && isLoading == false) {
                     isLoading = true;
                     Toast.makeText(context, "Scrolling", Toast.LENGTH_SHORT).show();
                     Thread thread = new ThreadGetMoreData();
@@ -152,6 +139,34 @@ public class DirectoryActivity extends AppCompatActivity implements NavigationVi
             public void onTextChanged(CharSequence s, int start, int before, int count) {
 //                DirectoryActivity.this.mAdapter.getFilter().filter(s);
                 Log.v("Typed",s+"");
+
+                if(s==""){
+//                    arrayList = new ArrayList<>();
+//                    mMembershipTypeInToolbar.setText("Members");
+//                    runOnUiThread(new Runnable() {
+//                        @Override
+//                        public void run() {
+//                            new ReadJSON().execute("http://192.168.0.104:8000/api_getAllMembers");
+//                        }
+//                    });
+
+                }else
+                {
+                    BackgroundTask_Searchme searchme=new BackgroundTask_Searchme(getApplicationContext(),s+"",lv);
+                    searchme.execute();
+                }
+
+
+
+//                String searcj
+//                runOnUiThread(new Runnable() {
+//                    @Override
+//                    public void run() {
+//
+//                        new ReadJSON().execute("http://192.168.0.104:8000/search?data="+s);
+////                new ReadJSON().execute("http://192.168.0.101:8000/api_getAllMembers");
+//                    }
+//                });
             }
 
             @Override
@@ -160,15 +175,16 @@ public class DirectoryActivity extends AppCompatActivity implements NavigationVi
             }
         });
 
-        mMembershipTypeInToolbar= (TextView) findViewById(R.id.toolbar_title);
+
 
         mMembershipTypeInToolbar.setText("ALL MEMBERS");
 //        mMemberType.setText("ALL MEMBERS");
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
+//                new ReadJSON().execute("http://iamimam.com/directory/contact.txt");
+
                 new ReadJSON().execute("http://iamimam.com/directory/contact.txt");
-//                new ReadJSON().execute("http://192.168.0.101:8000/api_getAllMembers");
             }
         });
 
@@ -251,7 +267,7 @@ public class DirectoryActivity extends AppCompatActivity implements NavigationVi
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    new ReadJSON().execute("http://iamimam.com/directory/member_a.txt");
+                    new ReadJSON().execute("http://192.168.0.101:8000/apps api_getMembers_of_a_type/Alpha");
                 }
             });
             // Handle the camera action
@@ -263,7 +279,7 @@ public class DirectoryActivity extends AppCompatActivity implements NavigationVi
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    new ReadJSON().execute("http://iamimam.com/directory/member_b.txt");
+                    new ReadJSON().execute("http://192.168.0.101:8000/apps api_getMembers_of_a_type/Beta");
                 }
             });
 
@@ -276,7 +292,7 @@ public class DirectoryActivity extends AppCompatActivity implements NavigationVi
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    new ReadJSON().execute("http://iamimam.com/directory/member_c.txt");
+                    new ReadJSON().execute("http://192.168.0.101:8000/apps api_getMembers_of_a_type/Gamma");
                 }
             });
 
@@ -288,7 +304,7 @@ public class DirectoryActivity extends AppCompatActivity implements NavigationVi
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    new ReadJSON().execute("http://iamimam.com/directory/member_d.txt");
+                    new ReadJSON().execute("http://192.168.0.101:8000/apps api_getMembers_of_a_type/Beta");
                 }
             });
 

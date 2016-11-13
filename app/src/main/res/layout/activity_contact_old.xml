@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/upperhalf_layout"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Contacts"
+            android:gravity="center"
+            android:textColor="#fff"
+            android:layout_margin="10dp"
+            android:id="@+id/contact_text"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dhaka Club Limited"
+            android:id="@+id/dcl_text"
+            android:layout_below="@+id/contact_text"
+            android:textColor="#fff"
+            android:textSize="25sp"
+            android:layout_margin="5pt"
+            android:paddingBottom="10dp"
+            android:gravity="center" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/textView4"
+            android:id="@+id/layout_address"
+            android:weightSum="3"
+            android:paddingTop="10dp"
+            >
+
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/contacthome"
+                android:id="@+id/address_image_layout"
+                android:layout_gravity="center"
+                android:layout_weight="1.5"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/address_text_layout"
+                android:text="House # 10, Road # 5,\nSector # 4,Uttara,\nDhaka - 1230 "
+                android:textColor="#fff"
+                android:textSize="17sp"
+                android:paddingLeft="15dp"
+                android:layout_weight="2"
+                android:layout_gravity="center" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/layout_phone"
+            android:layout_below="@+id/layout_address"
+            android:weightSum="3"
+            android:paddingTop="10dp"
+            >
+
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/contactphone"
+                android:id="@+id/phonne_image_layout"
+                android:layout_gravity="center"
+                android:layout_weight="1.5"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/phone_text_layout"
+                android:text="+88 01717898940      \n+88 01745456465      \n+88 01654545441      "
+                android:textColor="#fff"
+                android:textSize="17sp"
+                android:layout_gravity="center"
+                android:layout_weight="2"
+                android:paddingLeft="15dp"
+
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/layout_web"
+            android:layout_below="@+id/layout_phone"
+            android:weightSum="3"
+            android:paddingTop="10dp"
+            >
+
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/contactweb"
+                android:id="@+id/web_image_layout"
+                android:layout_gravity="center"
+                android:layout_weight="1.56"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/web_text_layout"
+                android:text="www.dhakaclubltd.com"
+                android:paddingLeft="15dp"
+                android:layout_weight="2"
+                android:textSize="17sp"
+                android:layout_gravity="center"
+                android:autoLink="web"
+                android:textColorLink="#fff"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/layout_mail"
+            android:layout_below="@+id/layout_web"
+            android:weightSum="3"
+            android:paddingTop="10dp"
+            >
+
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/contactmail"
+                android:id="@+id/mail_image_layout"
+                android:layout_gravity="center"
+                android:layout_weight="1.37"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/mail_text_layout"
+                android:text="m.chow@gmail.com"
+                android:layout_gravity="center|left"
+                android:textColor="#fff"
+                android:textSize="17sp"
+                android:layout_weight="2"
+                android:paddingLeft="15dp"
+                android:autoLink="email"
+                android:textColorLink="#fff"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/upperhalf_layout"-->
+        <!--&gt;-->
+        <!--<TableLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_below="@+id/upperhalf_layout"-->
+            <!--android:paddingTop="10dp"-->
+            <!--android:weightSum="5"-->
+
+
+            <!--&gt;-->
+
+            <!--<TableRow-->
+                <!--android:gravity="center"-->
+                <!--android:weightSum="3"-->
+                <!--android:layout_weight="1">-->
+
+                <!--<Button-->
+                    <!--android:background="@drawable/contact_button_facilities"-->
+                    <!--android:layout_margin="5dp"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:text="Restaurant"-->
+                    <!--android:textColor="#fff"-->
+                    <!--android:autoLink="phone"-->
+                    <!--android:id="@+id/btn_11"-->
+                    <!--/>-->
+
+                <!--<Button-->
+                    <!--android:background="@drawable/contact_button_facilities"-->
+                    <!--android:layout_margin="5dp"-->
+                    <!--android:text="Spa"-->
+                    <!--android:textColor="#fff"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:autoLink="phone"-->
+                    <!--android:id="@+id/btn_12"-->
+                    <!--/>-->
+
+                <!--<Button-->
+                    <!--android:background="@drawable/contact_button_facilities"-->
+                    <!--android:layout_margin="5dp"-->
+                    <!--android:text="Spa"-->
+                    <!--android:textColor="#fff"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:autoLink="phone"-->
+                    <!--android:id="@+id/btn_13"-->
+                    <!--/>-->
+
+            <!--</TableRow>-->
+
+            <!--<TableRow-->
+                <!--android:gravity="center"-->
+                <!--android:weightSum="3"-->
+                <!--android:layout_weight="1">-->
+
+                <!--<Button-->
+                    <!--android:background="@drawable/contact_button_facilities"-->
+                    <!--android:layout_margin="5dp"-->
+                    <!--android:text="Gym"-->
+                    <!--android:textColor="#fff"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:autoLink="phone"-->
+                    <!--android:id="@+id/btn_21"/>-->
+
+                <!--<Button-->
+                    <!--android:background="@drawable/contact_button_facilities"-->
+                    <!--android:layout_margin="5dp"-->
+                    <!--android:text="Lobby"-->
+                    <!--android:textColor="#fff"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:autoLink="phone"-->
+                    <!--android:id="@+id/btn_22"/>-->
+
+                <!--<Button-->
+                    <!--android:background="@drawable/contact_button_facilities"-->
+                    <!--android:layout_margin="5dp"-->
+                    <!--android:text="Lobby"-->
+                    <!--android:textColor="#fff"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:autoLink="phone"-->
+                    <!--android:id="@+id/btn_23"/>-->
+
+            <!--</TableRow>-->
+
+            <!--<TableRow-->
+                <!--android:gravity="center"-->
+                <!--android:weightSum="3"-->
+                <!--android:layout_weight="1">-->
+
+                <!--<Button-->
+                    <!--android:background="@drawable/contact_button_facilities"-->
+                    <!--android:layout_margin="5dp"-->
+                    <!--android:text="Bakery"-->
+                    <!--android:textColor="#fff"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:autoLink="phone"-->
+                    <!--android:id="@+id/btn_31"/>-->
+
+                <!--<Button-->
+                    <!--android:background="@drawable/contact_button_facilities"-->
+                    <!--android:layout_margin="5dp"-->
+                    <!--android:text="Reception"-->
+                    <!--android:textColor="#fff"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:autoLink="phone"-->
+                    <!--android:id="@+id/btn_32"/>-->
+
+                <!--<Button-->
+                    <!--android:background="@drawable/contact_button_facilities"-->
+                    <!--android:layout_margin="5dp"-->
+                    <!--android:text="Reception"-->
+                    <!--android:textColor="#fff"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:autoLink="phone"-->
+                    <!--android:id="@+id/btn_33"/>-->
+
+            <!--</TableRow>-->
+
+            <!--<TableRow-->
+                <!--android:gravity="center"-->
+                <!--android:weightSum="3"-->
+                <!--android:layout_weight="1">-->
+
+                <!--<Button-->
+                    <!--android:background="@drawable/contact_button_facilities"-->
+                    <!--android:layout_margin="5dp"-->
+                    <!--android:text="Pool Room"-->
+                    <!--android:textColor="#fff"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:autoLink="phone"-->
+                    <!--android:id="@+id/btn_41"/>-->
+
+                <!--<Button-->
+                    <!--android:background="@drawable/contact_button_facilities"-->
+                    <!--android:layout_margin="5dp"-->
+                    <!--android:text="Gate"-->
+                    <!--android:textColor="#fff"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:autoLink="phone"-->
+                    <!--android:id="@+id/btn_42"/>-->
+
+                <!--<Button-->
+                    <!--android:background="@drawable/contact_button_facilities"-->
+                    <!--android:layout_margin="5dp"-->
+                    <!--android:text="Gate"-->
+                    <!--android:textColor="#fff"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:autoLink="phone"-->
+                    <!--android:id="@+id/btn_43"/>-->
+
+            <!--</TableRow>-->
+
+            <!--<TableRow-->
+                <!--android:gravity="center"-->
+                <!--android:weightSum="3"-->
+                <!--android:layout_weight="1">-->
+
+                <!--<Button-->
+                    <!--android:background="@drawable/contact_button_facilities"-->
+                    <!--android:layout_margin="5dp"-->
+                    <!--android:text="Laundry"-->
+                    <!--android:textColor="#fff"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:autoLink="phone"-->
+                    <!--android:id="@+id/btn_51"/>-->
+
+                <!--<Button-->
+                    <!--android:background="@drawable/contact_button_facilities"-->
+                    <!--android:layout_margin="5dp"-->
+                    <!--android:text="Parlour"-->
+                    <!--android:textColor="#fff"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:autoLink="phone"-->
+                    <!--android:id="@+id/btn_52"/>-->
+
+                <!--<Button-->
+                    <!--android:background="@drawable/contact_button_facilities"-->
+                    <!--android:layout_margin="5dp"-->
+                    <!--android:text="Parlour"-->
+                    <!--android:textColor="#fff"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:autoLink="phone"-->
+                    <!--android:id="@+id/btn_53"/>-->
+
+            <!--</TableRow>-->
+
+
+
+
+
+        <!--</TableLayout>-->
+
+<!--</LinearLayout>-->
+
+
+
+</RelativeLayout>

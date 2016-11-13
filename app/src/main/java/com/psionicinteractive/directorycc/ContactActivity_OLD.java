@@ -5,15 +5,12 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 /**
  * Created by PSIONIC on 8/31/2016.
  */
-public class ContactActivity extends Activity {
+public class ContactActivity_OLD extends Activity {
 
     TextView m_tv_contact_text;
     TextView m_tv_dcl_text;

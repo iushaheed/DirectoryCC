@@ -8,32 +8,38 @@
 
     >
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Contacts"
+        android:gravity="center"
+        android:textColor="#fff"
+        android:layout_margin="10dp"
+        android:paddingTop="20dp"
+        android:id="@+id/contact_text"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dhaka Club Limited"
+        android:id="@+id/dcl_text"
+        android:layout_below="@+id/contact_text"
+        android:textColor="#fff"
+        android:textSize="25sp"
+        android:layout_margin="5pt"
+        android:paddingBottom="10dp"
+        android:gravity="center" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/upperhalf_layout"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_below="@+id/dcl_text"
+        android:gravity="center"
+        android:layout_alignParentBottom="true">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Contacts"
-            android:gravity="center"
-            android:textColor="#fff"
-            android:layout_margin="10dp"
-            android:id="@+id/contact_text"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Dhaka Club Limited"
-            android:id="@+id/dcl_text"
-            android:layout_below="@+id/contact_text"
-            android:textColor="#fff"
-            android:textSize="25sp"
-            android:layout_margin="5pt"
-            android:paddingBottom="10dp"
-            android:gravity="center" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -118,7 +124,7 @@
                 android:src="@drawable/contactweb"
                 android:id="@+id/web_image_layout"
                 android:layout_gravity="center"
-                android:layout_weight="1.67"/>
+                android:layout_weight="1.56"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -151,14 +157,14 @@
                 android:src="@drawable/contactmail"
                 android:id="@+id/mail_image_layout"
                 android:layout_gravity="center"
-                android:layout_weight="1.47"/>
+                android:layout_weight="1.37"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/mail_text_layout"
                 android:text="m.chow@gmail.com"
-                android:layout_gravity="center"
+                android:layout_gravity="center|left"
                 android:textColor="#fff"
                 android:textSize="17sp"
                 android:layout_weight="2"
@@ -166,207 +172,8 @@
                 android:autoLink="email"
                 android:textColorLink="#fff"
                 />
-
         </LinearLayout>
+
     </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/upperhalf_layout"
-        >
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/upperhalf_layout"
-            android:paddingTop="10dp"
-            android:weightSum="5"
-
-
-            >
-
-            <TableRow
-                android:gravity="center"
-                android:weightSum="3"
-                android:layout_weight="1">
-
-                <Button
-                    android:background="@drawable/contact_button_facilities"
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    android:text="Restaurant"
-                    android:textColor="#fff"
-                    android:autoLink="phone"
-                    android:id="@+id/btn_11"
-                    />
-
-                <Button
-                    android:background="@drawable/contact_button_facilities"
-                    android:layout_margin="5dp"
-                    android:text="Spa"
-                    android:textColor="#fff"
-                    android:layout_weight="1"
-                    android:autoLink="phone"
-                    android:id="@+id/btn_12"
-                    />
-
-                <Button
-                    android:background="@drawable/contact_button_facilities"
-                    android:layout_margin="5dp"
-                    android:text="Spa"
-                    android:textColor="#fff"
-                    android:layout_weight="1"
-                    android:autoLink="phone"
-                    android:id="@+id/btn_13"
-                    />
-
-            </TableRow>
-
-            <TableRow
-                android:gravity="center"
-                android:weightSum="3"
-                android:layout_weight="1">
-
-                <Button
-                    android:background="@drawable/contact_button_facilities"
-                    android:layout_margin="5dp"
-                    android:text="Gym"
-                    android:textColor="#fff"
-                    android:layout_weight="1"
-                    android:autoLink="phone"
-                    android:id="@+id/btn_21"/>
-
-                <Button
-                    android:background="@drawable/contact_button_facilities"
-                    android:layout_margin="5dp"
-                    android:text="Lobby"
-                    android:textColor="#fff"
-                    android:layout_weight="1"
-                    android:autoLink="phone"
-                    android:id="@+id/btn_22"/>
-
-                <Button
-                    android:background="@drawable/contact_button_facilities"
-                    android:layout_margin="5dp"
-                    android:text="Lobby"
-                    android:textColor="#fff"
-                    android:layout_weight="1"
-                    android:autoLink="phone"
-                    android:id="@+id/btn_23"/>
-
-            </TableRow>
-
-            <TableRow
-                android:gravity="center"
-                android:weightSum="3"
-                android:layout_weight="1">
-
-                <Button
-                    android:background="@drawable/contact_button_facilities"
-                    android:layout_margin="5dp"
-                    android:text="Bakery"
-                    android:textColor="#fff"
-                    android:layout_weight="1"
-                    android:autoLink="phone"
-                    android:id="@+id/btn_31"/>
-
-                <Button
-                    android:background="@drawable/contact_button_facilities"
-                    android:layout_margin="5dp"
-                    android:text="Reception"
-                    android:textColor="#fff"
-                    android:layout_weight="1"
-                    android:autoLink="phone"
-                    android:id="@+id/btn_32"/>
-
-                <Button
-                    android:background="@drawable/contact_button_facilities"
-                    android:layout_margin="5dp"
-                    android:text="Reception"
-                    android:textColor="#fff"
-                    android:layout_weight="1"
-                    android:autoLink="phone"
-                    android:id="@+id/btn_33"/>
-
-            </TableRow>
-
-            <TableRow
-                android:gravity="center"
-                android:weightSum="3"
-                android:layout_weight="1">
-
-                <Button
-                    android:background="@drawable/contact_button_facilities"
-                    android:layout_margin="5dp"
-                    android:text="Pool Room"
-                    android:textColor="#fff"
-                    android:layout_weight="1"
-                    android:autoLink="phone"
-                    android:id="@+id/btn_41"/>
-
-                <Button
-                    android:background="@drawable/contact_button_facilities"
-                    android:layout_margin="5dp"
-                    android:text="Gate"
-                    android:textColor="#fff"
-                    android:layout_weight="1"
-                    android:autoLink="phone"
-                    android:id="@+id/btn_42"/>
-
-                <Button
-                    android:background="@drawable/contact_button_facilities"
-                    android:layout_margin="5dp"
-                    android:text="Gate"
-                    android:textColor="#fff"
-                    android:layout_weight="1"
-                    android:autoLink="phone"
-                    android:id="@+id/btn_43"/>
-
-            </TableRow>
-
-            <TableRow
-                android:gravity="center"
-                android:weightSum="3"
-                android:layout_weight="1">
-
-                <Button
-                    android:background="@drawable/contact_button_facilities"
-                    android:layout_margin="5dp"
-                    android:text="Laundry"
-                    android:textColor="#fff"
-                    android:layout_weight="1"
-                    android:autoLink="phone"
-                    android:id="@+id/btn_51"/>
-
-                <Button
-                    android:background="@drawable/contact_button_facilities"
-                    android:layout_margin="5dp"
-                    android:text="Parlour"
-                    android:textColor="#fff"
-                    android:layout_weight="1"
-                    android:autoLink="phone"
-                    android:id="@+id/btn_52"/>
-
-                <Button
-                    android:background="@drawable/contact_button_facilities"
-                    android:layout_margin="5dp"
-                    android:text="Parlour"
-                    android:textColor="#fff"
-                    android:layout_weight="1"
-                    android:autoLink="phone"
-                    android:id="@+id/btn_53"/>
-
-            </TableRow>
-
-
-
-
-
-        </TableLayout>
-
-</LinearLayout>
-
-
 
 </RelativeLayout>

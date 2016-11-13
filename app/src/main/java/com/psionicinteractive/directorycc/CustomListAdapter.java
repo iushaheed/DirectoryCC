@@ -3,14 +3,11 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -108,9 +105,9 @@ public class CustomListAdapter extends ArrayAdapter<Product> {
 //                Toast.makeText(context,Product.getName(), Toast.LENGTH_LONG).show();
 
                 //calling an activity from a non activity class
-                Intent intent = new Intent(context,PutGetExtra.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                Intent intent = new Intent(context,DirectorySingleActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
-                //passing name id image phone string in the PUtGetExtra.java class for activity_member_profile display
+                //passing name id image phone string in the PUtGetExtra.java class for activity_directory_single display
 
                 intent.putExtra("name", product.getName());
                 intent.putExtra("id", product.getEmail());

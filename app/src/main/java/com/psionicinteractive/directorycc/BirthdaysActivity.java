@@ -51,7 +51,7 @@ public class BirthdaysActivity extends AppCompatActivity implements NavigationVi
         setContentView(R.layout.activity_birthday);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+//        setSupportActionBar(toolbar);
 //        getActionBar().setDisplayShowTitleEnabled(false);
 //        getSupportActionBar().hide();
         getSupportActionBar().setDisplayShowTitleEnabled(false);
@@ -78,7 +78,7 @@ public class BirthdaysActivity extends AppCompatActivity implements NavigationVi
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                new ReadJSON().execute("http://iamimam.com/directory/contact.txt");
+                new ReadJSON().execute("http://192.168.0.101:8000/api_get_birthDate");
             }
         });
 
@@ -160,7 +160,7 @@ public class BirthdaysActivity extends AppCompatActivity implements NavigationVi
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    new ReadJSON().execute("http://iamimam.com/directory/member_a.txt");
+                    new ReadJSON().execute("http://192.168.0.101:8000/apps api_getMembers_of_a_type/Alpha");
                 }
             });
             // Handle the camera action
@@ -172,7 +172,7 @@ public class BirthdaysActivity extends AppCompatActivity implements NavigationVi
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    new ReadJSON().execute("http://iamimam.com/directory/member_b.txt");
+                    new ReadJSON().execute("http://192.168.0.101:8000/apps api_getMembers_of_a_type/Beta");
                 }
             });
 
@@ -185,7 +185,7 @@ public class BirthdaysActivity extends AppCompatActivity implements NavigationVi
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    new ReadJSON().execute("http://iamimam.com/directory/member_c.txt");
+                    new ReadJSON().execute("http://192.168.0.101:8000/apps api_getMembers_of_a_type/Gamma");
                 }
             });
 
@@ -197,7 +197,7 @@ public class BirthdaysActivity extends AppCompatActivity implements NavigationVi
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    new ReadJSON().execute("http://iamimam.com/directory/member_d.txt");
+                    new ReadJSON().execute("http://192.168.0.101:8000/apps api_getMembers_of_a_type/Beta");
                 }
             });
 
@@ -233,15 +233,15 @@ public class BirthdaysActivity extends AppCompatActivity implements NavigationVi
             dialog.dismiss();
             try {
                 JSONObject jsonObject = new JSONObject(content);
-                JSONArray jsonArray =  jsonObject.getJSONArray("contacts");
+                JSONArray jsonArray =  jsonObject.getJSONArray("data");
 
                 for(int i =0;i<jsonArray.length(); i++){
                     JSONObject productObject = jsonArray.getJSONObject(i);
                     arrayList.add(new Product(
-                            productObject.getString("image"),
+                            productObject.getString("user_image"),
                             productObject.getString("name"),
                             productObject.getString("email"),
-                            productObject.getString("phone")
+                            productObject.getString("mobile_number")
                     ));
                 }
             } catch (JSONException e) {

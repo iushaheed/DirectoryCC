@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +16,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -23,7 +26,7 @@ import java.net.URL;
 /**
  * Created by iShaheed on 8/27/2016.
  */
-public class PutGetExtra extends Activity implements OnClickListener {
+public class DirectorySingleActivity extends Activity implements OnClickListener {
     ImageView imageView;
     TextView textName;
     TextView textEmail;
@@ -38,23 +41,48 @@ public class PutGetExtra extends Activity implements OnClickListener {
     Button smsButton;
     Button callButton;
     Button emailButton;
+
     RoundImage roundImage;
+
+    TextView headertext;
+    TextView joiningtext;
+    TextView member_sn_text;
+    TextView type_text;
+    TextView nametag;
+//    TextView namedata;
+    TextView dobtag;
+    TextView dobdata;
+    TextView addresstag;
+    TextView addressdata;
+    TextView emailtag;
+//    TextView emaildata;
+    TextView phonetag;
+//    TextView phonedata;
+    TextView statustag;
+    TextView statusdata;
+    TextView anniversarytag;
+    TextView anniversarydata;
+
+
+
 
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_member_profile);
+        setContentView(R.layout.activity_directory_single);
 //        setCornerRadius(float cornerRadius)
 //        RoundedBitmapDrawable dr = RoundedBitmapDrawableFactory.create(res, src);
 //        dr.setCornerRadius(cornerRadius);
 //        imageView.setImageDrawable(dr);
 
+        Typeface lato_font = Typeface.createFromAsset(getAssets(),  "fonts/lato.ttf");
+
         imageView = (ImageView) findViewById(R.id.profile_image);
-        textName = (TextView) findViewById(R.id.textView1);
-        textEmail = (TextView) findViewById(R.id.textView2);
-        textPhone = (TextView) findViewById(R.id.textView3);
+        textName = (TextView) findViewById(R.id.namedata);
+        textEmail = (TextView) findViewById(R.id.emaildata);
+        textPhone = (TextView) findViewById(R.id.phonedata);
 
         smsButton = (Button) findViewById(R.id.sendSms);
         smsButton.setOnClickListener(this);
@@ -64,6 +92,56 @@ public class PutGetExtra extends Activity implements OnClickListener {
 
         emailButton = (Button) findViewById(R.id.sendEmail);
         emailButton.setOnClickListener(this);
+
+        headertext = (TextView) findViewById(R.id.header_text);
+        joiningtext = (TextView) findViewById(R.id.joiningtext);
+        member_sn_text = (TextView) findViewById(R.id.member_sn_text);
+        type_text = (TextView) findViewById(R.id.type_text);
+        nametag = (TextView) findViewById(R.id.nametag);
+//        namedata = (TextView) findViewById(R.id.namedata);
+        dobtag = (TextView) findViewById(R.id.dobtag);
+        dobdata = (TextView) findViewById(R.id.dobdata);
+        addresstag = (TextView) findViewById(R.id.addresstag);
+        addressdata = (TextView) findViewById(R.id.addressdata);
+        emailtag = (TextView) findViewById(R.id.emailtag);
+//        emaildata = (TextView) findViewById(R.id.emaildata);
+        phonetag = (TextView) findViewById(R.id.phonetag);
+//        phonedata = (TextView) findViewById(R.id.phonedata);
+        statustag = (TextView) findViewById(R.id.statustag);
+        statusdata = (TextView) findViewById(R.id.statusdata);
+        anniversarytag = (TextView) findViewById(R.id.anniversarytag);
+        anniversarydata = (TextView) findViewById(R.id.anniversarydata);
+
+        headertext.setTypeface(lato_font);
+        joiningtext.setTypeface(lato_font);
+        member_sn_text.setTypeface(lato_font);
+        type_text.setTypeface(lato_font);
+        nametag.setTypeface(lato_font);
+        textName.setTypeface(lato_font);
+        dobtag.setTypeface(lato_font);
+        dobdata.setTypeface(lato_font);
+        addresstag.setTypeface(lato_font);
+        addressdata.setTypeface(lato_font);
+        emailtag.setTypeface(lato_font);
+        textEmail.setTypeface(lato_font);
+        phonetag.setTypeface(lato_font);
+        textPhone.setTypeface(lato_font);
+        statustag.setTypeface(lato_font);
+        statusdata.setTypeface(lato_font);
+        anniversarytag.setTypeface(lato_font);
+        anniversarydata.setTypeface(lato_font);
+        smsButton.setTypeface(lato_font);
+        callButton.setTypeface(lato_font);
+        emailButton.setTypeface(lato_font);
+
+
+
+
+
+
+
+
+
 
 //        TextView mTextNOTICE;
 
@@ -77,12 +155,12 @@ public class PutGetExtra extends Activity implements OnClickListener {
         imageUrl = intent.getStringExtra("image");
         phoneNumber = intent.getStringExtra("phone");
 
-        //setting profile_img name and email address and other info in the activity_member_profile layout to display
+        //setting profile_img name and email address and other info in the activity_directory_single layout to display
         textName.setText(name);
         textEmail.setText(emailAddress);
         textPhone.setText(phoneNumber);
 
-        //loading profile_img image in imageView of activity_member_profile
+        //loading profile_img image in imageView of activity_directory_single
 //        Picasso.with(this)
 //                .load(imageUrl)
 //                .resize(200,200)

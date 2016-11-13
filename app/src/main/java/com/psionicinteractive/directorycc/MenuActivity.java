@@ -50,7 +50,6 @@ public class MenuActivity extends Activity {
         m_myprofile_text_layout= (TextView)findViewById(R.id.myprofile_text_layout);
         m_settings_text_layout= (TextView)findViewById(R.id.settings_text_layout);
 
-
         tx.setTypeface(lato_font);
         m_directory_text_layout.setTypeface(lato_font);
         m_contact_text_layout.setTypeface(lato_font);
