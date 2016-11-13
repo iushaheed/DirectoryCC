@@ -3,51 +3,41 @@ package com.psionicinteractive.directorycc;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.app.ActionBar;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.AbsListView;
-import android.widget.ArrayAdapter;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.w3c.dom.Text;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
-import java.util.List;
 
-import static com.psionicinteractive.directorycc.R.id.checkboxId;
-
-public class DirectoryActivity extends AppCompatActivity{
+public class DirectoryActivity_old_with_navigation extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
 
 //    TextView m_name;
@@ -189,23 +179,23 @@ public class DirectoryActivity extends AppCompatActivity{
         });
 
 
-//        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-//        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-//        drawer.setDrawerListener(toggle);
-//        toggle.syncState();
-//
-//        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-//        navigationView.setNavigationItemSelectedListener(this);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.setDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
     }
 
     @Override
     public void onBackPressed() {
-//        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-//        if (drawer.isDrawerOpen(GravityCompat.START)) {
-//            drawer.closeDrawer(GravityCompat.START);
-//        } else {
-//            super.onBackPressed();
-//        }
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
     }
 
     @Override
@@ -253,73 +243,73 @@ public class DirectoryActivity extends AppCompatActivity{
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
-//    @Override
-//    public boolean onNavigationItemSelected(MenuItem item) {
-//        // Handle navigation view item clicks here.
-//        int id = item.getItemId();
-//
-//        if (id == R.id.nav_camera) {
-//            arrayList = new ArrayList<>();
-//            context=this;
-//            mMembershipTypeInToolbar.setText("ALPHA MEMBERS");
-////            mMemberType.setText("ALPHA MEMBERS");
-//
-//            runOnUiThread(new Runnable() {
-//                @Override
-//                public void run() {
-//                    new ReadJSON().execute("http://192.168.0.101:8000/apps api_getMembers_of_a_type/Alpha");
-//                }
-//            });
-//            // Handle the camera action
-//        } else if (id == R.id.nav_gallery) {
-//            arrayList = new ArrayList<>();
-//            context=this;
-//            mMembershipTypeInToolbar.setText("BETA MEMBERS");
-////            mMemberType.setText("BETA MEMBERS");
-//            runOnUiThread(new Runnable() {
-//                @Override
-//                public void run() {
-//                    new ReadJSON().execute("http://192.168.0.101:8000/apps api_getMembers_of_a_type/Beta");
-//                }
-//            });
-//
-//
-//        } else if (id == R.id.nav_slideshow) {
-//            arrayList = new ArrayList<>();
-//            context=this;
-//            mMembershipTypeInToolbar.setText("GAMMA MEMBERS");
-////            mMemberType.setText("GAMMA MEMBERS");
-//            runOnUiThread(new Runnable() {
-//                @Override
-//                public void run() {
-//                    new ReadJSON().execute("http://192.168.0.101:8000/apps api_getMembers_of_a_type/Gamma");
-//                }
-//            });
-//
-//        } else if (id == R.id.nav_manage) {
-//            arrayList = new ArrayList<>();
-//            context=this;
-//            mMembershipTypeInToolbar.setText("FREE MEMBERS");
-////            mMemberType.setText("FREE MEMBERS");
-//            runOnUiThread(new Runnable() {
-//                @Override
-//                public void run() {
-//                    new ReadJSON().execute("http://192.168.0.101:8000/apps api_getMembers_of_a_type/Beta");
-//                }
-//            });
-//
-//        } else if (id == R.id.nav_share) {
-//            Toast.makeText(context, "Loading website", Toast.LENGTH_SHORT).show();
-//
-//        } else if (id == R.id.nav_send) {
-//            Toast.makeText(context, "Loading facebook", Toast.LENGTH_SHORT).show();
-//
-//        }
-//
-//        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-//        drawer.closeDrawer(GravityCompat.START);
-//        return true;
-//    }
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        // Handle navigation view item clicks here.
+        int id = item.getItemId();
+
+        if (id == R.id.nav_camera) {
+            arrayList = new ArrayList<>();
+            context=this;
+            mMembershipTypeInToolbar.setText("ALPHA MEMBERS");
+//            mMemberType.setText("ALPHA MEMBERS");
+
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    new ReadJSON().execute("http://192.168.0.101:8000/apps api_getMembers_of_a_type/Alpha");
+                }
+            });
+            // Handle the camera action
+        } else if (id == R.id.nav_gallery) {
+            arrayList = new ArrayList<>();
+            context=this;
+            mMembershipTypeInToolbar.setText("BETA MEMBERS");
+//            mMemberType.setText("BETA MEMBERS");
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    new ReadJSON().execute("http://192.168.0.101:8000/apps api_getMembers_of_a_type/Beta");
+                }
+            });
+
+
+        } else if (id == R.id.nav_slideshow) {
+            arrayList = new ArrayList<>();
+            context=this;
+            mMembershipTypeInToolbar.setText("GAMMA MEMBERS");
+//            mMemberType.setText("GAMMA MEMBERS");
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    new ReadJSON().execute("http://192.168.0.101:8000/apps api_getMembers_of_a_type/Gamma");
+                }
+            });
+
+        } else if (id == R.id.nav_manage) {
+            arrayList = new ArrayList<>();
+            context=this;
+            mMembershipTypeInToolbar.setText("FREE MEMBERS");
+//            mMemberType.setText("FREE MEMBERS");
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    new ReadJSON().execute("http://192.168.0.101:8000/apps api_getMembers_of_a_type/Beta");
+                }
+            });
+
+        } else if (id == R.id.nav_share) {
+            Toast.makeText(context, "Loading website", Toast.LENGTH_SHORT).show();
+
+        } else if (id == R.id.nav_send) {
+            Toast.makeText(context, "Loading facebook", Toast.LENGTH_SHORT).show();
+
+        }
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
 
 
 
@@ -363,6 +353,18 @@ public class DirectoryActivity extends AppCompatActivity{
                     ));
                 }
 
+//                while( keys.hasNext() ) {
+//                    String key = (String) keys.next();
+//                    if ( jsonArray.get(key) instanceof JSONObject ) {
+//                        arrayList.add(new Product(
+//                                jsonArray.getString("user_image"),
+//
+//                                jsonArray.getString("name"),
+//                                jsonArray.getString("email"),
+//                                jsonArray.getString("mobile_number")));
+//                        Log.v("userernam",jsonArray.getString("user_image"));
+//                    }
+//                }
 
             } catch (JSONException e) {
                 e.printStackTrace();
