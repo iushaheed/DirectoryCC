@@ -3,7 +3,9 @@ package com.psionicinteractive.directorycc;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Typeface;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -59,7 +61,7 @@ public class DirectoryActivity extends AppCompatActivity{
     ProgressDialog dialog;
     Context context;
 //    TextView mMemberType;
-    TextView mMembershipTypeInToolbar;
+//    TextView mMembershipTypeInToolbar;
     public Handler mHandler;
     public View ftView;
     public boolean isLoading=false;
@@ -76,11 +78,13 @@ public class DirectoryActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_directory);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
 //        setSupportActionBar(toolbar);
 //        getSupportActionBar().hide();
 
+        getSupportActionBar().setTitle("CADET COLLEGE CLUB");
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.argb(90,68,161,100)));
 
 
         arrayList = new ArrayList<>();
@@ -91,7 +95,7 @@ public class DirectoryActivity extends AppCompatActivity{
         ftView = li.inflate(R.layout.footer_view,null);
         mHandler = new MyHandler();
 
-        mMembershipTypeInToolbar= (TextView) findViewById(R.id.toolbar_title);
+//        mMembershipTypeInToolbar= (TextView) findViewById(R.id.toolbar_title);
         //possible reason for list problem
 //        cb_t= (CheckBox) findViewById(R.id.checkboxId);
         lv = (ListView) findViewById(R.id.listView);
@@ -177,8 +181,9 @@ public class DirectoryActivity extends AppCompatActivity{
 
 
 
-        mMembershipTypeInToolbar.setText("ALL MEMBERS");
+//        mMembershipTypeInToolbar.setText("ALL MEMBERS");
 //        mMemberType.setText("ALL MEMBERS");
+        getSupportActionBar().setTitle("ALL MEMBERS");
         runOnUiThread(new Runnable() {
             @Override
             public void run() {

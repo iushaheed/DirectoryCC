@@ -79,6 +79,7 @@ public class CustomListAdapter extends ArrayAdapter<Product> {
 
         CheckBox cb= (CheckBox) convertView.findViewById(R.id.checkboxId);
 
+        cb.animate();
         cb.setChecked(product.getIsTrue());
 
 //        cb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
