@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
 
     >
@@ -34,7 +35,7 @@
             android:paddingTop="1dp"
             android:text="Name"
             android:textAllCaps="true"
-            android:textSize="15sp"
+            android:textSize="18sp"
             android:textStyle="bold"
 
 
@@ -45,7 +46,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Email"
-            android:textSize="12sp"
+            android:textSize="15sp"
             />
 
 
@@ -54,7 +55,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Mobile"
-            android:textSize="12sp"
+            android:textSize="15sp"
             android:paddingBottom="1dp"
             />
 
@@ -76,6 +77,9 @@
             android:padding="10dp"
             android:id="@+id/checkboxId"
             />
+
+
+
     </LinearLayout>
 
 

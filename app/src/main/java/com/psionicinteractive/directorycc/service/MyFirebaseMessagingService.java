@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.support.v4.app.NotificationCompat;
+import android.util.Log;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
@@ -28,6 +29,9 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     {
         String title=remoteMessage.getNotification().getTitle();
         String message=remoteMessage.getNotification().getBody();
+        String dAction=remoteMessage.getData().get("click_action");
+        Log.v("messssage",message);
+        Log.v("dAction",dAction);
         //from server
         String click_action="com.psionicinteractive.directorycc_TARGET_NOTIFICATION";
         Intent intent=new Intent(click_action);

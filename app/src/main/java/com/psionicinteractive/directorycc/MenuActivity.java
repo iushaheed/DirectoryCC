@@ -62,6 +62,13 @@ public class MenuActivity extends Activity {
         m_settings_text_layout.setTypeface(lato_font);
 
 
+//
+//        Intent intent=getIntent();
+//        String message=intent.getStringExtra("body");
+//
+//        Toast.makeText(this, ""+message, Toast.LENGTH_SHORT).show();
+
+
 
     }
 

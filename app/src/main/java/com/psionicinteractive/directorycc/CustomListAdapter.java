@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
+import com.uniquestudio.library.CircleCheckBox;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -78,9 +79,24 @@ public class CustomListAdapter extends ArrayAdapter<Product> {
         txtMobile.setTypeface(lato_font);
 
         CheckBox cb= (CheckBox) convertView.findViewById(R.id.checkboxId);
-
-        cb.animate();
         cb.setChecked(product.getIsTrue());
+
+//        CircleCheckBox checkBox = new CircleCheckBox(context);
+//        checkBox.setChecked(product.getIsTrue());
+//        checkBox.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (product.getIsTrue())
+//                    product.setIsTrue(!product.getIsTrue());
+//                else
+//                    product.setIsTrue(!product.getIsTrue());
+//                Toast.makeText(getContext(), ""+product.getIsTrue(), Toast.LENGTH_SHORT).show();
+//
+//            }
+//        });
+
+
+
 
 //        cb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 //            @Override
