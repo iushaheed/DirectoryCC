@@ -34,7 +34,7 @@
         <activity android:name="com.psionicinteractive.directorycc.HomeActivity"></activity>
         <activity android:name="com.psionicinteractive.directorycc.MenuActivity"></activity>
         <activity android:name="com.psionicinteractive.directorycc.DirectorySingleActivity"></activity>
-        <activity android:name="com.psionicinteractive.directorycc.AboutUsActivity"></activity>
+        <activity android:name="com.psionicinteractive.directorycc.MyClubActivity"></activity>
         <activity android:name="com.psionicinteractive.directorycc.FacilityActivity"></activity>
         <activity android:name="com.psionicinteractive.directorycc.BirthdaysActivity"></activity>
         <activity android:name="com.psionicinteractive.directorycc.GalleryActivity"></activity>

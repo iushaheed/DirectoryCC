@@ -45,7 +45,7 @@
                     android:layout_height="80dp"
                     android:id="@+id/imageButton"
                     android:onClick="gotodirectory"
-                    android:layout_margin="5dp"
+                    android:layout_margin="10dp"
                     android:background="@drawable/menu_button_selector_directory"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -65,7 +65,7 @@
                     android:layout_height="80dp"
                     android:id="@+id/imageButton2"
                     android:onClick="gotocontactus"
-                    android:layout_margin="5dp"
+                    android:layout_margin="10dp"
                     android:background="@drawable/menu_button_selector_contact"
                     />
                 <TextView
@@ -86,7 +86,7 @@
                     android:layout_height="80dp"
                     android:id="@+id/imageButton4"
                     android:onClick="gotopush"
-                    android:layout_margin="5dp"
+                    android:layout_margin="10dp"
                     android:background="@drawable/menu_button_selector_message"
                     />
                 <TextView
@@ -127,7 +127,7 @@
                     android:layout_height="80dp"
                     android:id="@+id/imageButton11"
                     android:onClick="gotobirthday"
-                    android:layout_margin="5dp"
+                    android:layout_margin="10dp"
                     android:background="@drawable/menu_button_selector_birthdays"
                     />
                 <TextView
@@ -149,7 +149,7 @@
                     android:layout_height="80dp"
                     android:id="@+id/imageButton8"
                     android:onClick="gotolocation"
-                    android:layout_margin="5dp"
+                    android:layout_margin="10dp"
                     android:background="@drawable/menu_button_selector_location"
                     />
                     />
@@ -171,8 +171,8 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:id="@+id/imageButton7"
-                    android:onClick="gotoaboutus"
-                    android:layout_margin="5dp"
+                    android:onClick="gotomyclub"
+                    android:layout_margin="10dp"
                     android:background="@drawable/menu_button_selector_aboutus"
                     />
                 <TextView
@@ -205,7 +205,7 @@
                     android:layout_height="80dp"
                     android:id="@+id/imageButton15"
                     android:onClick="gotosearch"
-                    android:layout_margin="5dp"
+                    android:layout_margin="10dp"
                     android:background="@drawable/menu_button_selector_search"
                     />
                 <TextView
@@ -226,7 +226,7 @@
                     android:layout_height="80dp"
                     android:id="@+id/imageButton13"
                     android:onClick="gotoprofile"
-                    android:layout_margin="5dp"
+                    android:layout_margin="10dp"
                     android:background="@drawable/menu_button_selector_profile"/>
                     />
                 <TextView
@@ -247,7 +247,7 @@
                     android:layout_height="80dp"
                     android:id="@+id/imageButton14"
                     android:onClick="gotosettings"
-                    android:layout_margin="5dp"
+                    android:layout_margin="10dp"
                     android:background="@drawable/menu_button_selector_settings"
                     />
                 <TextView

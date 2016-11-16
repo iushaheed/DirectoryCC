@@ -58,7 +58,7 @@
                 android:src="@drawable/contacthome"
                 android:id="@+id/address_image_layout"
                 android:layout_gravity="center"
-                android:layout_weight="1.5"/>
+                android:layout_weight="1.50"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -90,20 +90,60 @@
                 android:src="@drawable/contactphone"
                 android:id="@+id/phonne_image_layout"
                 android:layout_gravity="center"
-                android:layout_weight="1.5"/>
+                android:layout_weight="1.26"/>
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:orientation="vertical"
                 android:id="@+id/phone_text_layout"
-                android:text="+88 01717898940      \n+88 01745456465      \n+88 01654545441      "
-                android:textColor="#fff"
-                android:textSize="17sp"
-                android:layout_gravity="center"
-                android:layout_weight="2"
-                android:paddingLeft="15dp"
+                >
 
-                />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/phone_1"
+                    android:text="+8801719381510"
+                    android:textColor="#fff"
+                    android:textSize="17sp"
+                    android:layout_gravity="center"
+                    android:layout_weight="2"
+                    android:onClick="call_1"
+                    android:paddingLeft="15dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/phone_2"
+                    android:text="+8801745456465"
+                    android:textColor="#fff"
+                    android:textSize="17sp"
+                    android:layout_gravity="center"
+                    android:layout_weight="2"
+                    android:onClick="call_2"
+                    android:paddingLeft="15dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/phone_3"
+                    android:text="+8801654545441"
+                    android:textColor="#fff"
+                    android:textSize="17sp"
+                    android:layout_gravity="center"
+                    android:layout_weight="2"
+                    android:onClick="call_3"
+                    android:paddingLeft="15dp"
+                    />
+
+
+            </LinearLayout>
+
+
+
+
 
         </LinearLayout>
 
@@ -124,7 +164,7 @@
                 android:src="@drawable/contactweb"
                 android:id="@+id/web_image_layout"
                 android:layout_gravity="center"
-                android:layout_weight="1.56"/>
+                android:layout_weight="1.66"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -157,7 +197,7 @@
                 android:src="@drawable/contactmail"
                 android:id="@+id/mail_image_layout"
                 android:layout_gravity="center"
-                android:layout_weight="1.37"/>
+                android:layout_weight="1.44"/>
 
             <TextView
                 android:layout_width="wrap_content"

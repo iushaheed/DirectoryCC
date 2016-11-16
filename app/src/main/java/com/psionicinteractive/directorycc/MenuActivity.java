@@ -77,8 +77,8 @@ public class MenuActivity extends Activity {
         startActivity(i);
     }
 
-    public void gotoaboutus(View view) {
-        Intent i = new Intent(MenuActivity.this, AboutUsActivity.class);
+    public void gotomyclub(View view) {
+        Intent i = new Intent(MenuActivity.this, MyClubActivity.class);
         startActivity(i);
     }
     public void gotoevents(View view)
