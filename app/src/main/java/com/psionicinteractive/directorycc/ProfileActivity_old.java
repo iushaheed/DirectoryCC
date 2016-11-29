@@ -34,7 +34,7 @@ import java.util.HashMap;
  * Created by PSIONIC on 10/30/2016.
  */
 
-public class ProfileActivity extends Activity {
+public class ProfileActivity_old extends Activity {
     ImageView imageView;
     RoundImage roundImage;
     String UPLOAD_URL="http://192.168.0.104:8000/image";
@@ -78,7 +78,7 @@ public class ProfileActivity extends Activity {
             @Override
             public void onClick(View v) {
                 selectImage();
-                Toast.makeText(ProfileActivity.this, "Image changed", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ProfileActivity_old.this, "Image changed", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -88,7 +88,7 @@ public class ProfileActivity extends Activity {
         final CharSequence[] items = { "Take Photo", "Choose from Library",
                 "Cancel" };
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(ProfileActivity.this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(ProfileActivity_old.this);
         builder.setTitle("Add Photo!");
         builder.setItems(items, new DialogInterface.OnClickListener() {
             @Override
@@ -167,7 +167,7 @@ public class ProfileActivity extends Activity {
             } else if (requestCode == 1) {
                 Uri selectedImageUri = data.getData();
 
-                String tempPath = getPath(selectedImageUri, ProfileActivity.this);
+                String tempPath = getPath(selectedImageUri, ProfileActivity_old.this);
                 Log.v("PATH",tempPath+"");
                 Bitmap bm;
                 BitmapFactory.Options btmapOptions = new BitmapFactory.Options();
@@ -206,7 +206,7 @@ public class ProfileActivity extends Activity {
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                loading = ProgressDialog.show(ProfileActivity.this, "Uploading Image", "Please wait...", true, true);
+                loading = ProgressDialog.show(ProfileActivity_old.this, "Uploading Image", "Please wait...", true, true);
             }
 
             @Override
@@ -238,7 +238,7 @@ public class ProfileActivity extends Activity {
 
 
 
-
+    
 
 }
 

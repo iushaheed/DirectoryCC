@@ -18,6 +18,7 @@ public class MyClubActivity extends Activity {
     TextView mTextView_title;
     TextView mTextView_main_text_body;
     Button mButton_contact_us;
+    Button mButton_ec;
 
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
@@ -30,14 +31,13 @@ public class MyClubActivity extends Activity {
 
         mTextView_title= (TextView) findViewById(R.id.myclub_title_textview);
         mTextView_main_text_body= (TextView) findViewById(R.id.textView_main_body);
-        mButton_contact_us= (Button)findViewById(R.id.contact_button);
+        mButton_contact_us= (Button)findViewById(R.id.contact_button_a);
+        mButton_ec= (Button)findViewById(R.id.contact_button_b);
 
         mTextView_title.setTypeface(font_lato);
         mTextView_main_text_body.setTypeface(font_lato);
         mButton_contact_us.setTypeface(font_lato);
-
-
-
+        mButton_ec.setTypeface(font_lato);
 
     }
 
@@ -47,5 +47,11 @@ public class MyClubActivity extends Activity {
         Intent call =new Intent(Intent.ACTION_CALL, Uri.parse("tel:"+phoneNumber));
         Intent chooser= Intent.createChooser(call,"Choose Application");
         startActivity(chooser);
+    }
+
+    public void gotoec(View view) {
+        Intent i = new Intent(MyClubActivity.this, EcMembersActivity.class);
+        startActivity(i);
+
     }
 }

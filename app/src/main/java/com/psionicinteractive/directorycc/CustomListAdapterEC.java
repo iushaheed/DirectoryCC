@@ -12,14 +12,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.hanks.library.AnimateCheckBox;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class CustomListAdapter extends ArrayAdapter<Product> {
+public class CustomListAdapterEC extends ArrayAdapter<Product> {
 
 
     static ArrayList<Product> products;
@@ -32,7 +31,7 @@ public class CustomListAdapter extends ArrayAdapter<Product> {
 
 
 
-    public CustomListAdapter(Context context, int resource, ArrayList<Product> products) {
+    public CustomListAdapterEC(Context context, int resource, ArrayList<Product> products) {
         super(context, resource, products);
         this.products = products;
         this.context = context;
@@ -57,7 +56,7 @@ public class CustomListAdapter extends ArrayAdapter<Product> {
 
         if (convertView == null){
             LayoutInflater layoutInflater = (LayoutInflater) getContext().getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
-            convertView = layoutInflater.inflate(R.layout.list_item, null, true);
+            convertView = layoutInflater.inflate(R.layout.list_item_ec, null, true);
 
         }
         final Product product = getItem(position);
@@ -78,8 +77,8 @@ public class CustomListAdapter extends ArrayAdapter<Product> {
         TextView txtMobile = (TextView) convertView.findViewById(R.id.mobile);
         txtMobile.setTypeface(lato_font);
 
-        CheckBox cb= (CheckBox) convertView.findViewById(R.id.checkboxId);
-        cb.setChecked(product.getIsTrue());
+//        CheckBox cb= (CheckBox) convertView.findViewById(R.id.checkboxId);
+//        cb.setChecked(product.getIsTrue());
 
 
 //        CircleCheckBox checkBox = new CircleCheckBox(context);
@@ -106,16 +105,16 @@ public class CustomListAdapter extends ArrayAdapter<Product> {
 //                Toast.makeText(getContext(), ""+isChecked, Toast.LENGTH_SHORT).show();
 //            }
 //        });
-        cb.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (product.getIsTrue())
-                product.setIsTrue(!product.getIsTrue());
-                else
-                    product.setIsTrue(!product.getIsTrue());
-                Toast.makeText(getContext(), ""+product.getIsTrue(), Toast.LENGTH_SHORT).show();
-            }
-        });
+//        cb.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (product.getIsTrue())
+//                product.setIsTrue(!product.getIsTrue());
+//                else
+//                    product.setIsTrue(!product.getIsTrue());
+//                Toast.makeText(getContext(), ""+product.getIsTrue(), Toast.LENGTH_SHORT).show();
+//            }
+//        });
 
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override

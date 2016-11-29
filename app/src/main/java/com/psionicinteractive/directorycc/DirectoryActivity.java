@@ -15,6 +15,7 @@ import android.support.v7.app.ActionBar;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -47,7 +48,7 @@ import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.psionicinteractive.directorycc.R.id.checkboxId;
+//import static com.psionicinteractive.directorycc.R.id.checkboxId;
 
 public class DirectoryActivity extends AppCompatActivity{
 
@@ -82,9 +83,11 @@ public class DirectoryActivity extends AppCompatActivity{
 
 //        setSupportActionBar(toolbar);
 //        getSupportActionBar().hide();
+//
+//        getSupportActionBar().setTitle("CADET COLLEGE CLUB");
+        getSupportActionBar().setTitle("   ALL MEMBERS");
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.argb(100,68,161,100)));
 
-        getSupportActionBar().setTitle("CADET COLLEGE CLUB");
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.argb(90,68,161,100)));
 
 
         arrayList = new ArrayList<>();
@@ -183,7 +186,8 @@ public class DirectoryActivity extends AppCompatActivity{
 
 //        mMembershipTypeInToolbar.setText("ALL MEMBERS");
 //        mMemberType.setText("ALL MEMBERS");
-        getSupportActionBar().setTitle("ALL MEMBERS");
+//        getSupportActionBar().setTitle("ALL MEMBERS");
+
         runOnUiThread(new Runnable() {
             @Override
             public void run() {

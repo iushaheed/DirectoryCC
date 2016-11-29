@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 24
-    buildToolsVersion "24.0.2"
+    buildToolsVersion '24.0.1'
 
     defaultConfig {
         applicationId "com.psionicinteractive.directorycc"
@@ -27,8 +27,7 @@ dependencies {
     compile project(':picasso-2.5.2')
     compile 'pl.droidsonroids.gif:android-gif-drawable:1.1.+'
     compile 'com.google.firebase:firebase-messaging:9.6.1'
-    compile 'com.uniquestudio:checkbox:1.0.1'
-
-
+    compile 'com.hanks.animatecheckbox:library:0.1'
+    compile 'net.gotev:uploadservice:2.1'
 }
 apply plugin: 'com.google.gms.google-services'

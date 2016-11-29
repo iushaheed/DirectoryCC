@@ -141,7 +141,7 @@ public class BackgroundTask extends AsyncTask<String,Void,String> {
                 {
                     response += line;
                 }
-                Log.v("Response from server for FCM",response);
+                Log.v("Response from server FCM",response);
 
                 IS.close();
                 //httpURLConnection.connect();
