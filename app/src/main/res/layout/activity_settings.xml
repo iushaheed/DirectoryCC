@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splash"
+    >
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
         android:text="Logout"
-        android:id="@+id/button2"
+        android:layout_margin="30dp"
+        android:id="@+id/logout_button"
+        android:background="@drawable/login_button_selector"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:onClick="logout"/>
+        android:onClick="logout"
+        android:textColor="#fff"
+        android:textSize="20sp"
+        />
 </RelativeLayout>

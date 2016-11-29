@@ -1,15 +1,20 @@
 package com.psionicinteractive.directorycc;
 
+import android.animation.ObjectAnimator;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,6 +32,8 @@ public class MenuActivity extends Activity {
     TextView m_search_text_layout;
     TextView m_myprofile_text_layout;
     TextView m_settings_text_layout;
+    ImageButton m_ib;
+    private int DELAY = 2000;
 
 
     @Override
@@ -49,6 +56,7 @@ public class MenuActivity extends Activity {
         m_search_text_layout= (TextView)findViewById(R.id.search_text_layout);
         m_myprofile_text_layout= (TextView)findViewById(R.id.myprofile_text_layout);
         m_settings_text_layout= (TextView)findViewById(R.id.settings_text_layout);
+        m_ib= (ImageButton) findViewById(R.id.add_banner);
 
         tx.setTypeface(lato_font);
         m_directory_text_layout.setTypeface(lato_font);
@@ -68,7 +76,28 @@ public class MenuActivity extends Activity {
 //
 //        Toast.makeText(this, ""+message, Toast.LENGTH_SHORT).show();
 
+        m_ib.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                animatebanner();
+            }
+        });
 
+       // Delay time in milliseconds
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                animatebanner();
+            }
+        }, DELAY);
+    }
+
+    private void animatebanner() {
+
+        int StartValue=m_ib.getTop();
+        int EndValue=m_ib.getBottom();
+        ObjectAnimator.ofInt(m_ib,"bottom",StartValue,EndValue).start();
 
     }
 
@@ -181,7 +210,18 @@ public class MenuActivity extends Activity {
     }
 
     public void onBackPressed() {
-        finish();
+        new AlertDialog.Builder(this)
+                .setTitle("Really Exit?")
+                .setMessage("Are you sure you want to exit?")
+                .setNegativeButton(android.R.string.no, null)
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface arg0, int arg1) {
+                        MenuActivity.super.onBackPressed();
+                    }
+                }).create().show();
+//        finish();
+
     }
 
 

@@ -3,24 +3,33 @@ package com.psionicinteractive.directorycc;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.Toast;
 
 /**
  * Created by PSIONIC on 9/21/2016.
  */
 public class SettingsActivity extends Activity {
+
+    Button mLogout;
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_settings);
+
+        Typeface font_lato = Typeface.createFromAsset(getAssets(),  "fonts/lato.ttf");
+
+        mLogout= (Button) findViewById(R.id.logout_button);
+        mLogout.setTypeface(font_lato);
+
     }
     public void logout(View view){
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(SettingsActivity.this);

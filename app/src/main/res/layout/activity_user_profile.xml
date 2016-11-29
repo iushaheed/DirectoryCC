@@ -5,211 +5,277 @@
     android:layout_height="match_parent"
     android:background="@drawable/background"
     >
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="PROFILE"
+        android:text="Directory"
         android:gravity="center"
-        android:fontFamily="sans-serif-condensed"
         android:textSize="25sp"
         android:textColor="#fff"
         android:padding="10dp"
+        android:id="@+id/header_text" />
 
-        />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
 
-    <ImageView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:id="@+id/profile_image"
-        android:padding="5dp"
-        android:layout_gravity="center" />
+        <ImageView
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:id="@+id/profile_image"
+            android:src="@drawable/profile"
+            android:padding="15dp"
+            android:layout_gravity="left" />
 
-    <!--<LinearLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--&gt;-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center|left"
 
-    <!--</LinearLayout>-->
+
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Joining Date : 01 Jan 2015"
+                android:textColor="#fff"
+                android:textSize="16sp"
+                android:padding="5dp"
+                android:id="@+id/joiningtext" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Membership A/C : SN-19"
+                android:textColor="#fff"
+                android:textSize="16sp"
+                android:padding="5dp"
+                android:id="@+id/member_sn_text" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Member Type : Senior"
+                android:textColor="#fff"
+                android:textSize="16sp"
+                android:padding="5dp"
+                android:id="@+id/type_text" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center"
-            >
-
-    <TableRow
-        android:gravity="center"
-        android:paddingTop="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Name:"
-            android:textSize="20sp"
-            android:id="@+id/nametag"
-            android:textColor="#fff"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:paddingRight="10dp"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Name"
-            android:textSize="20sp"
-            android:id="@+id/textView1"
-            android:textColor="#fff" />
-    </TableRow>
-
-    <TableRow
-        android:gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Date of Birth:"
-            android:textSize="20sp"
-            android:id="@+id/dobtag"
-            android:textColor="#fff"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:paddingRight="10dp"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Date of Birth"
-            android:textSize="20sp"
-            android:id="@+id/dob"
-            android:textColor="#fff" />
-
-
-
-
-    </TableRow>
-
-    <TableRow
-        android:gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Address:"
-            android:textSize="20sp"
-            android:id="@+id/addresstag"
-            android:textColor="#fff"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:paddingRight="10dp"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Address"
-            android:textSize="20sp"
-            android:id="@+id/address"
-            android:textColor="#fff" />
-
-
-
-
-    </TableRow>
-
-    <TableRow
-        android:gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Email:"
-            android:textSize="20sp"
-            android:id="@+id/emailtag"
-            android:textColor="#fff"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:paddingRight="10dp"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Email"
-            android:textSize="20sp"
-            android:id="@+id/textView2"
-            android:textColor="#fff" />
-
-
-
-    </TableRow>
-
-    <TableRow
-        android:gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Phone:"
-            android:textSize="20sp"
-            android:id="@+id/phonetag"
-            android:textColor="#fff"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TableRow
+                android:paddingLeft="50dp"
+                android:paddingTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="Name:"
+                    android:textSize="17.5sp"
+                    android:id="@+id/nametag"
+                    android:textColor="#fff"
+                    />
+
+                <TextView
+                    android:paddingLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Who am i ?"
+                    android:textSize="17.5sp"
+                    android:id="@+id/namedata"
+                    android:textColor="#fff" />
 
 
-            />
+            </TableRow>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Email"
-            android:textSize="20sp"
-            android:id="@+id/textView3"
-            android:textColor="#fff"/>
+            <TableRow
+                android:paddingLeft="50dp"
+                android:paddingTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    </TableRow>
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="Date of Birth:"
+                    android:textSize="17.5sp"
+                    android:id="@+id/dobtag"
+                    android:textColor="#fff"
+                    />
+
+                <TextView
+                    android:paddingLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="01.01.1900"
+                    android:textSize="17.5sp"
+                    android:id="@+id/dobdata"
+                    android:textColor="#fff" />
+
+
+
+
+            </TableRow>
+
+            <TableRow
+                android:paddingLeft="50dp"
+                android:paddingTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="Address:"
+                    android:textSize="17.5sp"
+                    android:id="@+id/addresstag"
+                    android:textColor="#fff"
+                    />
+
+                <TextView
+                    android:paddingLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="House # 10, Road # 5,\nSector # 4, Uttara, \n Dhaka- 1230"
+                    android:textSize="17.5sp"
+                    android:id="@+id/addressdata"
+                    android:textColor="#fff" />
+
+
+
+
+            </TableRow>
+
+            <TableRow
+                android:paddingLeft="50dp"
+                android:paddingTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="Email:"
+                    android:textSize="17.5sp"
+                    android:id="@+id/emailtag"
+                    android:textColor="#fff"
+                    />
+
+                <TextView
+                    android:paddingLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="a@gmail"
+                    android:textSize="17.5sp"
+                    android:id="@+id/emaildata"
+                    android:textColor="#fff" />
+
+
+            </TableRow>
+
+            <TableRow
+                android:paddingLeft="50dp"
+                android:paddingTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="Phone:"
+                    android:textSize="17.5sp"
+                    android:id="@+id/phonetag"
+                    android:textColor="#fff"
+
+
+                    />
+
+                <TextView
+                    android:paddingLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="017"
+                    android:textSize="17.5sp"
+                    android:id="@+id/phonedata"
+                    android:textColor="#fff"/>
+
+            </TableRow>
+
+            <TableRow
+                android:paddingLeft="50dp"
+                android:paddingTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="Marital Status:"
+                    android:textSize="17.5sp"
+                    android:id="@+id/statustag"
+                    android:textColor="#fff"
+
+
+                    />
+
+                <TextView
+                    android:paddingLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Married"
+                    android:textSize="17.5sp"
+                    android:id="@+id/statusdata"
+                    android:textColor="#fff"/>
+
+            </TableRow>
+
+            <TableRow
+                android:paddingLeft="50dp"
+                android:paddingTop="5dp"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="Anniversary"
+                    android:textSize="17.5sp"
+                    android:id="@+id/anniversarytag"
+                    android:textColor="#fff"
+
+
+                    />
+
+                <TextView
+                    android:paddingLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="28 December"
+                    android:textSize="17.5sp"
+                    android:id="@+id/anniversarydata"
+                    android:textColor="#fff"/>
+
+            </TableRow>
+
 
         </LinearLayout>
+
     </ScrollView>
 
-    <!--<LinearLayout-->
-        <!--android:orientation="horizontal"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:layout_gravity="bottom"-->
-        <!--android:gravity="center"-->
-        <!--android:paddingBottom="10dp"-->
-        <!--android:id="@+id/linearLayout">-->
 
-        <!--<Button-->
-            <!--android:layout_width="150dp"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="CHANGE IMAGE"-->
-            <!--android:padding="5dp"-->
-            <!--android:id="@+id/sendSms" />-->
-
-        <!--<Button-->
-            <!--android:layout_width="150dp"-->
-            <!--android:padding="5dp"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="CHANGE PHONE"-->
-            <!--android:id="@+id/doCall"/>-->
-
-    <!--</LinearLayout>-->
 </TableLayout>
+
