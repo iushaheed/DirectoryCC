@@ -9,7 +9,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="EC Members"
+        android:text="FOUNDERS"
         android:id="@+id/ec_textview"
         android:gravity="center"
         android:textColor="#fff"
@@ -24,8 +24,7 @@
         android:layout_height="match_parent"
         android:id="@+id/list_of_ec"
         android:layout_gravity="center_horizontal"
-        android:layout_below="@+id/ec_textview"
-        >
+        android:layout_below="@+id/ec_textview">
 
         <ListView
             android:layout_width="match_parent"

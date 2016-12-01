@@ -80,14 +80,14 @@
 
         <!--<com.hanks.library.AnimateCheckBox-->
             <!--android:id="@+id/acb"-->
-            <!--android:layout_width="60dp"-->
-            <!--android:layout_height="60dp"-->
+            <!--android:layout_width="50dp"-->
+            <!--android:layout_height="50dp"-->
             <!--android:padding="15dp"-->
-            <!--app:animDuration="200"-->
-            <!--app:checkedColor="#00f"-->
+            <!--app:animDuration="150"-->
+            <!--app:checkedColor="#f00"-->
             <!--app:lineColor="#fff"-->
             <!--app:lineWidth="1.2dp"-->
-            <!--app:unCheckColor="#ff0"/>-->
+            <!--app:unCheckColor="#fff"/>-->
 
 
 

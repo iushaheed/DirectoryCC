@@ -33,7 +33,7 @@ public class MenuActivity extends Activity {
     TextView m_myprofile_text_layout;
     TextView m_settings_text_layout;
     ImageButton m_ib;
-    private int DELAY = 2000;
+    private int DELAY = 3000;
 
 
     @Override
@@ -95,9 +95,9 @@ public class MenuActivity extends Activity {
 
     private void animatebanner() {
 
-        int StartValue=m_ib.getTop();
-        int EndValue=m_ib.getBottom();
-        ObjectAnimator.ofInt(m_ib,"bottom",StartValue,EndValue).start();
+        int StartValue=m_ib.getLeft();
+        int EndValue=m_ib.getRight();
+        ObjectAnimator.ofInt(m_ib,"right",StartValue,EndValue).start();
 
     }
 

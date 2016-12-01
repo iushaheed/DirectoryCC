@@ -3,25 +3,13 @@ package com.psionicinteractive.directorycc;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.Typeface;
-import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -42,37 +30,30 @@ import java.util.Date;
  * Created by iShaheed on 8/28/2016.
  */
 //public class BirthdaysActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
-public class BirthdaysActivity extends AppCompatActivity{
+public class FoundersActivity extends AppCompatActivity{
     ArrayList<Product> arrayList;
     ListView lv;
     ProgressDialog dialog;
     Context context;
     TextView dateTime;
+    TextView m_ec_textview;
 //    TextView mMembershipTypeInToolbar;
-
-    ActionBar actionbar;
-    TextView textview;
-    DrawerLayout.LayoutParams layoutparams;
-    Typeface font_lato;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_birthday_old);
+        setContentView(R.layout.activity_founders);
 
 //        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
 //        getActionBar().setDisplayShowTitleEnabled(false);
-//        getSupportActionBar().hide();
+        getSupportActionBar().hide();
 
 //        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-        font_lato = Typeface.createFromAsset(getAssets(),  "fonts/lato.ttf");
-
 //        getSupportActionBar().setTitle("HAPPY BIRTHDAY !");
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.rgb(25,94,159)));
-        ActionBarTitleGravity();
+//        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.argb(90,68,161,100)));
 
         arrayList = new ArrayList<>();
         context=this;
@@ -90,6 +71,11 @@ public class BirthdaysActivity extends AppCompatActivity{
 
         //possible reason for list problem
         lv = (ListView) findViewById(R.id.listView);
+
+        Typeface font_lato = Typeface.createFromAsset(getAssets(),  "fonts/lato.ttf");
+        m_ec_textview= (TextView) findViewById(R.id.ec_textview);
+        m_ec_textview.setTypeface(font_lato);
+
 //        mMembershipTypeInToolbar= (TextView) findViewById(R.id.toolbar_title);
 
 //        mMembershipTypeInToolbar.setText("BIRTHDAY");
@@ -163,12 +149,6 @@ public class BirthdaysActivity extends AppCompatActivity{
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    public void openGallery(View view) {
-        Intent i = new Intent(BirthdaysActivity.this, GalleryActivity.class);
-        startActivity(i);
-
     }
 //    @SuppressWarnings("StatementWithEmptyBody")
 //    @Override
@@ -272,7 +252,7 @@ public class BirthdaysActivity extends AppCompatActivity{
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            CustomListAdapter adapter = new CustomListAdapter(getApplicationContext(), R.layout.list_item, arrayList);
+            CustomListAdapterEC adapter = new CustomListAdapterEC(getApplicationContext(), R.layout.list_item_ec, arrayList);
             lv.setAdapter(adapter);
         }
     }
@@ -297,22 +277,5 @@ public class BirthdaysActivity extends AppCompatActivity{
             e.printStackTrace();
         }
         return content.toString();
-    }
-
-    private void ActionBarTitleGravity() {
-        // TODO Auto-generated method stub
-
-        actionbar = getSupportActionBar();
-        textview = new TextView(getApplicationContext());
-        layoutparams = new DrawerLayout.LayoutParams(DrawerLayout.LayoutParams.MATCH_PARENT, DrawerLayout.LayoutParams.MATCH_PARENT);
-        textview.setLayoutParams(layoutparams);
-        textview.setText("ANNIVERSARY");
-        textview.setTypeface(font_lato);
-        textview.setTextColor(Color.WHITE);
-        textview.setGravity(Gravity.CENTER);
-        textview.setTextSize(20);
-        actionbar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        actionbar.setCustomView(textview);
-
     }
 }

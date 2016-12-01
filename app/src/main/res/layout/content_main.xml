@@ -29,7 +29,7 @@
         android:id="@+id/inputSearch"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:hint="Search member"
+        android:hint="Search Member"
         android:textColorHint="#fff"
         android:textColor="#fff"
         android:padding="10dp"

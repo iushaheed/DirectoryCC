@@ -8,51 +8,45 @@
 
     >
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Contacts"
+        android:gravity="center"
+        android:textColor="#fff"
+        android:textSize="20sp"
+        android:layout_margin="10dp"
+        android:id="@+id/contact_text"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cadet College Club"
+        android:id="@+id/dcl_text"
+        android:layout_below="@+id/contact_text"
+        android:textColor="#fff"
+        android:textSize="25sp"
+        android:layout_margin="5pt"
+        android:paddingBottom="10dp"
+        android:gravity="center" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="181dp"
+        android:id="@+id/imageView"
+        android:layout_below="@+id/dcl_text"
+        android:layout_centerHorizontal="true"
+        android:requiresFadingEdge="horizontal|vertical"
+        android:src="@drawable/contact_banner"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/add_banner">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Contacts"
-                android:gravity="center"
-                android:textColor="#fff"
-                android:layout_margin="10dp"
-                android:paddingTop="20dp"
-                android:id="@+id/contact_text"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Cadet College Club"
-                android:id="@+id/dcl_text"
-                android:layout_below="@+id/contact_text"
-                android:textColor="#fff"
-                android:textSize="25sp"
-                android:layout_margin="5pt"
-                android:paddingBottom="10dp"
-                android:gravity="center" />
-
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageView"
-                android:layout_below="@+id/dcl_text"
-                android:layout_centerHorizontal="true"
-                android:requiresFadingEdge="horizontal|vertical"
-                android:src="@drawable/myclubbanner"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginBottom="5dp" />
-
+        android:layout_above="@+id/add_banner"
+        android:layout_below="@+id/imageView">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -64,14 +58,13 @@
                 android:layout_alignParentBottom="true">
 
 
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:layout_below="@+id/textView4"
                     android:id="@+id/layout_address"
-                    android:weightSum="3"
+                    android:weightSum="4"
                     android:paddingTop="10dp"
                     >
 
@@ -92,7 +85,7 @@
                         android:textColor="#fff"
                         android:textSize="17sp"
                         android:paddingLeft="15dp"
-                        android:layout_weight="2"
+                        android:layout_weight="2.5"
                         android:layout_gravity="center" />
 
                 </LinearLayout>
@@ -103,7 +96,7 @@
                     android:orientation="horizontal"
                     android:id="@+id/layout_phone"
                     android:layout_below="@+id/layout_address"
-                    android:weightSum="3"
+                    android:weightSum="4"
                     android:paddingTop="10dp"
                     >
 
@@ -114,52 +107,51 @@
                         android:src="@drawable/contactphone"
                         android:id="@+id/phonne_image_layout"
                         android:layout_gravity="center"
-                        android:layout_weight="1.26"/>
+                        android:layout_weight="1.5"/>
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         android:id="@+id/phone_text_layout"
+                        android:layout_weight="2.5"
+
+                        android:layout_gravity="left"
+
                         >
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/phone_1"
                             android:text="+8801719381510"
                             android:textColor="#fff"
                             android:textSize="17sp"
-                            android:layout_gravity="center"
-                            android:layout_weight="2"
+                            android:layout_gravity="left"
+
                             android:onClick="call_1"
-                            android:paddingLeft="15dp"
                             />
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/phone_2"
                             android:text="+8801745456465"
                             android:textColor="#fff"
                             android:textSize="17sp"
-                            android:layout_gravity="center"
-                            android:layout_weight="2"
+                            android:layout_gravity="left"
                             android:onClick="call_2"
-                            android:paddingLeft="15dp"
                             />
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/phone_3"
                             android:text="+8801654545441"
                             android:textColor="#fff"
                             android:textSize="17sp"
-                            android:layout_gravity="center"
-                            android:layout_weight="2"
+                            android:layout_gravity="left"
                             android:onClick="call_3"
-                            android:paddingLeft="15dp"
                             />
 
 
@@ -177,7 +169,7 @@
                     android:orientation="horizontal"
                     android:id="@+id/layout_web"
                     android:layout_below="@+id/layout_phone"
-                    android:weightSum="3"
+                    android:weightSum="4"
                     android:paddingTop="10dp"
                     >
 
@@ -196,7 +188,7 @@
                         android:id="@+id/web_text_layout"
                         android:text="www.something.com"
                         android:paddingLeft="15dp"
-                        android:layout_weight="2.08"
+                        android:layout_weight="2.5"
                         android:textSize="17sp"
                         android:layout_gravity="center"
                         android:autoLink="web"
@@ -210,7 +202,7 @@
                     android:orientation="horizontal"
                     android:id="@+id/layout_mail"
                     android:layout_below="@+id/layout_web"
-                    android:weightSum="3"
+                    android:weightSum="4"
                     android:paddingTop="10dp"
                     >
 
@@ -221,7 +213,7 @@
                         android:src="@drawable/contactmail"
                         android:id="@+id/mail_image_layout"
                         android:layout_gravity="center"
-                        android:layout_weight="1.44"/>
+                        android:layout_weight="1.5"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -231,7 +223,7 @@
                         android:layout_gravity="center|left"
                         android:textColor="#fff"
                         android:textSize="17sp"
-                        android:layout_weight="2"
+                        android:layout_weight="2.5"
                         android:paddingLeft="15dp"
                         android:autoLink="email"
                         android:textColorLink="#fff"
@@ -239,7 +231,6 @@
                 </LinearLayout>
 
             </LinearLayout>
-        </LinearLayout>
     </ScrollView>
     <ImageButton
         android:layout_width="match_parent"

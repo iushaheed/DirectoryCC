@@ -32,6 +32,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -70,6 +71,11 @@ public class DirectoryActivity extends AppCompatActivity{
     String jsonArray_meta_url="";
     EditText inputSearch;
 
+    ActionBar actionbar;
+    TextView textview;
+    DrawerLayout.LayoutParams layoutparams;
+    Typeface font_lato;
+
 
 //    Switch mSmsSwich;
 //    CheckBox cb_t;
@@ -85,8 +91,16 @@ public class DirectoryActivity extends AppCompatActivity{
 //        getSupportActionBar().hide();
 //
 //        getSupportActionBar().setTitle("CADET COLLEGE CLUB");
-        getSupportActionBar().setTitle("   ALL MEMBERS");
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.argb(100,68,161,100)));
+//        getSupportActionBar().setTitle("ALL MEMBERS");
+//        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.argb(100,255,255,255)));
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.rgb(25,94,159)));
+        font_lato = Typeface.createFromAsset(getAssets(),  "fonts/lato.ttf");
+
+
+
+
+        ActionBarTitleGravity();
+
 
 
 
@@ -550,6 +564,23 @@ public class DirectoryActivity extends AppCompatActivity{
             e.printStackTrace();
         }
         return content.toString();
+    }
+
+    private void ActionBarTitleGravity() {
+        // TODO Auto-generated method stub
+
+        actionbar = getSupportActionBar();
+        textview = new TextView(getApplicationContext());
+        layoutparams = new DrawerLayout.LayoutParams(DrawerLayout.LayoutParams.MATCH_PARENT, DrawerLayout.LayoutParams.MATCH_PARENT);
+        textview.setLayoutParams(layoutparams);
+        textview.setText("ALL MEMBERS");
+        textview.setTypeface(font_lato);
+        textview.setTextColor(Color.WHITE);
+        textview.setGravity(Gravity.CENTER);
+        textview.setTextSize(20);
+        actionbar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        actionbar.setCustomView(textview);
+
     }
 
 

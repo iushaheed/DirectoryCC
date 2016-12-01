@@ -53,16 +53,14 @@ public class CustomListAdapter extends ArrayAdapter<Product> {
     public View getView(final int position, View convertView, ViewGroup parent) {
 
 
-
-
-        if (convertView == null){
+        if (convertView == null) {
             LayoutInflater layoutInflater = (LayoutInflater) getContext().getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
             convertView = layoutInflater.inflate(R.layout.list_item, null, true);
 
         }
         final Product product = getItem(position);
 
-        Typeface lato_font = Typeface.createFromAsset(getContext().getAssets(),  "fonts/lato.ttf");
+        Typeface lato_font = Typeface.createFromAsset(getContext().getAssets(), "fonts/lato.ttf");
 
         ImageView imageView = (ImageView) convertView.findViewById(R.id.imageView);
         Picasso.with(context).load(product.getImage()).into(imageView);
@@ -80,6 +78,34 @@ public class CustomListAdapter extends ArrayAdapter<Product> {
 
         CheckBox cb= (CheckBox) convertView.findViewById(R.id.checkboxId);
         cb.setChecked(product.getIsTrue());
+
+        cb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (product.getIsTrue())
+                product.setIsTrue(!product.getIsTrue());
+                else
+                    product.setIsTrue(!product.getIsTrue());
+                Toast.makeText(getContext(), ""+product.getIsTrue(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        //////////////////////////acb start/////////////////////////////////
+//        final AnimateCheckBox animateCheckBox = (AnimateCheckBox) convertView.findViewById(R.id.acb);
+//        animateCheckBox.setChecked(product.getIsTrue());
+//
+//        animateCheckBox.setOnCheckedChangeListener(new AnimateCheckBox.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(View buttonView, boolean isChecked)
+//            {
+//                Toast.makeText(context,""+isChecked+" "+product.getName(), Toast.LENGTH_SHORT).show();
+////                product.setIsTrue(isChecked);
+////                animateCheckBox.setChecmobileked(product.getIsTrue());
+//            }
+//        });
+
+
+        //////////////////////////acb ends/////////////////////////////////
 
 
 //        CircleCheckBox checkBox = new CircleCheckBox(context);
@@ -106,16 +132,7 @@ public class CustomListAdapter extends ArrayAdapter<Product> {
 //                Toast.makeText(getContext(), ""+isChecked, Toast.LENGTH_SHORT).show();
 //            }
 //        });
-        cb.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (product.getIsTrue())
-                product.setIsTrue(!product.getIsTrue());
-                else
-                    product.setIsTrue(!product.getIsTrue());
-                Toast.makeText(getContext(), ""+product.getIsTrue(), Toast.LENGTH_SHORT).show();
-            }
-        });
+//
 
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
