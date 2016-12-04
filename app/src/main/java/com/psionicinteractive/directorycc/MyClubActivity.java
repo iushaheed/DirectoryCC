@@ -104,6 +104,8 @@ public class MyClubActivity extends Activity {
     }
 
     public void gotogallery_myclub(View view) {
+        Intent i = new Intent(MyClubActivity.this, GalleryActivity.class);
+        startActivity(i);
     }
 
     public void gotoevents_myclub(View view) {

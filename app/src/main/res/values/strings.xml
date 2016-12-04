@@ -6,4 +6,5 @@
 
     <string name="action_settings">Settings</string>
     <string name="action_sendsms">Send SMS</string>
+    <string name="section_format">hello section: %1$d</string>
 </resources>

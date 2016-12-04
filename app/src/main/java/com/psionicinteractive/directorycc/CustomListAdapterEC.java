@@ -36,8 +36,6 @@ public class CustomListAdapterEC extends ArrayAdapter<Product> {
         this.products = products;
         this.context = context;
         this.resource = resource;
-
-
 //        checkArray=new boolean[products.size()];
     }
 
