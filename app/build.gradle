@@ -30,5 +30,6 @@ dependencies {
     compile 'com.google.firebase:firebase-messaging:9.6.1'
     compile 'com.hanks.animatecheckbox:library:0.1'
     compile 'net.gotev:uploadservice:2.1'
+    compile 'co.aenterhy:toggleswitch:1.0.0'
 }
 apply plugin: 'com.google.gms.google-services'

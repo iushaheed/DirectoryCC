@@ -9,19 +9,13 @@ import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,9 +28,10 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
-import java.text.DateFormat;
 import java.util.ArrayList;
-import java.util.Date;
+
+import co.aenterhy.toggleswitch.ToggleSwitchButton;
+import pl.droidsonroids.gif.GifTextView;
 
 /**
  * Created by iShaheed on 8/28/2016.
@@ -48,51 +43,64 @@ public class BirthdaysActivity extends AppCompatActivity{
     ProgressDialog dialog;
     Context context;
     TextView dateTime;
+    TextView m_wish_layout;
+    GifTextView m_gif_img;
 //    TextView mMembershipTypeInToolbar;
 
     ActionBar actionbar;
     TextView textview;
     DrawerLayout.LayoutParams layoutparams;
     Typeface font_lato;
+    ToggleSwitchButton toggle;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_birthday_old);
-
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
-//        getActionBar().setDisplayShowTitleEnabled(false);
-//        getSupportActionBar().hide();
-
-//        getSupportActionBar().setDisplayShowTitleEnabled(false);
-
-        font_lato = Typeface.createFromAsset(getAssets(),  "fonts/lato.ttf");
-
-//        getSupportActionBar().setTitle("HAPPY BIRTHDAY !");
+        setContentView(R.layout.activity_birthday);
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.rgb(25,94,159)));
         ActionBarTitleGravity();
 
         arrayList = new ArrayList<>();
         context=this;
 
-//        rocketAnimation = (AnimationDrawable) rocketImage.getBackground();
 
-//        dateTime= (TextView) findViewById(R.id.date_time);
-
-        //setting date
-        String currentDateTimeString = DateFormat.getDateInstance().format(new Date());
-
-        // textView is the TextView view that should display it
-//        dateTime.setText("IT'S "+currentDateTimeString+ " !");
-
-
-        //possible reason for list problem
+        font_lato = Typeface.createFromAsset(getAssets(),  "fonts/lato.ttf");
+        toggle = (ToggleSwitchButton) findViewById(R.id.toggle);
         lv = (ListView) findViewById(R.id.listView);
-//        mMembershipTypeInToolbar= (TextView) findViewById(R.id.toolbar_title);
+        m_wish_layout= (TextView) findViewById(R.id.wish_layout);
+        m_wish_layout.setTypeface(font_lato);
+        m_gif_img= (GifTextView) findViewById(R.id.headerlayout);
 
-//        mMembershipTypeInToolbar.setText("BIRTHDAY");
+        toggle.setOnTriggerListener(new ToggleSwitchButton.OnTriggerListener() {
+            @Override
+            public void toggledUp() {
+                arrayList = new ArrayList<>();
+                m_wish_layout.setText("BIRTHDAYS");
+                m_gif_img.setBackgroundResource(R.drawable.fireworksgif);
+                Toast.makeText(BirthdaysActivity.this, "BIRTHDAYS", Toast.LENGTH_SHORT).show();
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        new ReadJSON().execute("http://iamimam.com/directory/member_a.txt");
+                    }
+                });
+            }
+
+            @Override
+            public void toggledDown() {
+                arrayList = new ArrayList<>();
+                m_wish_layout.setText("ANNIVERSARIES");
+                m_gif_img.setBackgroundResource(R.drawable.birthdaycandle);
+                Toast.makeText(BirthdaysActivity.this, "ANNIVERSARIES", Toast.LENGTH_SHORT).show();
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        new ReadJSON().execute("http://iamimam.com/directory/contact.txt");
+                    }
+                });
+            }
+        });
 
         runOnUiThread(new Runnable() {
             @Override
@@ -100,6 +108,14 @@ public class BirthdaysActivity extends AppCompatActivity{
                 new ReadJSON().execute("http://iamimam.com/directory/contact.txt");
             }
         });
+
+//        getSupportActionBar().setTitle("HAPPY BIRTHDAY !");
+
+
+        //possible reason for list problem
+
+
+
 
         //
 //        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
