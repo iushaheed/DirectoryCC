@@ -12,6 +12,11 @@
         android:id="@+id/section_label"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="EC"
+        android:textColor="#fff"
+        android:textSize="20sp"
+        android:padding="10dp"
         />
 
     <LinearLayout

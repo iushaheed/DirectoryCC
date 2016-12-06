@@ -103,44 +103,50 @@ public class EcMembersActivity extends AppCompatActivity {
 
             textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
 
-//            ArrayList arr=loadList(getArguments().getInt(ARG_SECTION_NUMBER));
-            arrayList=new ArrayList<>();
-            loadList(getArguments().getInt(ARG_SECTION_NUMBER));
+//            arrayList=loadList(getArguments().getInt(ARG_SECTION_NUMBER));
+            int section=getArguments().getInt(ARG_SECTION_NUMBER);
+//            arrayList=new ArrayList<>();
+//            loadList(section);
 
-            CustomListAdapterEC adapter = new CustomListAdapterEC(getActivity(),R.layout.list_item_ec, arrayList);
+
+            CustomListAdapterEC adapter = new CustomListAdapterEC(getContext(), R.layout.list_item_ec, loadList(getArguments().getInt(ARG_SECTION_NUMBER)));
+//            Toast.makeText(getContext(), ""+arrayList.size(), Toast.LENGTH_SHORT).show();
             lv.setAdapter(adapter);
+//            arrayList.clear();
+
+
+
 
             return rootView;
         }
 
-        private void loadList(int section) {
+        private ArrayList loadList(int section) {
+            ArrayList arrayList=new ArrayList<>();
 
             if(section==1){
 
-                new ReadJSON().execute("http://iamimam.com/directory/contact.txt");
-//                arr.add(new Product("http://iamimam.com/directory/images/1.jpg","name","email","mobile_number"));
-//                arr.add(new Product("http://iamimam.com/directory/images/1.jpg","name","email","mobile_number"));
-//                arr.add(new Product("http://iamimam.com/directory/images/1.jpg","name","email","mobile_number"));
-//                arr.add(new Product("http://iamimam.com/directory/images/1.jpg","name","email","mobile_number"));
-//                arr.add(new Product("http://iamimam.com/directory/images/1.jpg","name","email","mobile_number"));
+//                new ReadJSON().execute("http://iamimam.com/directory/contact.txt");
+                arrayList.add(new Product("http://iamimam.com/directory/images/1.jpg","one","email","mobile_number"));
+                arrayList.add(new Product("http://iamimam.com/directory/images/1.jpg","one","email","mobile_number"));
+                arrayList.add(new Product("http://iamimam.com/directory/images/1.jpg","one","email","mobile_number"));
+                arrayList.add(new Product("http://iamimam.com/directory/images/1.jpg","one","email","mobile_number"));
+                arrayList.add(new Product("http://iamimam.com/directory/images/1.jpg","one","email","mobile_number"));
 
             }else if(section==2)
             {
-                new ReadJSON().execute("http://iamimam.com/directory/contact.txt");
-//                arr.add(new Product("http://iamimam.com/directory/images/2.jpg","name","email","mobile_number"));
-//                arr.add(new Product("http://iamimam.com/directory/images/2.jpg","name","email","mobile_number"));
-//                arr.add(new Product("http://iamimam.com/directory/images/2.jpg","name","email","mobile_number"));
-//                arr.add(new Product("http://iamimam.com/directory/images/2.jpg","name","email","mobile_number"));
-//                arr.add(new Product("http://iamimam.com/directory/images/2.jpg","name","email","mobile_number"));
+                arrayList.add(new Product("http://iamimam.com/directory/images/1.jpg","two","email","mobile_number"));
+                arrayList.add(new Product("http://iamimam.com/directory/images/1.jpg","two","email","mobile_number"));
+                arrayList.add(new Product("http://iamimam.com/directory/images/1.jpg","two","email","mobile_number"));
+                arrayList.add(new Product("http://iamimam.com/directory/images/1.jpg","two","email","mobile_number"));
+                arrayList.add(new Product("http://iamimam.com/directory/images/1.jpg","two","email","mobile_number"));
 
             }
             else if(section==3){
-                new ReadJSON().execute("http://iamimam.com/directory/contact.txt");
-//                arr.add(new Product("http://iamimam.com/directory/images/3.jpg","name","email","mobile_number"));
-//                arr.add(new Product("http://iamimam.com/directory/images/3.jpg","name","email","mobile_number"));
-//                arr.add(new Product("http://iamimam.com/directory/images/3.jpg","name","email","mobile_number"));
-//                arr.add(new Product("http://iamimam.com/directory/images/3.jpg","name","email","mobile_number"));
-//                arr.add(new Product("http://iamimam.com/directory/images/3.jpg","name","email","mobile_number"));
+                arrayList.add(new Product("http://iamimam.com/directory/images/1.jpg","three","email","mobile_number"));
+                arrayList.add(new Product("http://iamimam.com/directory/images/1.jpg","three","email","mobile_number"));
+                arrayList.add(new Product("http://iamimam.com/directory/images/1.jpg","three","email","mobile_number"));
+                arrayList.add(new Product("http://iamimam.com/directory/images/1.jpg","three","email","mobile_number"));
+                arrayList.add(new Product("http://iamimam.com/directory/images/1.jpg","three","email","mobile_number"));
 
             }
             else{
@@ -148,9 +154,12 @@ public class EcMembersActivity extends AppCompatActivity {
 
             }
             Toast.makeText(getContext(), ""+section, Toast.LENGTH_SHORT).show();
+            return arrayList;
         }
 
         class ReadJSON extends AsyncTask<String, Integer, String> {
+
+            int section;
 
             @Override
             protected void onPreExecute() {
@@ -168,6 +177,7 @@ public class EcMembersActivity extends AppCompatActivity {
                 try {
                     JSONObject jsonObject = new JSONObject(content);
                     JSONArray jsonArray =  jsonObject.getJSONArray("data");
+
                     for(int i =0;i<jsonArray.length(); i++){
                         JSONObject productObject = jsonArray.getJSONObject(i);
                         arrayList.add(new Product(
@@ -176,7 +186,7 @@ public class EcMembersActivity extends AppCompatActivity {
                                 productObject.getString("email"),
                                 productObject.getString("mobile_number")
                         ));
-                        Toast.makeText(getContext(), ""+productObject.getString("user_image"), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), ""+arrayList.size(), Toast.LENGTH_SHORT).show();
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
