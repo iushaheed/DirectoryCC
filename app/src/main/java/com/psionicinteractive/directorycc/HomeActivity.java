@@ -20,8 +20,7 @@ public class HomeActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_home);
         ET_NAME = (EditText)findViewById(R.id.user_name);
         ET_PASS = (EditText)findViewById(R.id.user_pass);
@@ -34,8 +33,8 @@ public class HomeActivity extends Activity {
         }
         else
         {
-            Toast.makeText(HomeActivity.this, "WELCOME BACK", Toast.LENGTH_LONG).show();
-            Intent i = new Intent(HomeActivity.this, MenuActivity.class);
+
+            Intent i = new Intent(HomeActivity.this, LiquidActivity.class);
             startActivity(i);
             finish();
         }

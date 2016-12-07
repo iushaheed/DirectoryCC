@@ -31,5 +31,6 @@ dependencies {
     compile 'com.hanks.animatecheckbox:library:0.1'
     compile 'net.gotev:uploadservice:2.1'
     compile 'co.aenterhy:toggleswitch:1.0.0'
+    compile 'com.gospelware.liquidbutton:liquidButtonLib:1.1.4'
 }
 apply plugin: 'com.google.gms.google-services'
