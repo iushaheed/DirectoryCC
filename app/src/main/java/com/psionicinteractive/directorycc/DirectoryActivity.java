@@ -371,7 +371,7 @@ public class DirectoryActivity extends AppCompatActivity{
                 JSONArray jsonArray_meta =  jsonObject.getJSONArray("meta");
                 JSONObject productObject_meta = jsonArray_meta.getJSONObject(0);
                jsonArray_meta_url=  productObject_meta.getString("next_page_url");
-                Toast.makeText(context, ""+jsonArray_meta_url, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(context, ""+jsonArray_meta_url, Toast.LENGTH_SHORT).show();
 //
 //                Log.v("nexturl",jsonArray_meta_url);
 //                Log.v("Next URL",jsonArray_url);

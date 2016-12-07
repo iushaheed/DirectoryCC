@@ -32,7 +32,7 @@ public class MenuActivity extends Activity {
     TextView m_search_text_layout;
     TextView m_myprofile_text_layout;
     TextView m_settings_text_layout;
-    ImageButton m_ib;
+//    ImageButton m_ib;
     private int DELAY = 3000;
 
 
@@ -56,7 +56,7 @@ public class MenuActivity extends Activity {
         m_search_text_layout= (TextView)findViewById(R.id.search_text_layout);
         m_myprofile_text_layout= (TextView)findViewById(R.id.myprofile_text_layout);
         m_settings_text_layout= (TextView)findViewById(R.id.settings_text_layout);
-        m_ib= (ImageButton) findViewById(R.id.add_banner);
+//        m_ib= (ImageButton) findViewById(R.id.add_banner);
 
         tx.setTypeface(lato_font);
         m_directory_text_layout.setTypeface(lato_font);
@@ -76,30 +76,30 @@ public class MenuActivity extends Activity {
 //
 //        Toast.makeText(this, ""+message, Toast.LENGTH_SHORT).show();
 
-        m_ib.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                animatebanner();
-            }
-        });
+//        m_ib.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                animatebanner();
+//            }
+//        });
 
        // Delay time in milliseconds
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                animatebanner();
-            }
-        }, DELAY);
+//        new Handler().postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                animatebanner();
+//            }
+//        }, DELAY);
     }
 
-    private void animatebanner() {
-
-        int StartValue=m_ib.getLeft();
-        int EndValue=m_ib.getRight();
-        ObjectAnimator.ofInt(m_ib,"right",StartValue,EndValue).start();
-
-    }
+//    private void animatebanner() {
+//
+//        int StartValue=m_ib.getLeft();
+//        int EndValue=m_ib.getRight();
+//        ObjectAnimator.ofInt(m_ib,"right",StartValue,EndValue).start();
+//
+//    }
 
     public void gotodirectory(View view) {
         Intent i = new Intent(MenuActivity.this, DirectoryActivity.class);

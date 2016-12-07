@@ -77,7 +77,7 @@ public class BirthdaysActivity extends AppCompatActivity{
             public void toggledUp() {
                 arrayList = new ArrayList<>();
                 m_wish_layout.setText("BIRTHDAYS");
-                m_gif_img.setBackgroundResource(R.drawable.fireworksgif);
+                m_gif_img.setBackgroundResource(R.drawable.birthdaycandle);
                 Toast.makeText(BirthdaysActivity.this, "BIRTHDAYS", Toast.LENGTH_SHORT).show();
                 runOnUiThread(new Runnable() {
                     @Override
@@ -91,7 +91,7 @@ public class BirthdaysActivity extends AppCompatActivity{
             public void toggledDown() {
                 arrayList = new ArrayList<>();
                 m_wish_layout.setText("ANNIVERSARIES");
-                m_gif_img.setBackgroundResource(R.drawable.birthdaycandle);
+                m_gif_img.setBackgroundResource(R.drawable.fireworksgif);
                 Toast.makeText(BirthdaysActivity.this, "ANNIVERSARIES", Toast.LENGTH_SHORT).show();
                 runOnUiThread(new Runnable() {
                     @Override

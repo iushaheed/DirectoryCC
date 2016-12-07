@@ -266,14 +266,15 @@
 
 
     </LinearLayout>
-    <ImageButton
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@drawable/add"
-        android:id="@+id/add_banner"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_alignParentBottom="true"/>
+
+    <!--<ImageButton-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:background="@drawable/add"-->
+        <!--android:id="@+id/add_banner"-->
+        <!--android:layout_marginLeft="5dp"-->
+        <!--android:layout_marginRight="5dp"-->
+        <!--android:layout_alignParentBottom="true"/>-->
 
 
 </RelativeLayout>
