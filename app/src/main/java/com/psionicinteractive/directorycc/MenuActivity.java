@@ -137,8 +137,8 @@ public class MenuActivity extends Activity {
 
     public void gotolocation(View view)
     {
-        String lat="23.738644";
-        String lon="90.397128";
+        String lat="23.7788177";
+        String lon="90.4127941";
         Intent i= new Intent(Intent.ACTION_VIEW);
         i.setData(Uri.parse("geo:"+lat+","+lon+"?z=17&q="+lat+","+lon));
         Intent chooser= Intent.createChooser(i,"choose map");

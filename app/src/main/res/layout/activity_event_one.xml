@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="মহান বিজয় দিবস ২০১৬"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="#fff"
+            android:padding="5dp"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="165dp"
+            android:background="@drawable/event_one_cover"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:gravity="center"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:paddingBottom="5dp"
+                android:textColor="#fff"
+                android:text="Time : 6:00 am"
+                android:id="@+id/text1"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:paddingBottom="5dp"
+                android:textColor="#fff"
+                android:text="Chief Guest : Honorable Minister "
+                android:id="@+id/text2"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:paddingBottom="5dp"
+                android:textColor="#fff"
+                android:text="Special Guest : Club President "
+                android:id="@+id/text3"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:paddingBottom="5dp"
+                android:textColor="#fff"
+                android:text="Event Chair : Vice President CCCL "
+                android:id="@+id/text4"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

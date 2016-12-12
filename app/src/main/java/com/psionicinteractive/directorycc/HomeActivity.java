@@ -22,6 +22,7 @@ public class HomeActivity extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_home);
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
         ET_NAME = (EditText)findViewById(R.id.user_name);
         ET_PASS = (EditText)findViewById(R.id.user_pass);
 

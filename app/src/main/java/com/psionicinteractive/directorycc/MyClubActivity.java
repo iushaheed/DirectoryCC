@@ -11,6 +11,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Created by imam on 8/17/2016.
@@ -109,6 +110,8 @@ public class MyClubActivity extends Activity {
     }
 
     public void gotoevents_myclub(View view) {
+        Intent i = new Intent(MyClubActivity.this, EventOneActivity.class);
+        startActivity(i);
     }
 
     public void gotonotice_myclub(View view) {
