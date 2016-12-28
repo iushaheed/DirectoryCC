@@ -7,15 +7,21 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v7.app.ActionBar;
+import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 public class HomeActivity extends Activity {
     EditText ET_NAME,ET_PASS;
     String login_name,login_pass;
+    LinearLayout linearLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +32,10 @@ public class HomeActivity extends Activity {
         ET_NAME = (EditText)findViewById(R.id.user_name);
         ET_PASS = (EditText)findViewById(R.id.user_pass);
 
+        linearLayout= (LinearLayout) findViewById(R.id.email_login_form);
+
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(HomeActivity.this);
+
         String token = preferences.getString("token","");
         if(token.equals(""))
         {
@@ -34,11 +43,65 @@ public class HomeActivity extends Activity {
         }
         else
         {
-
-            Intent i = new Intent(HomeActivity.this, LiquidActivity.class);
+            Intent i = new Intent(HomeActivity.this, MenuActivity.class);
             startActivity(i);
             finish();
         }
+
+//        ET_NAME.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                FrameLayout.LayoutParams p=new FrameLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+//                p.gravity=Gravity.CENTER;
+//
+//
+//                linearLayout.setLayoutParams(p);
+//
+//
+//            }
+//        });
+
+        ET_NAME.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(hasFocus)
+                {
+                    FrameLayout.LayoutParams p=new FrameLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                    p.gravity=Gravity.CENTER;
+                    linearLayout.setLayoutParams(p);
+                }
+                else
+                {
+                    FrameLayout.LayoutParams p=new FrameLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                    p.gravity=Gravity.BOTTOM;
+                    linearLayout.setLayoutParams(p);
+
+                }
+            }
+        });
+
+        ET_PASS.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(hasFocus)
+                {
+                    FrameLayout.LayoutParams p=new FrameLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                    p.gravity=Gravity.CENTER;
+                    linearLayout.setLayoutParams(p);
+                }
+                else
+                {
+                    FrameLayout.LayoutParams p=new FrameLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                    p.gravity=Gravity.BOTTOM;
+                    linearLayout.setLayoutParams(p);
+
+                }
+            }
+        });
+
+
+
+
     }
 
     public void userReg(View view)

@@ -24,7 +24,7 @@ import java.net.URL;
 import java.net.URLEncoder;
 
 public class BackgroundTask extends AsyncTask<String,Void,String> {
-//    ProgressDialog dialog;
+    ProgressDialog dialog;
     Context ctx;
     public BackgroundTask(Context ctx)
     {
@@ -34,7 +34,7 @@ public class BackgroundTask extends AsyncTask<String,Void,String> {
     protected void onPreExecute() {
 //        alertDialog = new AlertDialog.Builder(ctx).create();
 //        alertDialog.setTitle("Login Information....");
-//        dialog = ProgressDialog.show(ctx,"please wait","processing");
+        dialog = ProgressDialog.show(ctx,"Please wait","Validating user");
     }
     @Override
     protected String doInBackground(String... params) {
@@ -163,7 +163,7 @@ public class BackgroundTask extends AsyncTask<String,Void,String> {
     }
     @Override
     protected void onPostExecute(String result) {
-//        dialog.dismiss();
+        dialog.dismiss();
         try{
         if(result.contains("token"))
         {
