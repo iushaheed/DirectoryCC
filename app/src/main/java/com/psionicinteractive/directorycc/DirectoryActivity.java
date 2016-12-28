@@ -26,13 +26,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewGroup;
 import android.widget.AbsListView;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -76,6 +82,20 @@ public class DirectoryActivity extends AppCompatActivity{
     DrawerLayout.LayoutParams layoutparams;
     Typeface font_lato;
 
+    LinearLayout linearLayout_filter;
+    Button advance_search_button;
+
+//    TextView dropText;
+
+    Spinner spinner_name;
+    Spinner spinner_year;
+    String[] spinner_array_name;
+    String[] spinner_array_year;
+
+    String[] search_parameters;
+
+    Button after_spinner_search_button;
+
 
 //    Switch mSmsSwich;
 //    CheckBox cb_t;
@@ -95,11 +115,66 @@ public class DirectoryActivity extends AppCompatActivity{
 //        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.argb(100,255,255,255)));
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.rgb(25,94,159)));
         font_lato = Typeface.createFromAsset(getAssets(),  "fonts/lato.ttf");
-
-
-
-
         ActionBarTitleGravity();
+
+        spinner_name= (Spinner) findViewById(R.id.spinner_name);
+        spinner_year= (Spinner) findViewById(R.id.spinner_year);
+        after_spinner_search_button= (Button) findViewById(R.id.after_spinner_search_button);
+
+
+        spinner_array_name=new String[]{"Choose College","A Cadet College","B Cadet College","C Cadet College","D Cadet College"};
+        spinner_array_year=new String[]{"Choose Batch","Batch 2010-A","Batch 2010-B","Batch 2011-A","Batch 2011-B"};
+        search_parameters=new String[2];
+
+        ArrayAdapter<String> adapter_name = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, spinner_array_name);
+        spinner_name.setAdapter(adapter_name);
+
+        spinner_name.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                search_parameters[0]=spinner_array_name[position];
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        ArrayAdapter<String> adapter_year = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, spinner_array_year);
+        spinner_year.setAdapter(adapter_year);
+
+        spinner_year.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                search_parameters[1]=spinner_array_year[position];
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        after_spinner_search_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String what_to_search="";
+                for (String a:search_parameters) {
+                    what_to_search=what_to_search+a+" ";
+                }
+
+                RelativeLayout.LayoutParams llp= new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT,0);
+//                linearLayout_filter.setBottom(R.);
+                llp.addRule(RelativeLayout.BELOW,R.id.inputSearch);
+                linearLayout_filter.setLayoutParams(llp);
+
+                Toast.makeText(context,"Searching "+ what_to_search, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+
 
 
 
@@ -108,14 +183,22 @@ public class DirectoryActivity extends AppCompatActivity{
         context=this;
         inputSearch = (EditText) findViewById(R.id.inputSearch);
 
+//        linearLayout_filter= (LinearLayout) findViewById(R.id.advance_filter_layout);
+
         LayoutInflater li= (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         ftView = li.inflate(R.layout.footer_view,null);
         mHandler = new MyHandler();
+
+
+        advance_search_button= (Button) findViewById(R.id.advance_search_button);
+//        dropText= (TextView) findViewById(R.id.droptest);
 
 //        mMembershipTypeInToolbar= (TextView) findViewById(R.id.toolbar_title);
         //possible reason for list problem
 //        cb_t= (CheckBox) findViewById(R.id.checkboxId);
         lv = (ListView) findViewById(R.id.listView);
+
+        linearLayout_filter= (LinearLayout) findViewById(R.id.advance_filter_layout);
 //        mMemberType= (TextView) findViewById(R.id.membership_name);
 //        mSmsSwich= (Switch) findViewById(R.id.sms_switch);
 //        mSmsSwich.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -192,6 +275,24 @@ public class DirectoryActivity extends AppCompatActivity{
 
             @Override
             public void afterTextChanged(Editable s) {
+
+            }
+        });
+        advance_search_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+//                FrameLayout.LayoutParams p=new FrameLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+//                linearLayout_filter.setLayoutParams(p);
+
+//                FrameLayout.LayoutParams p=new FrameLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+//                linearLayout_filter.setLayoutParams(new LinearLayout.LayoutParams(100,100));
+//                dropText.setText("new text drop");
+                RelativeLayout.LayoutParams llp= new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT,RelativeLayout.LayoutParams.WRAP_CONTENT);
+                llp.addRule(RelativeLayout.BELOW,R.id.inputSearch);
+                linearLayout_filter.setLayoutParams(llp);
+
+                Toast.makeText(context, "c", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -274,6 +375,13 @@ public class DirectoryActivity extends AppCompatActivity{
 //        }
         return super.onOptionsItemSelected(item);
     }
+
+//    public void open_filter_layout(View view) {
+//
+//        FrameLayout.LayoutParams p=new FrameLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+//        p.gravity=Gravity.CENTER;
+//        linearLayout_filter.setLayoutParams(p);
+//    }
 
     @SuppressWarnings("StatementWithEmptyBody")
 //    @Override
