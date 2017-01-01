@@ -83,6 +83,25 @@
                 android:background="@drawable/login_button_selector"
                 />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:paddingTop="2dp"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="New to Club app ? "/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:textColor="@color/blue_custom_psi"
+                    android:text=" Sign up"/>
+            </LinearLayout>
         </LinearLayout>
+
     </ScrollView>
 </LinearLayout>

@@ -16,7 +16,9 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -43,7 +45,7 @@ public class BirthdaysActivity extends AppCompatActivity{
     ProgressDialog dialog;
     Context context;
     TextView dateTime;
-    TextView m_wish_layout;
+//    TextView m_wish_layout;
     GifTextView m_gif_img;
 //    TextView mMembershipTypeInToolbar;
 
@@ -51,7 +53,15 @@ public class BirthdaysActivity extends AppCompatActivity{
     TextView textview;
     DrawerLayout.LayoutParams layoutparams;
     Typeface font_lato;
-    ToggleSwitchButton toggle;
+
+    TextView m_text_button_birthday;
+    TextView m_text_button_anniversary;
+
+    LinearLayout m_wish_linear_layout;
+
+    //toggle switch declare
+//    ToggleSwitchButton toggle;
+    //toggle switch declare
 
 
     @Override
@@ -66,19 +76,38 @@ public class BirthdaysActivity extends AppCompatActivity{
 
 
         font_lato = Typeface.createFromAsset(getAssets(),  "fonts/lato.ttf");
-        toggle = (ToggleSwitchButton) findViewById(R.id.toggle);
+        //toggle switch init
+//        toggle = (ToggleSwitchButton) findViewById(R.id.toggle);
+        //toggle switch init
         lv = (ListView) findViewById(R.id.listView);
-        m_wish_layout= (TextView) findViewById(R.id.wish_layout);
-        m_wish_layout.setTypeface(font_lato);
+//        m_wish_layout= (TextView) findViewById(R.id.wish_layout);
+//        m_wish_layout.setTypeface(font_lato);
         m_gif_img= (GifTextView) findViewById(R.id.headerlayout);
 
-        toggle.setOnTriggerListener(new ToggleSwitchButton.OnTriggerListener() {
+        m_text_button_birthday= (TextView) findViewById(R.id.text_button_birthday);
+        m_text_button_anniversary= (TextView) findViewById(R.id.text_button_anniversary);
+        m_text_button_birthday.setTypeface(font_lato);
+        m_text_button_anniversary.setTypeface(font_lato);
+
+
+        m_text_button_birthday.setTextColor(Color.rgb(255,165,0));
+        m_text_button_anniversary.setTextColor(Color.WHITE);
+        m_text_button_birthday.setTypeface(font_lato,Typeface.BOLD);
+        m_text_button_anniversary.setTypeface(font_lato,Typeface.NORMAL);
+        m_gif_img.setBackgroundResource(R.drawable.birthdaycandle);
+
+        m_wish_linear_layout= (LinearLayout) findViewById(R.id.wish_linear_layout);
+
+
+        m_text_button_birthday.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void toggledUp() {
+            public void onClick(View v) {
                 arrayList = new ArrayList<>();
-                m_wish_layout.setText("BIRTHDAYS");
+                m_text_button_birthday.setTextColor(Color.rgb(255,165,0));
+                m_text_button_anniversary.setTextColor(Color.WHITE);
+                m_text_button_birthday.setTypeface(font_lato,Typeface.BOLD);
+                m_text_button_anniversary.setTypeface(font_lato,Typeface.NORMAL);
                 m_gif_img.setBackgroundResource(R.drawable.birthdaycandle);
-                Toast.makeText(BirthdaysActivity.this, "BIRTHDAYS", Toast.LENGTH_SHORT).show();
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -86,13 +115,19 @@ public class BirthdaysActivity extends AppCompatActivity{
                     }
                 });
             }
-
+        });
+        m_text_button_anniversary.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void toggledDown() {
+            public void onClick(View v) {
                 arrayList = new ArrayList<>();
-                m_wish_layout.setText("ANNIVERSARIES");
+                m_text_button_birthday.setTextColor(Color.WHITE);
+                m_text_button_anniversary.setTextColor(Color.rgb(255,165,0));
+                m_text_button_birthday.setTypeface(font_lato,Typeface.NORMAL);
+                m_text_button_anniversary.setTypeface(font_lato,Typeface.BOLD);
                 m_gif_img.setBackgroundResource(R.drawable.fireworksgif);
-                Toast.makeText(BirthdaysActivity.this, "ANNIVERSARIES", Toast.LENGTH_SHORT).show();
+////                linearLayout_filter.setBottom(R.);
+//                llp.addRule(RelativeLayout.BELOW,R.id.inputSearch);
+//                m_wish_linear_layout.setLayoutParams(llp);
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -101,6 +136,44 @@ public class BirthdaysActivity extends AppCompatActivity{
                 });
             }
         });
+
+
+
+
+
+        ///////////////birthday and anniversary change with toggle switch starts////////////////////////
+
+//        toggle.setOnTriggerListener(new ToggleSwitchButton.OnTriggerListener() {
+//            @Override
+//            public void toggledUp() {
+//                arrayList = new ArrayList<>();
+//                m_wish_layout.setText("BIRTHDAYS");
+//                m_gif_img.setBackgroundResource(R.drawable.birthdaycandle);
+//                Toast.makeText(BirthdaysActivity.this, "BIRTHDAYS", Toast.LENGTH_SHORT).show();
+//                runOnUiThread(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        new ReadJSON().execute("http://iamimam.com/directory/member_a.txt");
+//                    }
+//                });
+//            }
+//
+//            @Override
+//            public void toggledDown() {
+//                arrayList = new ArrayList<>();
+//                m_wish_layout.setText("ANNIVERSARIES");
+//                m_gif_img.setBackgroundResource(R.drawable.fireworksgif);
+//                Toast.makeText(BirthdaysActivity.this, "ANNIVERSARIES", Toast.LENGTH_SHORT).show();
+//                runOnUiThread(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        new ReadJSON().execute("http://iamimam.com/directory/contact.txt");
+//                    }
+//                });
+//            }
+//        });
+
+        ///////////////birthday and anniversary change with toggle switch ends//////////////////////////
 
         runOnUiThread(new Runnable() {
             @Override
@@ -142,7 +215,7 @@ public class BirthdaysActivity extends AppCompatActivity{
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.main_wish, menu);
         return true;
     }
 
@@ -185,6 +258,12 @@ public class BirthdaysActivity extends AppCompatActivity{
         Intent i = new Intent(BirthdaysActivity.this, GalleryActivity.class);
         startActivity(i);
 
+    }
+
+    public void onClickFromTextButton_birthday(View view) {
+    }
+
+    public void onClickFromTextButton_anniversary(View view) {
     }
 //    @SuppressWarnings("StatementWithEmptyBody")
 //    @Override

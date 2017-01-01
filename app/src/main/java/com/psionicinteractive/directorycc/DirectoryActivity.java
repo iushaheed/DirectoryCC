@@ -96,6 +96,8 @@ public class DirectoryActivity extends AppCompatActivity{
 
     Button after_spinner_search_button;
 
+    Button button_cross;
+
 
 //    Switch mSmsSwich;
 //    CheckBox cb_t;
@@ -120,6 +122,8 @@ public class DirectoryActivity extends AppCompatActivity{
         spinner_name= (Spinner) findViewById(R.id.spinner_name);
         spinner_year= (Spinner) findViewById(R.id.spinner_year);
         after_spinner_search_button= (Button) findViewById(R.id.after_spinner_search_button);
+
+        button_cross= (Button) findViewById(R.id.button_cross);
 
 
         spinner_array_name=new String[]{"Choose College","A Cadet College","B Cadet College","C Cadet College","D Cadet College"};
@@ -170,6 +174,17 @@ public class DirectoryActivity extends AppCompatActivity{
                 linearLayout_filter.setLayoutParams(llp);
 
                 Toast.makeText(context,"Searching "+ what_to_search, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        button_cross.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                RelativeLayout.LayoutParams llp= new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT,0);
+//                linearLayout_filter.setBottom(R.);
+                llp.addRule(RelativeLayout.BELOW,R.id.inputSearch);
+                linearLayout_filter.setLayoutParams(llp);
+
             }
         });
 

@@ -47,6 +47,12 @@
         android:orientation="vertical"
         android:padding="5dp"
         >
+        <Button
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="right"
+            android:id="@+id/button_cross"
+            android:background="@drawable/button_cross"/>
         <Spinner
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
