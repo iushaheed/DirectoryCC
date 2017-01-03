@@ -52,10 +52,11 @@
         <activity android:name=".SearchActivity"></activity>
 
         <activity android:name="com.psionicinteractive.directorycc.SinglePushActivity"></activity>
-        <activity android:name=".EcMembersActivity"></activity>
+        <activity android:name=".EcMembersActivity_withpager"></activity>
         <activity android:name=".FoundersActivity"></activity>
         <activity android:name=".LiquidActivity"></activity>
         <activity android:name=".EventOneActivity"></activity>
+        <activity android:name=".EcMembersActivity"></activity>
 
 
 

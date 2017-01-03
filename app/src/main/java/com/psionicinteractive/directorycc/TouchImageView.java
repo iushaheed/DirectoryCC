@@ -354,8 +354,8 @@ public class TouchImageView extends ImageView {
     /**
      * Set zoom to the specified scale. Image will be centered around the point
      * (focusX, focusY). These floats range from 0 to 1 and denote the focus point
-     * as a fraction from the left and top of the view. For example, the top left
-     * corner of the image would be (0, 0). And the bottom right corner would be (1, 1).
+     * as a fraction from the arrow_left and top of the view. For example, the top arrow_left
+     * corner of the image would be (0, 0). And the bottom arrow_right corner would be (1, 1).
      * @param scale
      * @param focusX
      * @param focusY
@@ -367,8 +367,8 @@ public class TouchImageView extends ImageView {
     /**
      * Set zoom to the specified scale. Image will be centered around the point
      * (focusX, focusY). These floats range from 0 to 1 and denote the focus point
-     * as a fraction from the left and top of the view. For example, the top left
-     * corner of the image would be (0, 0). And the bottom right corner would be (1, 1).
+     * as a fraction from the arrow_left and top of the view. For example, the top arrow_left
+     * corner of the image would be (0, 0). And the bottom arrow_right corner would be (1, 1).
      * @param scale
      * @param focusX
      * @param focusY
@@ -410,9 +410,9 @@ public class TouchImageView extends ImageView {
 
     /**
      * Return the point at the center of the zoomed image. The PointF coordinates range
-     * in value between 0 and 1 and the focus point is denoted as a fraction from the left
-     * and top of the view. For example, the top left corner of the image would be (0, 0).
-     * And the bottom right corner would be (1, 1).
+     * in value between 0 and 1 and the focus point is denoted as a fraction from the arrow_left
+     * and top of the view. For example, the top arrow_left corner of the image would be (0, 0).
+     * And the bottom arrow_right corner would be (1, 1).
      * @return PointF representing the scroll position of the zoomed image.
      */
     public PointF getScrollPosition() {
@@ -431,7 +431,7 @@ public class TouchImageView extends ImageView {
 
     /**
      * Set the focus point of the zoomed image. The focus points are denoted as a fraction from the
-     * left and top of the view. The focus points can range in value between 0 and 1.
+     * arrow_left and top of the view. The focus points can range in value between 0 and 1.
      * @param focusX
      * @param focusY
      */
@@ -708,7 +708,7 @@ public class TouchImageView extends ImageView {
         } else {
         	//
         	// Find the area of the image which was previously centered in the view. Determine its distance
-        	// from the left/top side of the view as a fraction of the entire image's width/height. Use that percentage
+        	// from the arrow_left/top side of the view as a fraction of the entire image's width/height. Use that percentage
         	// to calculate the trans in the new view width/height.
         	//
         	float percentage = (Math.abs(trans) + (0.5f * prevViewSize)) / prevImageSize;

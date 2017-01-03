@@ -38,8 +38,6 @@
         android:layout_centerHorizontal="true"
         android:requiresFadingEdge="horizontal|vertical"
         android:src="@drawable/contact_banner"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
         android:layout_marginBottom="5dp" />
 
     <ScrollView
@@ -64,7 +62,7 @@
                     android:orientation="horizontal"
                     android:layout_below="@+id/textView4"
                     android:id="@+id/layout_address"
-                    android:weightSum="4"
+                    android:weightSum="3"
                     android:paddingTop="10dp"
                     >
 
@@ -72,10 +70,10 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:src="@drawable/contacthome"
+                        android:src="@drawable/home_icon_white"
                         android:id="@+id/address_image_layout"
                         android:layout_gravity="center"
-                        android:layout_weight="1.50"/>
+                        android:layout_weight="1"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -84,9 +82,9 @@
                         android:text="House # 10, Road # 5,\nSector # 4,Uttara,\nDhaka - 1230 "
                         android:textColor="#fff"
                         android:textSize="17sp"
-                        android:paddingLeft="15dp"
-                        android:layout_weight="2.5"
-                        android:layout_gravity="center" />
+
+                        android:layout_weight="2"
+                        android:layout_gravity="left" />
 
                 </LinearLayout>
 
@@ -96,7 +94,7 @@
                     android:orientation="horizontal"
                     android:id="@+id/layout_phone"
                     android:layout_below="@+id/layout_address"
-                    android:weightSum="4"
+                    android:weightSum="3"
                     android:paddingTop="10dp"
                     >
 
@@ -104,18 +102,17 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:src="@drawable/contactphone"
+                        android:src="@drawable/phone_icon_white"
                         android:id="@+id/phonne_image_layout"
                         android:layout_gravity="center"
-                        android:layout_weight="1.5"/>
+                        android:layout_weight="0.88"/>
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         android:id="@+id/phone_text_layout"
-                        android:layout_weight="2.5"
-
+                        android:layout_weight="2"
                         android:layout_gravity="left"
 
                         >
@@ -169,7 +166,7 @@
                     android:orientation="horizontal"
                     android:id="@+id/layout_web"
                     android:layout_below="@+id/layout_phone"
-                    android:weightSum="4"
+                    android:weightSum="3"
                     android:paddingTop="10dp"
                     >
 
@@ -177,18 +174,18 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:src="@drawable/contactweb"
+                        android:src="@drawable/web_icon_white"
                         android:id="@+id/web_image_layout"
                         android:layout_gravity="center"
-                        android:layout_weight="1.5"/>
+                        android:layout_weight="1"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/web_text_layout"
                         android:text="www.something.com"
-                        android:paddingLeft="15dp"
-                        android:layout_weight="2.5"
+
+                        android:layout_weight="2"
                         android:textSize="17sp"
                         android:layout_gravity="center"
                         android:autoLink="web"
@@ -202,7 +199,7 @@
                     android:orientation="horizontal"
                     android:id="@+id/layout_mail"
                     android:layout_below="@+id/layout_web"
-                    android:weightSum="4"
+                    android:weightSum="3"
                     android:paddingTop="10dp"
                     >
 
@@ -210,21 +207,21 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:src="@drawable/contactmail"
+                        android:src="@drawable/mail_icon_white"
                         android:id="@+id/mail_image_layout"
                         android:layout_gravity="center"
-                        android:layout_weight="1.5"/>
+                        android:layout_weight="0.96"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/mail_text_layout"
-                        android:text="m.chow@gmail.com"
+                        android:text="contact@gmail.com"
                         android:layout_gravity="center|left"
                         android:textColor="#fff"
                         android:textSize="17sp"
-                        android:layout_weight="2.5"
-                        android:paddingLeft="15dp"
+                        android:layout_weight="2"
+
                         android:autoLink="email"
                         android:textColorLink="#fff"
                         />

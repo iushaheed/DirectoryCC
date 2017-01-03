@@ -43,7 +43,7 @@ public class EcMembersActivity_beforepager extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ecmembers);
+        setContentView(R.layout.activity_ecmembers_withpager);
 
         getSupportActionBar().hide();
 

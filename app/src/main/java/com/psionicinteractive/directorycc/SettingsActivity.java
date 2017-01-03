@@ -18,6 +18,7 @@ import android.widget.Toast;
 public class SettingsActivity extends Activity {
 
     Button mLogout;
+    Button m_password_change_button;
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
@@ -28,7 +29,11 @@ public class SettingsActivity extends Activity {
         Typeface font_lato = Typeface.createFromAsset(getAssets(),  "fonts/lato.ttf");
 
         mLogout= (Button) findViewById(R.id.logout_button);
+        m_password_change_button= (Button) findViewById(R.id.password_change_button);
+
         mLogout.setTypeface(font_lato);
+        m_password_change_button.setTypeface(font_lato);
+
 
     }
     public void logout(View view){
@@ -45,4 +50,7 @@ public class SettingsActivity extends Activity {
         finish();
     }
 
+    public void password_change_method(View view) {
+        Toast.makeText(this, "Password changed", Toast.LENGTH_SHORT).show();
+    }
 }

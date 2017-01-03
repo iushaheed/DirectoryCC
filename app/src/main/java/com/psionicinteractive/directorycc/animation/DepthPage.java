@@ -12,11 +12,11 @@ public class DepthPage implements ViewPager.PageTransformer {
         int pageWidth = view.getWidth();
 
         if (position < -1) { // [-Infinity,-1)
-            // This page is way off-screen to the left.
+            // This page is way off-screen to the arrow_left.
             view.setAlpha(0);
 
         } else if (position <= 0) { // [-1,0]
-            // Use the default slide transition when moving to the left page
+            // Use the default slide transition when moving to the arrow_left page
             view.setAlpha(1);
             view.setTranslationX(0);
             view.setScaleX(1);
@@ -35,7 +35,7 @@ public class DepthPage implements ViewPager.PageTransformer {
             view.setScaleY(scaleFactor);
 
         } else { // (1,+Infinity]
-            // This page is way off-screen to the right.
+            // This page is way off-screen to the arrow_right.
             view.setAlpha(0);
         }
     }

@@ -62,30 +62,6 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="end|center"
-        android:id="@+id/checkboxlayout"
-
-        >
-
-        <!--<com.hanks.library.AnimateCheckBox-->
-            <!--android:id="@+id/acb"-->
-            <!--android:layout_width="60dp"-->
-            <!--android:layout_height="60dp"-->
-            <!--android:padding="15dp"-->
-            <!--app:animDuration="200"-->
-            <!--app:checkedColor="#00f"-->
-            <!--app:lineColor="#fff"-->
-            <!--app:lineWidth="1.2dp"-->
-            <!--app:unCheckColor="#ff0"/>-->
-
-
-
-    </LinearLayout>
-
 
 </LinearLayout>
 

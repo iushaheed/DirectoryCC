@@ -2,27 +2,19 @@ package com.psionicinteractive.directorycc;
 
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.Gravity;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,10 +27,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
-import java.text.DateFormat;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
 /**
  * Created by iShaheed on 8/28/2016.
@@ -46,10 +35,25 @@ import java.util.List;
 //public class BirthdaysActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 public class EcMembersActivity extends AppCompatActivity {
 
-    private SectionsPagerAdapter mSectionsPagerAdapter;
-    private ViewPager mViewPager;
+    ArrayList<Product> arrayList;
     ListView lv;
-    static ArrayList arrayList;
+    ProgressDialog dialog;
+    Context context;
+
+    String jsonArray_meta_url="";
+
+
+    ActionBar actionbar;
+    TextView textview;
+    TextView m_ec_text_year;
+    DrawerLayout.LayoutParams layoutparams;
+    Typeface font_lato;
+
+    Button m_arrow_button_left;
+    Button m_arrow_button_right;
+
+    String[] ec_year_array;
+    int cursor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,199 +62,174 @@ public class EcMembersActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_ecmembers);
 
-        // Create the adapter that will return a fragment for each of the three
-        // primary sections of the activity.
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.rgb(25,94,159)));
+        font_lato = Typeface.createFromAsset(getAssets(),  "fonts/lato.ttf");
+        ActionBarTitleGravity();
 
-        // Set up the ViewPager with the sections adapter.
-        mViewPager = (ViewPager) findViewById(R.id.container);
-        mViewPager.setAdapter(mSectionsPagerAdapter);
+        arrayList = new ArrayList<>();
+        context=this;
+        lv = (ListView) findViewById(R.id.listView);
+        m_arrow_button_left= (Button) findViewById(R.id.arrow_button_left);
+        m_arrow_button_right= (Button) findViewById(R.id.arrow_button_right);
+        m_ec_text_year= (TextView) findViewById(R.id.ec_text_year);
 
+        ec_year_array=new String[]{"2017","2016","2015","2014","2013"};
+        cursor=0;
+        m_ec_text_year.setText(ec_year_array[cursor]);
 
+        m_arrow_button_left.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-    }
+                if(cursor<=0)
+                {
+                    Toast.makeText(context, "Does not exist", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    cursor--;
+                    arrayList = new ArrayList<>();
+                Toast.makeText(context, ec_year_array[cursor], Toast.LENGTH_SHORT).show();
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        new ReadJSON().execute("http://iamimam.com/directory/contact.txt");
 
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-    public static class PlaceholderFragment extends Fragment {
-        /**
-         * The fragment argument representing the section number for this
-         * fragment.
-         */
-        private static final String ARG_SECTION_NUMBER = "section_number";
-
-        public PlaceholderFragment() {
-        }
-
-        /**
-         * Returns a new instance of this fragment for the given section
-         * number.
-         */
-        public static PlaceholderFragment newInstance(int sectionNumber) {
-            PlaceholderFragment fragment = new PlaceholderFragment();
-            Bundle args = new Bundle();
-            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-            fragment.setArguments(args);
-            return fragment;
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-            ListView lv= (ListView) rootView.findViewById(R.id.listView);
-
-            textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
-
-//            arrayList=loadList(getArguments().getInt(ARG_SECTION_NUMBER));
-            int section=getArguments().getInt(ARG_SECTION_NUMBER);
-//            arrayList=new ArrayList<>();
-//            loadList(section);
-
-
-            CustomListAdapterEC adapter = new CustomListAdapterEC(getContext(), R.layout.list_item_ec, loadList(getArguments().getInt(ARG_SECTION_NUMBER)));
-//            Toast.makeText(getContext(), ""+arrayList.size(), Toast.LENGTH_SHORT).show();
-            lv.setAdapter(adapter);
-//            arrayList.clear();
-
-
-
-
-            return rootView;
-        }
-
-        private ArrayList loadList(int section) {
-            ArrayList arrayList=new ArrayList<>();
-
-            if(section==1){
-
-//                new ReadJSON().execute("http://iamimam.com/directory/contact.txt");
-                arrayList.add(new Product("http://iamimam.com/directory/images/1.jpg","one","email","mobile_number"));
-                arrayList.add(new Product("http://iamimam.com/directory/images/1.jpg","one","email","mobile_number"));
-                arrayList.add(new Product("http://iamimam.com/directory/images/1.jpg","one","email","mobile_number"));
-                arrayList.add(new Product("http://iamimam.com/directory/images/1.jpg","one","email","mobile_number"));
-                arrayList.add(new Product("http://iamimam.com/directory/images/1.jpg","one","email","mobile_number"));
-
-            }else if(section==2)
-            {
-                arrayList.add(new Product("http://iamimam.com/directory/images/1.jpg","two","email","mobile_number"));
-                arrayList.add(new Product("http://iamimam.com/directory/images/1.jpg","two","email","mobile_number"));
-                arrayList.add(new Product("http://iamimam.com/directory/images/1.jpg","two","email","mobile_number"));
-                arrayList.add(new Product("http://iamimam.com/directory/images/1.jpg","two","email","mobile_number"));
-                arrayList.add(new Product("http://iamimam.com/directory/images/1.jpg","two","email","mobile_number"));
+//                new EcMembersActivity.ReadJSON().execute("http://iamimam.com/directory/contact.txt");
+                    }
+                });
+                    m_ec_text_year.setText(ec_year_array[cursor]);
+                }
 
             }
-            else if(section==3){
-                arrayList.add(new Product("http://iamimam.com/directory/images/1.jpg","three","email","mobile_number"));
-                arrayList.add(new Product("http://iamimam.com/directory/images/1.jpg","three","email","mobile_number"));
-                arrayList.add(new Product("http://iamimam.com/directory/images/1.jpg","three","email","mobile_number"));
-                arrayList.add(new Product("http://iamimam.com/directory/images/1.jpg","three","email","mobile_number"));
-                arrayList.add(new Product("http://iamimam.com/directory/images/1.jpg","three","email","mobile_number"));
+        });
 
+        m_arrow_button_right.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(cursor>=ec_year_array.length-1)
+                {
+                    Toast.makeText(context, "Does not exist", Toast.LENGTH_SHORT).show();
+                }
+                else {
+
+
+                    cursor++;
+                    Toast.makeText(context, ec_year_array[cursor], Toast.LENGTH_SHORT).show();
+                    arrayList = new ArrayList<>();
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            new ReadJSON().execute("http://iamimam.com/directory/member_a.txt");
+
+//                new EcMembersActivity.ReadJSON().execute("http://iamimam.com/directory/contact.txt");
+                        }
+                    });
+                    m_ec_text_year.setText(ec_year_array[cursor]);
+                }
             }
-            else{
+        });
+
+
+
+
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
                 new ReadJSON().execute("http://iamimam.com/directory/contact.txt");
 
+//                new EcMembersActivity.ReadJSON().execute("http://iamimam.com/directory/contact.txt");
             }
-            Toast.makeText(getContext(), ""+section, Toast.LENGTH_SHORT).show();
-            return arrayList;
-        }
+        });
 
-        class ReadJSON extends AsyncTask<String, Integer, String> {
 
-            int section;
 
-            @Override
-            protected void onPreExecute() {
+    }
+
+
+
+    class ReadJSON extends AsyncTask<String, Integer, String> {
+
+        @Override
+        protected void onPreExecute() {
 //            super.onPreExecute();
+            dialog = ProgressDialog.show(context,"please wait","processing");
 
-            }
-
-            @Override
-            protected String doInBackground(String... params) {
-                return readURL(params[0]);
-            }
-
-            @Override
-            protected void onPostExecute(String content) {
-                try {
-                    JSONObject jsonObject = new JSONObject(content);
-                    JSONArray jsonArray =  jsonObject.getJSONArray("data");
-
-                    for(int i =0;i<jsonArray.length(); i++){
-                        JSONObject productObject = jsonArray.getJSONObject(i);
-                        arrayList.add(new Product(
-                                productObject.getString("user_image"),
-                                productObject.getString("name"),
-                                productObject.getString("email"),
-                                productObject.getString("mobile_number")
-                        ));
-                        Toast.makeText(getContext(), ""+arrayList.size(), Toast.LENGTH_SHORT).show();
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
         }
 
+        @Override
+        protected String doInBackground(String... params) {
+            return readURL(params[0]);
+        }
 
-        private static String readURL(String theUrl) {
-            StringBuilder content = new StringBuilder();
+        @Override
+        protected void onPostExecute(String content) {
+            dialog.dismiss();
             try {
-                // create a url object
-                URL url = new URL(theUrl);
-                // create a urlconnection object
-                URLConnection urlConnection = url.openConnection();
-                // wrap the urlconnection in a bufferedreader
-                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
-                String line;
-                // read from the urlconnection via the bufferedreader
-                while ((line = bufferedReader.readLine()) != null) {
-                    content.append(line + "\n");
+                JSONObject jsonObject = new JSONObject(content);
+                JSONArray jsonArray =  jsonObject.getJSONArray("data");
+
+
+                JSONArray jsonArray_meta =  jsonObject.getJSONArray("meta");
+                JSONObject productObject_meta = jsonArray_meta.getJSONObject(0);
+                jsonArray_meta_url=  productObject_meta.getString("next_page_url");
+
+                for(int i =0;i<jsonArray.length(); i++){
+                    JSONObject productObject = jsonArray.getJSONObject(i);
+                    arrayList.add(new Product(
+                            productObject.getString("user_image"),
+                            productObject.getString("name"),
+                            productObject.getString("email"),
+                            productObject.getString("mobile_number")
+                    ));
                 }
-                bufferedReader.close();
-            } catch (Exception e) {
+            } catch (JSONException e) {
                 e.printStackTrace();
             }
-            return content.toString();
+            CustomListAdapterEC adapter = new CustomListAdapterEC(getApplicationContext(), R.layout.list_item_ec, arrayList);
+            lv.setAdapter(adapter);
         }
     }
 
-    /**
-     * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
-     * one of the sections/tabs/pages.
-     */
-    public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
-        public SectionsPagerAdapter(FragmentManager fm) {
-            super(fm);
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            // getItem is called to instantiate the fragment for the given page.
-            // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment.newInstance(position + 1);
-        }
-
-        @Override
-        public int getCount() {
-            // Show 3 total pages.
-            return 3;
-        }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            switch (position) {
-                case 0:
-                    return "SECTION 1";
-                case 1:
-                    return "SECTION 2";
-                case 2:
-                    return "SECTION 3";
+    private static String readURL(String theUrl) {
+        StringBuilder content = new StringBuilder();
+        try {
+            // create a url object
+            URL url = new URL(theUrl);
+            // create a urlconnection object
+            URLConnection urlConnection = url.openConnection();
+            // wrap the urlconnection in a bufferedreader
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
+            String line;
+            // read from the urlconnection via the bufferedreader
+            while ((line = bufferedReader.readLine()) != null) {
+                content.append(line + "\n");
             }
-            return null;
+            bufferedReader.close();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+        return content.toString();
     }
+
+
+    private void ActionBarTitleGravity() {
+        // TODO Auto-generated method stub
+
+        actionbar = getSupportActionBar();
+        textview = new TextView(getApplicationContext());
+        layoutparams = new DrawerLayout.LayoutParams(DrawerLayout.LayoutParams.MATCH_PARENT, DrawerLayout.LayoutParams.MATCH_PARENT);
+        textview.setLayoutParams(layoutparams);
+        textview.setText("EC MEMBERS");
+        textview.setTypeface(font_lato);
+        textview.setTextColor(Color.WHITE);
+        textview.setGravity(Gravity.CENTER);
+        textview.setTextSize(20);
+        actionbar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        actionbar.setCustomView(textview);
+
+    }
+
+
 }

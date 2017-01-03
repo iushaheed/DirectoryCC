@@ -14,7 +14,7 @@ public class ZoomOut implements ViewPager.PageTransformer {
         int pageHeight = view.getHeight();
 
         if (position < -1) { // [-Infinity,-1)
-            // This page is way off-screen to the left.
+            // This page is way off-screen to the arrow_left.
             view.setAlpha(0);
 
         } else if (position <= 1) { // [-1,1]
@@ -38,7 +38,7 @@ public class ZoomOut implements ViewPager.PageTransformer {
                             (1 - MIN_SCALE) * (1 - MIN_ALPHA));
 
         } else { // (1,+Infinity]
-            // This page is way off-screen to the right.
+            // This page is way off-screen to the arrow_right.
             view.setAlpha(0);
         }
     }

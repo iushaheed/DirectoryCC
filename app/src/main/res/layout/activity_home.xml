@@ -76,9 +76,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:layout_marginTop="16dp"
-                android:text="login"
+                android:text="SIGN IN"
+                android:fontFamily="normal"
                 android:textColor="#fff"
-                android:textSize="30sp"
+                android:textSize="20sp"
                 android:onClick="userLogin"
                 android:background="@drawable/login_button_selector"
                 />
@@ -93,7 +94,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_horizontal|center_vertical"
-                    android:text="New to Club app ? "/>
+                    android:text="New to Club App? "/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

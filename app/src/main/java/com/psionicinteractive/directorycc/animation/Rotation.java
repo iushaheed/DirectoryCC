@@ -19,7 +19,7 @@ public class Rotation implements ViewPager.PageTransformer{
         view.setPivotY(pageHeight + pageWidth * centerFactor);
 
         if(position < -1){ //[-infinity,1)
-            //off to the left by a lot
+            //off to the arrow_left by a lot
             view.setRotation(0);
             view.setAlpha(0);
         }else if(position <= 1){ //[-1,1]
@@ -29,7 +29,7 @@ public class Rotation implements ViewPager.PageTransformer{
             float minAlpha = 0.7f;
             view.setAlpha(Math.max(minAlpha, 1 - Math.abs(position)/3));
         }else{ //(1, +infinity]
-            //off to the right by a lot
+            //off to the arrow_right by a lot
             view.setRotation(0);
             view.setAlpha(0);
         }

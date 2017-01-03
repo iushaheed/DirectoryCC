@@ -1,20 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_content"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    android:background="@drawable/background"
-    tools:context="com.psionicinteractive.directorycc.EcMembersActivity">
+    android:background="@drawable/background">
 
+    <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="EC Members"-->
+        <!--android:id="@+id/ec_textview"-->
+        <!--android:gravity="center"-->
+        <!--android:textColor="#fff"-->
+        <!--android:textSize="20sp"-->
+        <!--android:padding="5dp"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_alignParentStart="true" />-->
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/container"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        android:id="@+id/list_of_ec"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/ec_year_navigation"
+        >
 
-</android.support.design.widget.CoordinatorLayout>
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/listView"
+            android:padding="5dp"
+            >
+        </ListView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ec_year_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:orientation="horizontal"
+
+        >
+
+        <Button
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/arrow_left"
+            android:id="@+id/arrow_button_left"
+            android:layout_marginLeft="20dp"/>
+
+        <TextView
+            android:id="@+id/ec_text_year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" YEAR "
+            android:gravity="center"
+            android:textColor="#fff"
+            android:layout_weight="1"
+            />
+
+        <Button
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/arrow_right"
+            android:id="@+id/arrow_button_right"
+            android:layout_marginRight="20dp"
+            />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

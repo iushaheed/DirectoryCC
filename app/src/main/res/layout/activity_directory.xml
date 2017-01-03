@@ -48,11 +48,11 @@
         android:padding="5dp"
         >
         <Button
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_gravity="right"
             android:id="@+id/button_cross"
-            android:background="@drawable/button_cross"/>
+            android:background="@drawable/button_cross_black"/>
         <Spinner
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -76,7 +76,8 @@
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:text="SEARCH"
-            android:textSize="20sp"
+            android:textSize="14sp"
+            android:fontFamily="normal"
             android:textColor="#fff"
             android:background="@drawable/login_button_selector"/>
 
@@ -94,7 +95,7 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:id="@+id/advance_search_button"
-        android:background="@drawable/advance_search"
+        android:background="@drawable/advance_search_white"
 
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true" />

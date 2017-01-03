@@ -97,7 +97,7 @@ public class MenuActivity extends Activity {
 //
 //        int StartValue=m_ib.getLeft();
 //        int EndValue=m_ib.getRight();
-//        ObjectAnimator.ofInt(m_ib,"right",StartValue,EndValue).start();
+//        ObjectAnimator.ofInt(m_ib,"arrow_right",StartValue,EndValue).start();
 //
 //    }
 
