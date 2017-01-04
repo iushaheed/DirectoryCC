@@ -64,6 +64,8 @@ public class DirectorySingleActivity extends Activity implements OnClickListener
     TextView anniversarydata;
 
 
+    int test_couter_for_member_number_decode;
+
 
 
 
@@ -137,7 +139,19 @@ public class DirectorySingleActivity extends Activity implements OnClickListener
 
 
 
+        headertext.setText("05-010-00459-11-00127");
 
+        test_couter_for_member_number_decode=0;
+
+        headertext.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(test_couter_for_member_number_decode%3==0){
+
+                }
+                test_couter_for_member_number_decode++;
+            }
+        });
 
 
 

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -18,24 +19,7 @@
         <!--android:layout_alignParentTop="true"-->
         <!--android:layout_alignParentStart="true" />-->
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/list_of_ec"
-        android:layout_gravity="center_horizontal"
-        android:layout_below="@+id/ec_year_navigation"
-        >
 
-        <ListView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/listView"
-            android:padding="5dp"
-            >
-        </ListView>
-
-    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/ec_year_navigation"
@@ -72,6 +56,42 @@
             />
 
     </LinearLayout>
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:src="@drawable/eleven"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/banner_of_ec_board_by_year"
+        android:layout_below="@+id/ec_year_navigation"
+        />
+
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/list_of_ec"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/banner_of_ec_board_by_year"
+        >
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/listView"
+            android:padding="5dp"
+            >
+        </ListView>
+
+    </LinearLayout>
+
+
+
+
 
 
 </RelativeLayout>

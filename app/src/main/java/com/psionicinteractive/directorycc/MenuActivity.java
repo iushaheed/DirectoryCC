@@ -45,6 +45,7 @@ public class MenuActivity extends Activity {
 
         setContentView(R.layout.activity_menu);
         Typeface lato_font = Typeface.createFromAsset(getAssets(),  "fonts/lato.ttf");
+        Typeface old_english_font = Typeface.createFromAsset(getAssets(),  "fonts/font_old_eng.ttf");
 
         tx = (TextView)findViewById(R.id.headerText);
         m_directory_text_layout= (TextView)findViewById(R.id.directory_text_layout);
@@ -58,7 +59,7 @@ public class MenuActivity extends Activity {
         m_settings_text_layout= (TextView)findViewById(R.id.settings_text_layout);
 //        m_ib= (ImageButton) findViewById(R.id.add_banner);
 
-        tx.setTypeface(lato_font);
+        tx.setTypeface(old_english_font);
         m_directory_text_layout.setTypeface(lato_font);
         m_contact_text_layout.setTypeface(lato_font);
         m_message_text_layout.setTypeface(lato_font);

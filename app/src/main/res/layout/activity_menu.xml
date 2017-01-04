@@ -7,7 +7,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="CADET COLLEGE\nCLUB"
+        android:text="Cadet College Club"
         android:gravity="center"
         android:id="@+id/headerText"
         android:paddingTop="20dp"

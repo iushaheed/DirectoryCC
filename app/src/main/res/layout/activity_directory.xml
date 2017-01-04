@@ -92,8 +92,8 @@
         android:layout_below="@+id/advance_filter_layout" />
 
     <Button
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
         android:id="@+id/advance_search_button"
         android:background="@drawable/advance_search_white"
 

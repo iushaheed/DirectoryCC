@@ -5,6 +5,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
@@ -15,6 +16,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -51,6 +53,7 @@ public class EcMembersActivity extends AppCompatActivity {
 
     Button m_arrow_button_left;
     Button m_arrow_button_right;
+    ImageView m_banner_of_ec_board_by_year;
 
     String[] ec_year_array;
     int cursor;
@@ -72,8 +75,13 @@ public class EcMembersActivity extends AppCompatActivity {
         m_arrow_button_left= (Button) findViewById(R.id.arrow_button_left);
         m_arrow_button_right= (Button) findViewById(R.id.arrow_button_right);
         m_ec_text_year= (TextView) findViewById(R.id.ec_text_year);
+        m_banner_of_ec_board_by_year= (ImageView) findViewById(R.id.banner_of_ec_board_by_year);
 
-        ec_year_array=new String[]{"2017","2016","2015","2014","2013"};
+
+
+        ec_year_array=new String[]{"2016","2015","2014","2013","2012","2011","2010"};
+        final String banner_of_ec_board_by_year_string[]=new String[]{"sixteen","fifteen","fourteen","thirteen","twelve","eleven","ten",};
+
         cursor=0;
         m_ec_text_year.setText(ec_year_array[cursor]);
 
@@ -89,7 +97,12 @@ public class EcMembersActivity extends AppCompatActivity {
                 {
                     cursor--;
                     arrayList = new ArrayList<>();
-                Toast.makeText(context, ec_year_array[cursor], Toast.LENGTH_SHORT).show();
+//                    Drawable temp= Drawable.createFromPath("R.drawable."+banner_of_ec_board_by_year_string[cursor]);
+
+                    int id = getResources().getIdentifier(banner_of_ec_board_by_year_string[cursor], "drawable", getPackageName());
+                    m_banner_of_ec_board_by_year.setImageResource(id);
+
+                Toast.makeText(context, "R.drawable."+banner_of_ec_board_by_year_string[cursor], Toast.LENGTH_SHORT).show();
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -115,7 +128,10 @@ public class EcMembersActivity extends AppCompatActivity {
 
 
                     cursor++;
-                    Toast.makeText(context, ec_year_array[cursor], Toast.LENGTH_SHORT).show();
+                    int id = getResources().getIdentifier(banner_of_ec_board_by_year_string[cursor], "drawable", EcMembersActivity.this.getPackageName());
+                    m_banner_of_ec_board_by_year.setImageResource(id);
+
+                    Toast.makeText(context, "R.drawable."+banner_of_ec_board_by_year_string[cursor], Toast.LENGTH_SHORT).show();
                     arrayList = new ArrayList<>();
                     runOnUiThread(new Runnable() {
                         @Override

@@ -58,6 +58,7 @@ public class ContactActivity extends Activity {
         setContentView(R.layout.activity_contact);
 
         Typeface font_lato = Typeface.createFromAsset(getAssets(),  "fonts/lato.ttf");
+        Typeface font_old_eng = Typeface.createFromAsset(getAssets(),  "fonts/font_old_eng.ttf");
 
         m_tv_contact_text = (TextView)findViewById(R.id.contact_text);
         m_tv_mail_text_layout = (TextView)findViewById(R.id.mail_text_layout);
@@ -70,7 +71,7 @@ public class ContactActivity extends Activity {
         m_tv_phone_text_layout_3 = (TextView)findViewById(R.id.phone_3);
 
         m_tv_contact_text.setTypeface(font_lato);
-        m_tv_dcl_text.setTypeface(font_lato);
+        m_tv_dcl_text.setTypeface(font_old_eng);
         m_tv_address_text_layout.setTypeface(font_lato);
         m_tv_web_text_layout.setTypeface(font_lato);
         m_tv_mail_text_layout.setTypeface(font_lato);
