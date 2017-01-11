@@ -126,8 +126,8 @@ public class DirectoryActivity extends AppCompatActivity{
         button_cross= (Button) findViewById(R.id.button_cross);
 
 
-        spinner_array_name=new String[]{"Choose College","A Cadet College","B Cadet College","C Cadet College","D Cadet College"};
-        spinner_array_year=new String[]{"Choose Batch","Batch 2010-A","Batch 2010-B","Batch 2011-A","Batch 2011-B"};
+        spinner_array_name=new String[]{"College Code","A Cadet College","B Cadet College","C Cadet College","D Cadet College"};
+        spinner_array_year=new String[]{"Passing year","Batch 2010-A","Batch 2010-B","Batch 2011-A","Batch 2011-B"};
         search_parameters=new String[2];
 
         ArrayAdapter<String> adapter_name = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, spinner_array_name);
