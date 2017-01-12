@@ -89,8 +89,11 @@ public class DirectoryActivity extends AppCompatActivity{
 
     Spinner spinner_name;
     Spinner spinner_year;
+    Spinner spinner_occupation;
+
     String[] spinner_array_name;
     String[] spinner_array_year;
+    String[] spinner_array_occupation;
 
     String[] search_parameters;
 
@@ -121,6 +124,9 @@ public class DirectoryActivity extends AppCompatActivity{
 
         spinner_name= (Spinner) findViewById(R.id.spinner_name);
         spinner_year= (Spinner) findViewById(R.id.spinner_year);
+        spinner_occupation= (Spinner) findViewById(R.id.spinner_occupation);
+
+
         after_spinner_search_button= (Button) findViewById(R.id.after_spinner_search_button);
 
         button_cross= (Button) findViewById(R.id.button_cross);
@@ -128,7 +134,9 @@ public class DirectoryActivity extends AppCompatActivity{
 
         spinner_array_name=new String[]{"College Code","A Cadet College","B Cadet College","C Cadet College","D Cadet College"};
         spinner_array_year=new String[]{"Passing year","Batch 2010-A","Batch 2010-B","Batch 2011-A","Batch 2011-B"};
-        search_parameters=new String[2];
+        spinner_array_occupation=new String[]{"Occupation","Business","Govt service","Pvt service","Self employed"};
+
+        search_parameters=new String[3];
 
         ArrayAdapter<String> adapter_name = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, spinner_array_name);
         spinner_name.setAdapter(adapter_name);
@@ -152,6 +160,21 @@ public class DirectoryActivity extends AppCompatActivity{
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 search_parameters[1]=spinner_array_year[position];
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        ArrayAdapter<String> adapter_occupation = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, spinner_array_occupation);
+        spinner_occupation.setAdapter(adapter_occupation);
+
+        spinner_occupation.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                search_parameters[2]=spinner_array_occupation[position];
             }
 
             @Override

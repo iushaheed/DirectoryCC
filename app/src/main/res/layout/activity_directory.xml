@@ -71,6 +71,15 @@
 
         </Spinner>
 
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner_occupation"
+            android:layout_margin="5dp"
+            >
+
+        </Spinner>
+
         <Button
             android:id="@+id/after_spinner_search_button"
             android:layout_width="match_parent"
