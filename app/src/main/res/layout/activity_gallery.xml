@@ -13,26 +13,26 @@
     android:orientation="vertical"
     >
 
-    <com.psionicinteractive.directorycc.ExtendedViewPager
-        android:id="@+id/view_pager"
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager_one"
         android:layout_width="match_parent"
-        android:layout_height="200dip"
+        android:layout_height="match_parent"
         android:layout_weight="1"
         />
 
-    <com.psionicinteractive.directorycc.ExtendedViewPager
-        android:id="@+id/view_pager_two"
-        android:layout_width="match_parent"
-        android:layout_height="200dip"
-        android:layout_weight="1"
-        />
+    <!--<com.psionicinteractive.directorycc.ExtendedViewPager-->
+        <!--android:id="@+id/view_pager_two"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="200dip"-->
+        <!--android:layout_weight="1"-->
+        <!--/>-->
 
-    <com.psionicinteractive.directorycc.ExtendedViewPager
-        android:id="@+id/view_pager_three"
-        android:layout_width="match_parent"
-        android:layout_height="200dip"
-        android:layout_weight="1"
-        />
+    <!--<com.psionicinteractive.directorycc.ExtendedViewPager-->
+        <!--android:id="@+id/view_pager_three"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="200dip"-->
+        <!--android:layout_weight="1"-->
+        <!--/>-->
 
 </LinearLayout>
 

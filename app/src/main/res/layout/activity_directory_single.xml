@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Directory"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textColor="#fff"
+        android:padding="10dp"
+        android:id="@+id/header_text" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header_text"
+        android:id="@+id/imageandinfolayout"
+        >
+
+        <ImageView
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:id="@+id/profile_image"
+            android:src="@drawable/profile"
+            android:padding="15dp"
+            android:layout_gravity="left" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center|left"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Who am I ?"
+                android:textColor="#fff"
+                android:textSize="16sp"
+                android:padding="5dp"
+                android:id="@+id/joiningtext" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ABC Cadet College"
+                android:textColor="#fff"
+                android:textSize="16sp"
+                android:padding="5dp"
+                android:id="@+id/member_sn_text" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="US President"
+                android:textColor="#fff"
+                android:textSize="16sp"
+                android:padding="5dp"
+                android:id="@+id/type_text" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="226dp"
+        android:paddingBottom="10dp"
+        android:layout_below="@+id/imageandinfolayout"
+        android:id="@+id/scroll_layout"
+        android:layout_above="@+id/button_layout"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TableRow
+                android:paddingLeft="25dp"
+                android:paddingTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="Name:"
+                    android:textSize="17.5sp"
+                    android:id="@+id/nametag"
+                    android:textColor="#fff"
+                    />
+
+                <TextView
+                    android:paddingLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Who am i ?"
+                    android:textSize="17.5sp"
+                    android:id="@+id/namedata"
+                    android:textColor="#fff" />
+
+
+            </TableRow>
+
+            <TableRow
+                android:paddingLeft="25dp"
+                android:paddingTop="5dp"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="Occupation"
+                    android:textSize="17.5sp"
+                    android:id="@+id/occupation_tag"
+                    android:textColor="#fff"
+
+
+                    />
+
+                <TextView
+                    android:paddingLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Defense Service"
+                    android:textSize="17.5sp"
+                    android:id="@+id/occupation_data"
+                    android:textColor="#fff"/>
+
+            </TableRow>
+            <TableRow
+                android:paddingLeft="25dp"
+                android:paddingTop="5dp"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="Designation"
+                    android:textSize="17.5sp"
+                    android:id="@+id/designation_tag"
+                    android:textColor="#fff"
+
+
+                    />
+
+                <TextView
+                    android:paddingLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Rtd. General"
+                    android:textSize="17.5sp"
+                    android:id="@+id/designation_data"
+                    android:textColor="#fff"/>
+
+            </TableRow>
+
+            <TableRow
+                android:paddingLeft="25dp"
+                android:paddingTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="Date of Birth:"
+                    android:textSize="17.5sp"
+                    android:id="@+id/dobtag"
+                    android:textColor="#fff"
+                    />
+
+                <TextView
+                    android:paddingLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="01.01.1900"
+                    android:textSize="17.5sp"
+                    android:id="@+id/dobdata"
+                    android:textColor="#fff" />
+
+
+
+
+            </TableRow>
+
+            <TableRow
+                android:paddingLeft="25dp"
+                android:paddingTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="Address:"
+                    android:textSize="17.5sp"
+                    android:id="@+id/addresstag"
+                    android:textColor="#fff"
+                    />
+
+                <TextView
+                    android:paddingLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="House # 10, Road # 5,\nSector # 4, Uttara, \nDhaka 1230"
+                    android:textSize="17.5sp"
+                    android:id="@+id/addressdata"
+                    android:textColor="#fff" />
+
+
+
+
+            </TableRow>
+
+            <TableRow
+                android:paddingLeft="25dp"
+                android:paddingTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="Email:"
+                    android:textSize="17.5sp"
+                    android:id="@+id/emailtag"
+                    android:textColor="#fff"
+                    />
+
+                <TextView
+                    android:paddingLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="a@gmail"
+                    android:textSize="17.5sp"
+                    android:id="@+id/emaildata"
+                    android:textColor="#fff" />
+
+
+            </TableRow>
+
+            <TableRow
+                android:paddingLeft="25dp"
+                android:paddingTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="Phone:"
+                    android:textSize="17.5sp"
+                    android:id="@+id/phonetag"
+                    android:textColor="#fff"
+
+
+                    />
+
+                <TextView
+                    android:paddingLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="017"
+                    android:textSize="17.5sp"
+                    android:id="@+id/phonedata"
+                    android:textColor="#fff"/>
+
+            </TableRow>
+
+            <TableRow
+                android:paddingLeft="25dp"
+                android:paddingTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="Marital Status:"
+                    android:textSize="17.5sp"
+                    android:id="@+id/statustag"
+                    android:textColor="#fff"
+
+
+                    />
+
+                <TextView
+                    android:paddingLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Married"
+                    android:textSize="17.5sp"
+                    android:id="@+id/statusdata"
+                    android:textColor="#fff"/>
+
+            </TableRow>
+
+            <TableRow
+                android:paddingLeft="25dp"
+                android:paddingTop="5dp"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="Anniversary"
+                    android:textSize="17.5sp"
+                    android:id="@+id/anniversarytag"
+                    android:textColor="#fff"
+
+
+                    />
+
+                <TextView
+                    android:paddingLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="28 December"
+                    android:textSize="17.5sp"
+                    android:id="@+id/anniversarydata"
+                    android:textColor="#fff"/>
+
+            </TableRow>
+
+            <TableRow
+                android:paddingLeft="25dp"
+                android:paddingTop="5dp"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="Blood group"
+                    android:textSize="17.5sp"
+                    android:id="@+id/bloodgroup_tag"
+                    android:textColor="#fff"
+
+
+                    />
+
+                <TextView
+                    android:paddingLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="O +v e"
+                    android:textSize="17.5sp"
+                    android:id="@+id/bloodgroup_data"
+                    android:textColor="#fff"/>
+
+            </TableRow>
+
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="bottom|center_horizontal"
+        android:id="@+id/button_layout"
+        android:paddingBottom="5dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true">
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="@drawable/message_icon"
+            android:id="@+id/sendSms"
+            android:layout_gravity="center"
+            android:gravity="bottom"
+            android:layout_margin="5dp"/>
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:id="@+id/doCall"
+            android:layout_margin="5dp"
+            android:layout_gravity="center"
+            android:gravity="bottom"
+            android:background="@drawable/phone_icon"
+            />
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:id="@+id/sendEmail"
+            android:layout_margin="5dp"
+            android:layout_gravity="center"
+            android:gravity="bottom"
+            android:background="@drawable/mail_icon"
+            />
+    </LinearLayout>
+
+</RelativeLayout>

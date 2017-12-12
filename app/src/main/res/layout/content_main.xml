@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,20 +12,46 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".DirectoryActivity"
     android:background="@drawable/background"
-    tools:showIn="@layout/app_bar_main">
+    tools:showIn="@layout/app_bar_main" >
 
-    <TextView
+    <!--<Button-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="send sms"-->
+        <!--android:textSize="15sp"-->
+        <!--android:background="@drawable/send"-->
+        <!--android:gravity="center_vertical|center_horizontal"-->
+        <!--android:layout_toStartOf="@+id/sms_switch"-->
+        <!--android:layout_above="@+id/listView"-->
+        <!--android:layout_alignParentTop="true" />-->
+
+    <EditText
+        android:id="@+id/inputSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="MEMBERSHIP"
-        android:padding="10dp"
-        android:id="@+id/membership_name"
+        android:hint="Search Member"
+        android:textColorHint="#fff"
         android:textColor="#fff"
-        android:textStyle="bold"
-        android:layout_alignParentLeft="true"
+        android:padding="10dp"
+        android:inputType="textVisiblePassword"
+        android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:gravity="center_horizontal" />
+        android:layout_toStartOf="@+id/advance_search_button" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="#fff"
+        android:id="@+id/advance_filter_layout"
+        android:layout_below="@+id/inputSearch"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/droptest"
+            android:text="hi"/>
+
+    </LinearLayout>
 
     <ListView
         android:layout_width="wrap_content"
@@ -32,5 +59,27 @@
         android:id="@+id/listView"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_below="@+id/membership_name" />
+        android:layout_below="@+id/advance_filter_layout" />
+
+    <Button
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/advance_search_button"
+        android:background="@drawable/advance_search"
+
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
+    <!--android:layout_below="@+id/sms_switch"-->
+        
+
+    <!--<Switch-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:padding="10dp"-->
+        <!--android:id="@+id/sms_switch"-->
+        <!--android:textOn="Send Multiple"-->
+        <!--android:textOff="Send Single"-->
+        <!--android:gravity="center_horizontal"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_alignParentEnd="true" />-->
 </RelativeLayout>

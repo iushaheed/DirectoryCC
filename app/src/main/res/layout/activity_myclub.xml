@@ -1,0 +1,222 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MY CLUB"
+        android:gravity="center"
+        android:id="@+id/headerText"
+        android:paddingTop="10dp"
+        android:textSize="20sp"
+        android:textColor="#fff"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+
+    <!--<ImageButton-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:background="@drawable/add"-->
+        <!--android:id="@+id/add_banner"-->
+        <!--android:layout_marginLeft="5dp"-->
+        <!--android:layout_marginRight="5dp"-->
+        <!--android:layout_alignParentBottom="true"/>-->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/headerText"
+        android:layout_alignParentStart="true">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_gravity="center"
+
+
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/headerText"
+            android:layout_above="@+id/add_banner">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+                    <ImageButton
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:id="@+id/imageButton"
+                        android:onClick="gotoec"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/ec_members_icon"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="EC Members"
+                        android:textColor="#fff"
+                        android:id="@+id/directory_text_layout"
+                        android:layout_gravity="center"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+                    <ImageButton
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:id="@+id/imageButton2"
+                        android:onClick="gotofounders_myclub"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/founder_icon"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="FOUNDERS"
+                        android:textColor="#fff"
+                        android:id="@+id/contact_text_layout"
+                        android:layout_gravity="center"/>
+                </LinearLayout>
+
+
+                <!--<ImageButton-->
+                <!--android:layout_width="80dp"-->
+                <!--android:layout_height="90dp"-->
+                <!--android:id="@+id/imageButton3"-->
+                <!--android:onClick="gotoevents"-->
+                <!--android:background="@drawable/menu_button_selector_events"-->
+                <!--/>-->
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+                    <ImageButton
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:id="@+id/imageButton11"
+                        android:onClick="gotogallery_myclub"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/gallery_icon"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="GALLERY"
+                        android:textColor="#fff"
+                        android:id="@+id/anniversary_text_layout"
+                        android:layout_gravity="center"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+                    <ImageButton
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:id="@+id/imageButton8"
+                        android:onClick="gotoevents_myclub"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/events_icon"
+                        />
+                    />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="EVENTS"
+                        android:textColor="#fff"
+                        android:id="@+id/checkin_text_layout"
+                        android:layout_gravity="center"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+                    <ImageButton
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:id="@+id/imageButton15"
+                        android:onClick="gotonotice_myclub"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/notice_icon"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="NOTICE"
+                        android:textColor="#fff"
+                        android:id="@+id/search_text_layout"
+                        android:layout_gravity="center"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+                    <ImageButton
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:id="@+id/imageButton13"
+                        android:onClick="gotorules_myclub"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/rules_icon"/>
+                    />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="RULES"
+                        android:textColor="#fff"
+                        android:id="@+id/myprofile_text_layout"
+                        android:layout_gravity="center"/>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

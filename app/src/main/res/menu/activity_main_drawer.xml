@@ -5,6 +5,7 @@
         <item
             android:id="@+id/nav_camera"
             android:icon="@drawable/ic_menu_memmers"
+
             android:title="Alpha Members" />
         <item
             android:id="@+id/nav_gallery"

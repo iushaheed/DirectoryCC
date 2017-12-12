@@ -1,14 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splash"
+    >
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
         android:text="Logout"
-        android:id="@+id/button2"
+        android:id="@+id/logout_button"
+        android:background="@drawable/login_button_selector"
+        android:onClick="logout"
+        android:textColor="#fff"
+        android:textSize="20sp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="CHANGE PASSWORD"
+        android:id="@+id/password_change_button"
+        android:background="@drawable/login_button_selector"
+        android:onClick="password_change_method"
+        android:textColor="#fff"
+        android:textSize="20sp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:onClick="logout"/>
+        android:layout_marginBottom="44dp" />
 </RelativeLayout>

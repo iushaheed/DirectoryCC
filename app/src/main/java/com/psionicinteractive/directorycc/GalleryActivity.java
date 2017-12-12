@@ -3,150 +3,83 @@ package com.psionicinteractive.directorycc;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
 
-public class GalleryActivity extends Activity {
+import com.psionicinteractive.directorycc.animation.DepthPage;
+import com.psionicinteractive.directorycc.animation.Rotation;
+import com.psionicinteractive.directorycc.animation.ZoomOut;
 
-    /**
-     * Step 1: Download and set up v4 support library: http://developer.android.com/tools/support-library/setup.html
-     * Step 2: Create ExtendedViewPager wrapper which calls TouchImageView.canScrollHorizontallyFroyo
-     * Step 3: ExtendedViewPager is a custom view and must be referred to by its full package name in XML
-     * Step 4: Write TouchImageAdapter, located below
-     * Step 5. The ViewPager in the XML should be ExtendedViewPager
-     */
+public class GalleryActivity extends AppCompatActivity {
+
+    private ViewPager mViewPager1;
+//    private ViewPager mViewPager2;
+//    private ViewPager mViewPager3;
+
+    private int[] mImageId;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_gallery);
+        getSupportActionBar().hide();
 
-        ExtendedViewPager mViewPager1 = (ExtendedViewPager) findViewById(R.id.view_pager);
-        mViewPager1.setAdapter(new TouchImageAdapter1());
-
-        ExtendedViewPager mViewPager2 = (ExtendedViewPager) findViewById(R.id.view_pager_two);
-        mViewPager2.setAdapter(new TouchImageAdapter2());
-
-        ExtendedViewPager mViewPager3 = (ExtendedViewPager) findViewById(R.id.view_pager_three);
-        mViewPager3.setAdapter(new TouchImageAdapter3());
-    }
-
-    static class TouchImageAdapter1 extends PagerAdapter {
-
-        private static int[] images = {
-                R.drawable.h,
-                R.drawable.b,
-                R.drawable.c,
-                R.drawable.d,
-                R.drawable.e,
-                R.drawable.f,
-                R.drawable.g
+        mImageId = new int[]{
+                R.drawable.aa,
+                R.drawable.ba,
+                R.drawable.ca,
+                R.drawable.da,
+                R.drawable.ea,
+                R.drawable.fa,
+                R.drawable.ga,
+                R.drawable.ha
         };
 
-        @Override
-        public int getCount() {
-            return images.length;
-        }
 
-        @Override
-        public View instantiateItem(ViewGroup container, int position) {
-            TouchImageView img = new TouchImageView(container.getContext());
-            img.setImageResource(images[position]);
-            container.addView(img, LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
-            return img;
-        }
+        // Locate the ViewPager in activity_main.xml
+        mViewPager1 = (ViewPager) findViewById(R.id.view_pager_one);
+//        mViewPager.setPageTransformer(true, new DepthPage());
 
-        @Override
-        public void destroyItem(ViewGroup container, int position, Object object) {
-            container.removeView((View) object);
-        }
+        // Pass params to ViewPagerAdapter Class
+        PagerAdapter adapter1 = new ViewPagerAdapter(GalleryActivity.this, mImageId);
 
-        @Override
-        public boolean isViewFromObject(View view, Object object) {
-            return view == object;
-        }
+        mViewPager1.setPageTransformer(true, new DepthPage());
+        // Bind the ViewPager Adapter to the ViewPager
+        mViewPager1.setAdapter(adapter1);
 
-    }
 
-    ///////////////
-    static class TouchImageAdapter2 extends PagerAdapter {
 
-        private static int[] images = {
-                R.drawable.h,
-                R.drawable.b,
-                R.drawable.c,
-                R.drawable.d,
-                R.drawable.e,
-                R.drawable.f,
-                R.drawable.g
-        };
+        /////////////////////////////////////
+//        mViewPager2 = (ViewPager) findViewById(R.id.view_pager_two);
+////        mViewPager.setPageTransformer(true, new DepthPage());
+//
+//        // Pass params to ViewPagerAdapter Class
+//        PagerAdapter adapter2 = new ViewPagerAdapter(GalleryActivity.this, mImageId);
+//
+//        mViewPager2.setPageTransformer(true, new DepthPage());
+//        // Bind the ViewPager Adapter to the ViewPager
+//        mViewPager2.setAdapter(adapter2);
 
-        @Override
-        public int getCount() {
-            return images.length;
-        }
 
-        @Override
-        public View instantiateItem(ViewGroup container, int position) {
-            TouchImageView img = new TouchImageView(container.getContext());
-            img.setImageResource(images[position]);
-            container.addView(img, LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
-            return img;
-        }
 
-        @Override
-        public void destroyItem(ViewGroup container, int position, Object object) {
-            container.removeView((View) object);
-        }
+        //////////////////////////////////////
+//        mViewPager3 = (ViewPager) findViewById(R.id.view_pager_three);
+////        mViewPager.setPageTransformer(true, new DepthPage());
+//
+//        // Pass params to ViewPagerAdapter Class
+//        PagerAdapter adapter3 = new ViewPagerAdapter(GalleryActivity.this, mImageId);
+//
+//        mViewPager3.setPageTransformer(true, new Rotation());
+//        // Bind the ViewPager Adapter to the ViewPager
+//        mViewPager3.setAdapter(adapter3);
 
-        @Override
-        public boolean isViewFromObject(View view, Object object) {
-            return view == object;
-        }
-
-    }
-    //////////////
-    /////////////////
-    static class TouchImageAdapter3 extends PagerAdapter {
-
-        private static int[] images = {
-                R.drawable.h,
-                R.drawable.b,
-                R.drawable.c,
-                R.drawable.d,
-                R.drawable.e,
-                R.drawable.f,
-                R.drawable.g
-        };
-
-        @Override
-        public int getCount() {
-            return images.length;
-        }
-
-        @Override
-        public View instantiateItem(ViewGroup container, int position) {
-            TouchImageView img = new TouchImageView(container.getContext());
-            img.setImageResource(images[position]);
-            container.addView(img, LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
-            return img;
-        }
-
-        @Override
-        public void destroyItem(ViewGroup container, int position, Object object) {
-            container.removeView((View) object);
-        }
-
-        @Override
-        public boolean isViewFromObject(View view, Object object) {
-            return view == object;
-        }
 
     }
     ///////////////

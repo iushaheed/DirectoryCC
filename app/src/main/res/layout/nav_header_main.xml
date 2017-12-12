@@ -6,24 +6,26 @@
     android:gravity="bottom"
     android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:src="@drawable/dcllogo" />
+    <!--<ImageView-->
+        <!--android:id="@+id/imageView"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center"-->
+        <!--/>-->
+        <!--android:src="@drawable/dcllogo" />-->
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Dhaka Club Limited"
-        android:textSize="20sp"
+        android:layout_height="match_parent"
+        android:text="Dhaka Club \nLimited"
+        android:textSize="30sp"
         android:textAllCaps="true"
-        android:textColor="#000"
+        android:textColor="#fff"
         android:fontFamily="sans-serif-condensed"
         android:gravity="center"
         android:layout_margin="5dp"
-        android:padding="5dp"
+        android:padding="10dp"
+
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
 

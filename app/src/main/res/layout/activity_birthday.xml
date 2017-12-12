@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context="com.psionicinteractive.directorycc.BirthdaysActivity"
-    >
+    tools:context="com.psionicinteractive.directorycc.BirthdaysActivity">
 
 
     <pl.droidsonroids.gif.GifTextView
@@ -14,47 +14,89 @@
         android:layout_height="70pt"
         android:layout_gravity="center"
         android:paddingTop="10dip"
-        android:background="@drawable/birthdayimage"
+        android:background="@drawable/birthdaycandle"
+        android:id="@+id/headerlayout"
         />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
-        android:id="@+id/date_time"
-        android:textSize="30sp"
-        android:textColor="#fff"
-        android:paddingTop="5dip"
-        android:paddingLeft="5dip"
-        android:paddingRight="5dip"
-        android:paddingBottom="10dip"
-        android:layout_gravity="center_horizontal" />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="HAPPY BIRTDAY !!!"
-        android:gravity="center"
-        android:textColor="#fff"
-        android:textSize="25sp"
-        android:padding="5dip"
 
-        />
+    <LinearLayout
+        android:id="@+id/wish_linear_layout"
+        android:layout_below="@+id/headerlayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_margin="5dp"
+        android:weightSum="2"
+
+        android:background="#000"
+        >
+        <TextView
+            android:id="@+id/text_button_birthday"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="BIRTHDAYS"
+            android:textColor="#fff"
+            android:gravity="center_horizontal|center_vertical"
+            android:layout_marginRight=".5dp"
+            android:onClick="onClickFromTextButton_birthday"
+            android:background="#0A468D"
+
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/text_button_anniversary"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="ANNIVERSARY"
+            android:textColor="#fff"
+            android:background="#0A468D"
+            android:gravity="center_horizontal|center_vertical"
+            android:onClick="onClickFromTextButton_anniversary"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Birthdays and anniversaries"-->
+        <!--android:gravity="center"-->
+        <!--android:textColor="#fff"-->
+        <!--android:textSize="15sp"-->
+        <!--android:padding="10dip"-->
+        <!--android:layout_below="@+id/headerlayout"-->
+        <!--android:onClick="openGallery"-->
+        <!--android:id="@+id/wish_layout"-->
+        <!--/>-->
+
+
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center_horizontal">
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/wish_linear_layout"
+        android:id="@+id/list_body_layout">
 
         <ListView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/listView"
             android:padding="10dip"
+
             >
-
-
         </ListView>
 
     </LinearLayout>
-</LinearLayout>
+
+    <!--<co.aenterhy.toggleswitch.ToggleSwitchButton-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:id="@+id/toggle"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--app:outerRadius="50dp"-->
+        <!--app:handleDrawable="@drawable/ic_switch"-->
+        <!--app:upper="@drawable/ic_camera"-->
+        <!--app:bottom="@drawable/ic_audio"-->
+        <!--android:layout_alignParentEnd="true" />-->
+
+</RelativeLayout>

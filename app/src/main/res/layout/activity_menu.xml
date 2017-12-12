@@ -7,7 +7,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="CADET COLLEGE\nCLUB"
+        android:text="Cadet College Club"
         android:gravity="center"
         android:id="@+id/headerText"
         android:paddingTop="20dp"
@@ -45,13 +45,14 @@
                     android:layout_height="80dp"
                     android:id="@+id/imageButton"
                     android:onClick="gotodirectory"
-                    android:layout_margin="5dp"
+                    android:layout_margin="10dp"
                     android:background="@drawable/menu_button_selector_directory"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="DIRECTORY"
                     android:textColor="#fff"
+                    android:id="@+id/directory_text_layout"
                     android:layout_gravity="center"/>
             </LinearLayout>
             <LinearLayout
@@ -63,8 +64,8 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:id="@+id/imageButton2"
-                    android:onClick="gotoaboutus"
-                    android:layout_margin="5dp"
+                    android:onClick="gotocontactus"
+                    android:layout_margin="10dp"
                     android:background="@drawable/menu_button_selector_contact"
                     />
                 <TextView
@@ -72,6 +73,7 @@
                     android:layout_height="wrap_content"
                     android:text="CONTACT"
                     android:textColor="#fff"
+                    android:id="@+id/contact_text_layout"
                     android:layout_gravity="center"/>
             </LinearLayout>
             <LinearLayout
@@ -84,7 +86,7 @@
                     android:layout_height="80dp"
                     android:id="@+id/imageButton4"
                     android:onClick="gotopush"
-                    android:layout_margin="5dp"
+                    android:layout_margin="10dp"
                     android:background="@drawable/menu_button_selector_message"
                     />
                 <TextView
@@ -92,6 +94,7 @@
                     android:layout_height="wrap_content"
                     android:text="MESSAGES"
                     android:textColor="#fff"
+                    android:id="@+id/message_text_layout"
                     android:layout_gravity="center"/>
             </LinearLayout>
 
@@ -124,7 +127,7 @@
                     android:layout_height="80dp"
                     android:id="@+id/imageButton11"
                     android:onClick="gotobirthday"
-                    android:layout_margin="5dp"
+                    android:layout_margin="10dp"
                     android:background="@drawable/menu_button_selector_birthdays"
                     />
                 <TextView
@@ -132,6 +135,7 @@
                     android:layout_height="wrap_content"
                     android:text="ANNIVERSARY"
                     android:textColor="#fff"
+                    android:id="@+id/anniversary_text_layout"
                     android:layout_gravity="center"/>
             </LinearLayout>
 
@@ -145,7 +149,7 @@
                     android:layout_height="80dp"
                     android:id="@+id/imageButton8"
                     android:onClick="gotolocation"
-                    android:layout_margin="5dp"
+                    android:layout_margin="10dp"
                     android:background="@drawable/menu_button_selector_location"
                     />
                     />
@@ -154,6 +158,7 @@
                     android:layout_height="wrap_content"
                     android:text="CHECK-IN"
                     android:textColor="#fff"
+                    android:id="@+id/checkin_text_layout"
                     android:layout_gravity="center"/>
             </LinearLayout>
 
@@ -166,8 +171,8 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:id="@+id/imageButton7"
-                    android:onClick="gotofounders"
-                    android:layout_margin="5dp"
+                    android:onClick="gotomyclub"
+                    android:layout_margin="10dp"
                     android:background="@drawable/menu_button_selector_aboutus"
                     />
                 <TextView
@@ -175,6 +180,7 @@
                     android:layout_height="wrap_content"
                     android:text="MY CLUB"
                     android:textColor="#fff"
+                    android:id="@+id/myclub_text_layout"
                     android:layout_gravity="center"/>
             </LinearLayout>
 
@@ -199,7 +205,7 @@
                     android:layout_height="80dp"
                     android:id="@+id/imageButton15"
                     android:onClick="gotosearch"
-                    android:layout_margin="5dp"
+                    android:layout_margin="10dp"
                     android:background="@drawable/menu_button_selector_search"
                     />
                 <TextView
@@ -207,6 +213,7 @@
                     android:layout_height="wrap_content"
                     android:text="SEARCH"
                     android:textColor="#fff"
+                    android:id="@+id/search_text_layout"
                     android:layout_gravity="center"/>
             </LinearLayout>
             <LinearLayout
@@ -219,7 +226,7 @@
                     android:layout_height="80dp"
                     android:id="@+id/imageButton13"
                     android:onClick="gotoprofile"
-                    android:layout_margin="5dp"
+                    android:layout_margin="10dp"
                     android:background="@drawable/menu_button_selector_profile"/>
                     />
                 <TextView
@@ -227,6 +234,7 @@
                     android:layout_height="wrap_content"
                     android:text="MY PROFILE"
                     android:textColor="#fff"
+                    android:id="@+id/myprofile_text_layout"
                     android:layout_gravity="center"/>
             </LinearLayout>
             <LinearLayout
@@ -239,7 +247,7 @@
                     android:layout_height="80dp"
                     android:id="@+id/imageButton14"
                     android:onClick="gotosettings"
-                    android:layout_margin="5dp"
+                    android:layout_margin="10dp"
                     android:background="@drawable/menu_button_selector_settings"
                     />
                 <TextView
@@ -247,17 +255,9 @@
                     android:layout_height="wrap_content"
                     android:text="SETTINGS"
                     android:textColor="#fff"
+                    android:id="@+id/settings_text_layout"
                     android:layout_gravity="center"/>
             </LinearLayout>
-
-
-
-
-
-
-
-
-
 
 
         </LinearLayout>
@@ -266,6 +266,15 @@
 
 
     </LinearLayout>
+
+    <!--<ImageButton-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:background="@drawable/add"-->
+        <!--android:id="@+id/add_banner"-->
+        <!--android:layout_marginLeft="5dp"-->
+        <!--android:layout_marginRight="5dp"-->
+        <!--android:layout_alignParentBottom="true"/>-->
 
 
 </RelativeLayout>

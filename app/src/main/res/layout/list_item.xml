@@ -2,14 +2,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
 
     >
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="5pt"
+    android:padding="3pt"
     >
+
 
     <ImageView
         android:layout_width="30pt"
@@ -21,7 +23,7 @@
     <!-- Name Label -->
 
     <LinearLayout
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="fill_parent"
         android:paddingLeft="5pt"
         android:orientation="vertical"
@@ -30,13 +32,9 @@
             android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="1dp"
             android:text="Name"
             android:textAllCaps="true"
             android:textSize="15sp"
-            android:textStyle="bold"
-
-
             />
 
         <TextView
@@ -54,11 +52,42 @@
             android:layout_height="wrap_content"
             android:text="Mobile"
             android:textSize="12sp"
-            android:paddingBottom="1dp"
             />
+
 
     </LinearLayout>
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="end|center"
+        android:id="@+id/checkboxlayout"
+
+        >
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:id="@+id/checkboxId"
+
+            />
+
+        <!--<com.hanks.library.AnimateCheckBox-->
+            <!--android:id="@+id/acb"-->
+            <!--android:layout_width="50dp"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:padding="15dp"-->
+            <!--app:animDuration="150"-->
+            <!--app:checkedColor="#f00"-->
+            <!--app:lineColor="#fff"-->
+            <!--app:lineWidth="1.2dp"-->
+            <!--app:unCheckColor="#fff"/>-->
+
+
+
+    </LinearLayout>
 
 
 </LinearLayout>

@@ -1,49 +1,114 @@
 package com.psionicinteractive.directorycc;
 
+import android.animation.ObjectAnimator;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.psionicinteractive.directorycc.activity.PushActivity;
 
 /**
  * Created by imam on 8/16/2016.
  */
 public class MenuActivity extends Activity {
     TextView tx;
+    TextView m_directory_text_layout;
+    TextView m_contact_text_layout;
+    TextView m_message_text_layout;
+    TextView m_anniversary_text_layout;
+    TextView m_checkin_text_layout;
+    TextView m_myclub_text_layout;
+    TextView m_search_text_layout;
+    TextView m_myprofile_text_layout;
+    TextView m_settings_text_layout;
+//    ImageButton m_ib;
+    private int DELAY = 3000;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.activity_menu);
+        Typeface lato_font = Typeface.createFromAsset(getAssets(),  "fonts/lato.ttf");
+        Typeface old_english_font = Typeface.createFromAsset(getAssets(),  "fonts/font_old_eng.ttf");
 
         tx = (TextView)findViewById(R.id.headerText);
-        Typeface custom_font = Typeface.createFromAsset(getAssets(),  "fonts/lato.ttf");
-        tx.setTypeface(custom_font);
+        m_directory_text_layout= (TextView)findViewById(R.id.directory_text_layout);
+        m_contact_text_layout= (TextView)findViewById(R.id.contact_text_layout);
+        m_message_text_layout= (TextView)findViewById(R.id.message_text_layout);
+        m_anniversary_text_layout= (TextView)findViewById(R.id.anniversary_text_layout);
+        m_checkin_text_layout= (TextView)findViewById(R.id.checkin_text_layout);
+        m_myclub_text_layout= (TextView)findViewById(R.id.myclub_text_layout);
+        m_search_text_layout= (TextView)findViewById(R.id.search_text_layout);
+        m_myprofile_text_layout= (TextView)findViewById(R.id.myprofile_text_layout);
+        m_settings_text_layout= (TextView)findViewById(R.id.settings_text_layout);
+//        m_ib= (ImageButton) findViewById(R.id.add_banner);
+
+        tx.setTypeface(old_english_font);
+        m_directory_text_layout.setTypeface(lato_font);
+        m_contact_text_layout.setTypeface(lato_font);
+        m_message_text_layout.setTypeface(lato_font);
+        m_anniversary_text_layout.setTypeface(lato_font);
+        m_checkin_text_layout.setTypeface(lato_font);
+        m_myclub_text_layout.setTypeface(lato_font);
+        m_search_text_layout.setTypeface(lato_font);
+        m_myprofile_text_layout.setTypeface(lato_font);
+        m_settings_text_layout.setTypeface(lato_font);
 
 
+//
+//        Intent intent=getIntent();
+//        String message=intent.getStringExtra("body");
+//
+//        Toast.makeText(this, ""+message, Toast.LENGTH_SHORT).show();
+
+//        m_ib.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                animatebanner();
+//            }
+//        });
+
+       // Delay time in milliseconds
+
+//        new Handler().postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                animatebanner();
+//            }
+//        }, DELAY);
     }
+
+//    private void animatebanner() {
+//
+//        int StartValue=m_ib.getLeft();
+//        int EndValue=m_ib.getRight();
+//        ObjectAnimator.ofInt(m_ib,"arrow_right",StartValue,EndValue).start();
+//
+//    }
 
     public void gotodirectory(View view) {
         Intent i = new Intent(MenuActivity.this, DirectoryActivity.class);
         startActivity(i);
     }
 
-    public void gotoaboutus(View view) {
-        Intent i = new Intent(MenuActivity.this, AboutUsActivity.class);
+    public void gotomyclub(View view) {
+        Intent i = new Intent(MenuActivity.this, MyClubActivity.class);
         startActivity(i);
     }
     public void gotoevents(View view)
@@ -73,8 +138,8 @@ public class MenuActivity extends Activity {
 
     public void gotolocation(View view)
     {
-        String lat="23.738644";
-        String lon="90.397128";
+        String lat="23.7788177";
+        String lon="90.4127941";
         Intent i= new Intent(Intent.ACTION_VIEW);
         i.setData(Uri.parse("geo:"+lat+","+lon+"?z=17&q="+lat+","+lon));
         Intent chooser= Intent.createChooser(i,"choose map");
@@ -94,6 +159,8 @@ public class MenuActivity extends Activity {
     }
 
     public void gotoprofile(View view) {
+        Intent i = new Intent(MenuActivity.this, ProfileActivity.class);
+        startActivity(i);
         Toast.makeText(MenuActivity.this, "PROFILE", Toast.LENGTH_LONG).show();
     }
 
@@ -120,7 +187,9 @@ public class MenuActivity extends Activity {
     }
 
     public void gotosearch(View view) {
-        Toast.makeText(MenuActivity.this, "SEARCH", Toast.LENGTH_LONG).show();
+        Intent i=new Intent(MenuActivity.this,SearchActivity.class);
+////        startActivityForResult(i, 107);
+        startActivity(i);
     }
 
 
@@ -142,7 +211,18 @@ public class MenuActivity extends Activity {
     }
 
     public void onBackPressed() {
-        finish();
+        new AlertDialog.Builder(this)
+                .setTitle("Really Exit?")
+                .setMessage("Are you sure you want to exit?")
+                .setNegativeButton(android.R.string.no, null)
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface arg0, int arg1) {
+                        MenuActivity.super.onBackPressed();
+                    }
+                }).create().show();
+//        finish();
+
     }
 
 

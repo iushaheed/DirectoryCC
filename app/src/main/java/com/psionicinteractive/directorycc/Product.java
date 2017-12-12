@@ -8,6 +8,7 @@ public class Product {
     private String name;
     private String email;
     private String phoneNumber;
+    private boolean isTrue=false;
 
     public Product(String image, String name, String email, String phone) {
         this.image = image;
@@ -45,5 +46,13 @@ public class Product {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public boolean getIsTrue() {
+        return isTrue;
+    }
+
+    public void setIsTrue(boolean isTrue) {
+        this.isTrue = isTrue;
     }
 }
